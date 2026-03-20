@@ -14,7 +14,7 @@ Collect the 3 gems by defeating the 3 different bosses across runs
 Start → Choose Path → Fight → Upgrade → Boss → Reward → Repeat
 ```
 
-<img width="600" alt="diag-gameloop" src="https://github.com/user-attachments/assets/9f050cf7-b045-48d5-b301-2b683d2a0d71" />
+<img width="800" alt="diag-gameloop" src="https://github.com/user-attachments/assets/9f050cf7-b045-48d5-b301-2b683d2a0d71" />
 
 ### Notes
 
