@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://ln8jbcu1x0fq"]
 
 [ext_resource type="StyleBox" uid="uid://cj5q7ig2o1h4x" path="res://touch/JoystickStyle.tres" id="1_p1q0v"]
+[ext_resource type="StyleBox" uid="uid://cvw7bw10woxkx" path="res://touch/JoystickStyleAlt.tres" id="2_kgyjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgyjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15yyi"]
 
 [node name="Input" type="Control" unique_id=535424120]
 layout_mode = 3
@@ -70,27 +75,43 @@ offset_top = 208.0
 offset_right = 200.0
 offset_bottom = 336.0
 theme_override_styles/normal = ExtResource("1_p1q0v")
+theme_override_styles/pressed = ExtResource("2_kgyjp")
+theme_override_styles/hover = ExtResource("1_p1q0v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kgyjp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15yyi")
 
-[node name="Button2" type="Button" parent="." unique_id=827316827]
+[node name="Button2" type="Button" parent="." unique_id=2090221828]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 208.0
 offset_right = 360.0
 offset_bottom = 336.0
 theme_override_styles/normal = ExtResource("1_p1q0v")
+theme_override_styles/pressed = ExtResource("2_kgyjp")
+theme_override_styles/hover = ExtResource("1_p1q0v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kgyjp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15yyi")
 
-[node name="Button3" type="Button" parent="." unique_id=111573044]
+[node name="Button3" type="Button" parent="." unique_id=1183309557]
 layout_mode = 0
 offset_left = 792.0
 offset_top = 208.0
 offset_right = 920.0
 offset_bottom = 336.0
 theme_override_styles/normal = ExtResource("1_p1q0v")
+theme_override_styles/pressed = ExtResource("2_kgyjp")
+theme_override_styles/hover = ExtResource("1_p1q0v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kgyjp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15yyi")
 
-[node name="Button4" type="Button" parent="." unique_id=1652594939]
+[node name="Button4" type="Button" parent="." unique_id=1422784025]
 layout_mode = 0
 offset_left = 952.0
 offset_top = 208.0
 offset_right = 1080.0
 offset_bottom = 336.0
 theme_override_styles/normal = ExtResource("1_p1q0v")
+theme_override_styles/pressed = ExtResource("2_kgyjp")
+theme_override_styles/hover = ExtResource("1_p1q0v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kgyjp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_15yyi")
