@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://f62llffiii3s"]
+
+[ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.tscn" id="1_6xmcy"]
+[ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/startmenu/TapToStart.cs" id="2_07mxg"]
+[ext_resource type="PackedScene" uid="uid://ca3k5po71jw5d" path="res://tscn/scene/tests/TestMovement.tscn" id="3_07mxg"]
+
+[node name="StartMenu" type="Control" unique_id=193297777]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Footer" type="HBoxContainer" parent="." unique_id=1024642939]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -462.5
+offset_top = -83.0
+offset_right = 462.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 223
+alignment = 1
+
+[node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+text = "Codex"
+
+[node name="Button2" parent="Footer" unique_id=1699150195 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+text = "Settings"
+
+[node name="Button3" parent="Footer" unique_id=167639075 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+text = "Options"
+
+[node name="Button4" parent="Footer" unique_id=961371023 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+text = "Socials"
+
+[node name="Tap" type="Control" parent="." unique_id=980406163]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_07mxg")
+TargetScene = ExtResource("3_07mxg")
+
+[node name="Label" type="Label" parent="Tap" unique_id=1514062504]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = 79.75
+offset_right = 115.5
+offset_bottom = 102.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tap to start the game"
+horizontal_alignment = 1
