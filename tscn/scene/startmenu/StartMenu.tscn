@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.tscn" id="1_6xmcy"]
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/startmenu/TapToStart.cs" id="2_07mxg"]
-[ext_resource type="PackedScene" uid="uid://ca3k5po71jw5d" path="res://tscn/scene/tests/TestMovement.tscn" id="3_07mxg"]
+[ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://tscn/scene/tests/TestMapgen.tscn" id="3_07mxg"]
 
 [node name="StartMenu" type="Control" unique_id=193297777]
 layout_mode = 3

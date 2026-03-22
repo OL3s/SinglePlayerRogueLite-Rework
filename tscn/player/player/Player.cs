@@ -5,7 +5,7 @@ using Animation;
 public partial class Player : CharacterBody2D
 {
 	[Export] public InputNode PlayerInput; 
-	[Export] public float MoveSpeed { get; set; } = 200f;
+	[Export] public float MoveSpeed { get; set; } = 40f;
 	[Export] Sprite2D Sprite;
 	private SpriteTarget _spriteTarget;
 
@@ -42,7 +42,7 @@ public partial class Player : CharacterBody2D
 		if (Velocity.Length() > 0f)
 		{
 			_time += delta;
-			Sprite.Position -= new Vector2(0f, PositionModifiers.Bounce(_time, 10f, .35f));
+			Sprite.Position -= new Vector2(0f, PositionModifiers.Bounce(_time, 10f, .20f));
 			Sprite.Rotation += PositionModifiers.Sway(_time, 10f, 0.02f);
 		} 
 		else

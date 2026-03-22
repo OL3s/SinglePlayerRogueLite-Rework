@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://ln8jbcu1x0fq" path="res://tscn/input/Input.tscn" id="3_kne1u"]
 
 [sub_resource type="Gradient" id="Gradient_wr5v1"]
-offsets = PackedFloat32Array(0, 0.4259928)
-colors = PackedColorArray(0, 0, 0, 0.58431375, 0, 0, 0, 0)
+offsets = PackedFloat32Array(0.10469314, 0.48736462)
+colors = PackedColorArray(0, 0, 0, 0.3372549, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qjuqw"]
 gradient = SubResource("Gradient_wr5v1")
-width = 32
-height = 16
+width = 16
+height = 8
 fill = 1
 fill_from = Vector2(0.5, 0.51282054)
 
@@ -23,18 +23,17 @@ PlayerInput = NodePath("CanvasLayer/Control/Input")
 Sprite = NodePath("Sprite2D")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1747756745]
-position = Vector2(0, 5)
+position = Vector2(0, 3)
 texture = SubResource("GradientTexture2D_qjuqw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70423679]
 shape = SubResource("CircleShape2D_kpjcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=697083700]
-scale = Vector2(2, 2)
 texture = ExtResource("1_xhfnw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=263009321]
-zoom = Vector2(2, 2)
+zoom = Vector2(6, 6)
 limit_enabled = false
 limit_smoothed = true
 position_smoothing_enabled = true

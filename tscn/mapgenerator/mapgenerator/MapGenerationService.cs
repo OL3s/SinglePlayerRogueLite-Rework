@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-namespace MapGeneration
+namespace MapGenerationService
 {
 	/// <summary>
 	/// Generates a random map as a set of floor tiles and a path connecting them.
@@ -23,7 +23,6 @@ namespace MapGeneration
 	{
 		public HashSet<Vector2I> TileFloor;
 		public HashSet<Vector2I> TileWall => GetWallTiles(TileFloor);
-		public HashSet<Vector2I> TileDeep => GetDeepTiles();
 		public HashSet<Vector2I> TileAll => new HashSet<Vector2I>(TileFloor.Union(TileWall));
 		public List<Vector2I> Path;
 
@@ -55,7 +54,8 @@ namespace MapGeneration
 			AddTile(data, pos);
 			ApplySnake(ref pos, length, data, random);
 			ApplyPadding(data, padding, smoothCorners);
-			
+		
+			data.DoubleSize();
 			data.MoveToPositive();
 
 			GD.Print("Map Generated : " + data.GetSize());
@@ -169,41 +169,6 @@ namespace MapGeneration
 			return wallTiles;
 		}
 
-		public static HashSet<Vector2I> GetDeepTiles(HashSet<Vector2I> tileFloor, int deepThreshold = 4, int deepRadius = 2)
-		{
-			if (deepRadius < 1)
-				throw new ArgumentException("Deep radius must be at least 1.");
-
-			var deepTiles = new HashSet<Vector2I>();
-			int requiredFloorCount = Math.Max(0, deepThreshold);
-
-			foreach (var floor in tileFloor)
-			{
-				int nearbyFloorCount = 0;
-
-				for (int dx = -deepRadius; dx <= deepRadius; dx++)
-				{
-					for (int dy = -deepRadius; dy <= deepRadius; dy++)
-					{
-						if (dx == 0 && dy == 0)
-							continue;
-
-						var neighbor = floor + new Vector2I(dx, dy);
-						if (tileFloor.Contains(neighbor))
-							nearbyFloorCount++;
-					}
-				}
-
-				if (nearbyFloorCount >= requiredFloorCount)
-					deepTiles.Add(floor);
-			}
-
-			return deepTiles;
-		}
-
-		public HashSet<Vector2I> GetDeepTiles(int deepThreshold = 4, int deepRadius = 2) =>
-			GetDeepTiles(TileFloor, deepThreshold, deepRadius);
-
 		private static readonly Vector2I[] AllDirs =
 		{
 			Vector2I.Up,
@@ -269,6 +234,26 @@ namespace MapGeneration
 			}
 
 			return count;
+		}
+
+		public void DoubleSize()
+		{
+			var doubledFloor = new HashSet<Vector2I>(TileFloor.Count * 4);
+
+			foreach (var tile in TileFloor)
+			{
+				Vector2I doubledOrigin = tile * 2;
+
+				doubledFloor.Add(doubledOrigin);
+				doubledFloor.Add(doubledOrigin + Vector2I.Right);
+				doubledFloor.Add(doubledOrigin + Vector2I.Down);
+				doubledFloor.Add(doubledOrigin + Vector2I.One);
+			}
+
+			TileFloor = doubledFloor;
+
+			for (int i = 0; i < Path.Count; i++)
+				Path[i] *= 2;
 		}
 	}
 
