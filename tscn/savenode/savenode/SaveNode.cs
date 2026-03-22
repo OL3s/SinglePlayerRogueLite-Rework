@@ -12,7 +12,10 @@ public partial class SaveNode : Node
 	{
 		DirAccess.MakeDirRecursiveAbsolute(SaveDirectory);
 		LoadAllData();
-		SaveAllData(); // Save immediately to ensure files are created with the correct structure if they don't exist
+
+		if (!FilesExist())
+			SaveAllData(); // Ensure that save files exist after the first run	
+
 
 		GD.Print("SaveNode is ready. MetaData, RunData, and SettingsData have been initialized.");
 	}
@@ -99,6 +102,13 @@ public partial class SaveNode : Node
 	}
 
 	public static string GetSavePath(FileType type) => $"user://saves/{type.ToString().ToLower()}_data.tres";
+
+	private bool FilesExist()
+	{
+		return FileAccess.FileExists(GetSavePath(FileType.Meta)) &&
+			   FileAccess.FileExists(GetSavePath(FileType.Run)) &&
+			   FileAccess.FileExists(GetSavePath(FileType.Settings));
+	}
 
 	public enum FileType
 	{

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsrbx6wxjirg8"
-path="res://.godot/imported/spTIlesetWallsBasic.png-4bb5fb67b3d17486477da9e63959deb6.ctex"
+uid="uid://cn3se5usu6b"
+path="res://.godot/imported/spTilesetWallsBasic.png-20a337e7d10648f60de951655e26d576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spTIlesetWallsBasic.png"
-dest_files=["res://.godot/imported/spTIlesetWallsBasic.png-4bb5fb67b3d17486477da9e63959deb6.ctex"]
+source_file="res://spTilesetWallsBasic.png"
+dest_files=["res://.godot/imported/spTilesetWallsBasic.png-20a337e7d10648f60de951655e26d576.ctex"]
 
 [params]
 

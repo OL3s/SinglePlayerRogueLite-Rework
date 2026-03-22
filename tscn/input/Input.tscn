@@ -11,6 +11,7 @@
 
 [node name="Input" type="Control" unique_id=535424120 node_paths=PackedStringArray("Btn1", "Btn2", "Btn3", "Btn4", "DebugLabel", "LeftStick", "RightStick")]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
