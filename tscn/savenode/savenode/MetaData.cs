@@ -6,13 +6,12 @@ namespace SaveData
 	[GlobalClass]
 	public partial class MetaData : SaveResource
 	{
-		[Export] public Array<bool> CollectedGems { get; set; }
-		[Export] public int RunCount { get; set; }
-
-		public override void ResetToDefaults()
+		public bool[] CollectedGems { get; set; } = [false, false, false];
+		[Export] public int RunCount { get; set; } = 0;
+		[Export] public bool IsFirstTimePlayer { get; set; } = true;
+		public override string ToString()
 		{
-			CollectedGems = [false, false, false];
-			RunCount = 0;
+			return $"MetaData: RunCount={RunCount}, IsFirstTimePlayer={IsFirstTimePlayer}, CollectedGems=[{string.Join(", ", CollectedGems)}]";
 		}
 	}
 

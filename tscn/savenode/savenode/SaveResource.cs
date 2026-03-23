@@ -5,7 +5,5 @@ namespace SaveData
 	public abstract partial class SaveResource : Resource
 	{
 		[Export] public int DataVersion { get; set; } = 1;
-
-		public abstract void ResetToDefaults();
 	}
 }

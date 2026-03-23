@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.tscn" id="1_6xmcy"]
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/startmenu/TapToStart.cs" id="2_07mxg"]
 [ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://tscn/scene/tests/TestMapgen.tscn" id="3_07mxg"]
+[ext_resource type="PackedScene" uid="uid://cohjplfasmpo3" path="res://gem_2d.tscn" id="4_u0rcl"]
 
 [node name="StartMenu" type="Control" unique_id=193297777]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Footer" type="HBoxContainer" parent="." unique_id=1024642939]
 layout_mode = 1
@@ -27,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 223
 alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
@@ -59,6 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_07mxg")
 TargetScene = ExtResource("3_07mxg")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Tap" unique_id=1514062504]
 layout_mode = 1
@@ -75,3 +79,18 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Tap to start the game"
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Gem2D" parent="." unique_id=918468913 instance=ExtResource("4_u0rcl")]
+position = Vector2(384, 256)
+scale = Vector2(4, 4)
+
+[node name="Gem2D2" parent="." unique_id=506248094 instance=ExtResource("4_u0rcl")]
+position = Vector2(768, 256)
+scale = Vector2(4, 4)
+Type = 2
+
+[node name="Gem2D3" parent="." unique_id=207524389 instance=ExtResource("4_u0rcl")]
+position = Vector2(576, 256)
+scale = Vector2(4, 4)
+Type = 1

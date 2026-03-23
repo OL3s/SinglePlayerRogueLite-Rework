@@ -3,9 +3,9 @@ using SaveData;
 
 public partial class SaveNode : Node
 {
-	public MetaData MetaData { get; set; }
-	public RunData RunData { get; set; }
-	public SettingsData SettingsData { get; set; }
+	[Export] public MetaData MetaData { get; set; }
+	[Export] public RunData RunData { get; set; }
+	[Export] public SettingsData SettingsData { get; set; }
 	[Export] public string SaveDirectory { get; set; } = "user://saves/";
 
 	public override void _Ready()
@@ -14,17 +14,9 @@ public partial class SaveNode : Node
 		LoadAllData();
 
 		if (!FilesExist())
-			SaveAllData(); // Ensure that save files exist after the first run	
-
+			SaveAllData();
 
 		GD.Print("SaveNode is ready. MetaData, RunData, and SettingsData have been initialized.");
-	}
-
-	public void ResetAllDataToDefaults()
-	{
-		MetaData.ResetToDefaults();
-		RunData.ResetToDefaults();
-		SettingsData.ResetToDefaults();
 	}
 
 	public void SaveData(SaveResource data, FileType type)
@@ -99,6 +91,20 @@ public partial class SaveNode : Node
 		MetaData = LoadData(FileType.Meta) as MetaData ?? new MetaData();
 		RunData = LoadData(FileType.Run) as RunData ?? new RunData();
 		SettingsData = LoadData(FileType.Settings) as SettingsData ?? new SettingsData();
+
+
+		if (MetaData == null || RunData == null || SettingsData == null)
+			throw new System.FieldAccessException("One or more data files failed to load. Default instances have been created for missing files.");
+
+		if (MetaData.IsFirstTimePlayer)
+		{
+			RunData.IsTutorialGameplay = true;
+			GD.Print("First time player detected. Tutorial gameplay enabled.");
+		}
+
+		GD.Print(MetaData.ToString());
+		GD.Print(RunData.ToString());
+		GD.Print(SettingsData.ToString());
 	}
 
 	public static string GetSavePath(FileType type) => $"user://saves/{type.ToString().ToLower()}_data.tres";

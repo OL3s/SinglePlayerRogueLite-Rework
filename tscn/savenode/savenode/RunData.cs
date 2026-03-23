@@ -5,10 +5,11 @@ namespace SaveData
 	[GlobalClass]
 	public partial class RunData : SaveResource
 	{
-		[Export] public int CurrentLocation { get; set; }
-		public override void ResetToDefaults()
+		[Export] public int CurrentLocation { get; set; } = (int)Location.GrasslandsA;
+		[Export] public bool IsTutorialGameplay { get; set; } = false;
+		public override string ToString()
 		{
-			CurrentLocation = (int)Location.GrasslandsA;
+			return $"RunData: CurrentLocation={((Location)CurrentLocation).ToString()}, IsTutorialGameplay={IsTutorialGameplay}";
 		}
 	}
 
