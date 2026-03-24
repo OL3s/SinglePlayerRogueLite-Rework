@@ -4,8 +4,10 @@ using Animation;
 
 public partial class Gem : TextureRect
 {
+	[ExportGroup("Gem Properties")]
 	[Export] public GemType Type { get; set; } = GemType.Red;
 	[Export] public TextureRect GemSprite { get; set; }
+	[ExportGroup("Gem Textures")]
 	[Export] public Texture2D GemTextureRed { get; set; }
 	[Export] public Texture2D GemTextureGreen { get; set; }
 	[Export] public Texture2D GemTextureBlue { get; set; }
@@ -51,7 +53,13 @@ public partial class Gem : TextureRect
 	{
 		var saveNode = GetNode<SaveNode>("/root/SaveNode");
 		var metaData = saveNode.MetaData;
-		GemSprite.Visible = metaData.CollectedGems[(int)Type];
+		GemSprite.Visible = Type switch
+		{
+			GemType.Red => metaData.GemRedCollected,
+			GemType.Green => metaData.GemGreenCollected,
+			GemType.Blue => metaData.GemBlueCollected,
+			_ => true
+		};
 	}
 
 }

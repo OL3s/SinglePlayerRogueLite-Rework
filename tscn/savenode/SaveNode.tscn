@@ -1,24 +1,28 @@
 [gd_scene format=3 uid="uid://dt730oshvg4ot"]
 
 [ext_resource type="Script" uid="uid://bnoakhb4l8iru" path="res://tscn/savenode/savenode/SaveNode.cs" id="1_2h2c8"]
-[ext_resource type="Script" uid="uid://b3l4nrmq6p8c8" path="res://tscn/savenode/savenode/MetaData.cs" id="2_48oto"]
+[ext_resource type="Script" uid="uid://b3l4nrmq6p8c8" path="res://tscn/savenode/savenode/MetaData.cs" id="2_78l8q"]
+[ext_resource type="Script" uid="uid://celm5xvuktvmo" path="res://global/PlayerData.cs" id="3_brvqa"]
 [ext_resource type="Script" uid="uid://g4uqrps1xrur" path="res://tscn/savenode/savenode/RunData.cs" id="3_x7dqs"]
-[ext_resource type="Script" uid="uid://dokw4vlauqtom" path="res://tscn/savenode/savenode/SettingsData.cs" id="4_brvqa"]
+[ext_resource type="Script" uid="uid://dokw4vlauqtom" path="res://tscn/savenode/savenode/SettingsData.cs" id="5_x7dqs"]
 
-[sub_resource type="Resource" id="Resource_68aqy"]
-script = ExtResource("2_48oto")
+[sub_resource type="Resource" id="Resource_bkhlg"]
+script = ExtResource("2_78l8q")
 metadata/_custom_type_script = "uid://b3l4nrmq6p8c8"
 
-[sub_resource type="Resource" id="Resource_yngsu"]
+[sub_resource type="Resource" id="Resource_x7dqs"]
+script = ExtResource("3_brvqa")
+
+[sub_resource type="Resource" id="Resource_68aqy"]
 script = ExtResource("3_x7dqs")
 metadata/_custom_type_script = "uid://g4uqrps1xrur"
 
-[sub_resource type="Resource" id="Resource_nrwms"]
-script = ExtResource("4_brvqa")
+[sub_resource type="Resource" id="Resource_yngsu"]
+script = ExtResource("5_x7dqs")
 metadata/_custom_type_script = "uid://dokw4vlauqtom"
 
 [node name="SaveNode" type="Node" unique_id=528353956]
 script = ExtResource("1_2h2c8")
-MetaData = SubResource("Resource_68aqy")
-RunData = SubResource("Resource_yngsu")
-SettingsData = SubResource("Resource_nrwms")
+DefaultMetaData = SubResource("Resource_bkhlg")
+DefaultRunData = SubResource("Resource_68aqy")
+DefaultSettingsData = SubResource("Resource_yngsu")

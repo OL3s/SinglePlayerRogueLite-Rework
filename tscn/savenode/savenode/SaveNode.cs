@@ -3,12 +3,21 @@ using SaveData;
 
 public partial class SaveNode : Node
 {
-	[Export] public MetaData MetaData { get; set; }
-	[Export] public RunData RunData { get; set; }
-	[Export] public SettingsData SettingsData { get; set; }
+	[Export] public MetaData DefaultMetaData { get; set; } = new MetaData();
+	[Export] public RunData DefaultRunData { get; set; } = new RunData();
+	[Export] public SettingsData DefaultSettingsData { get; set; } = new SettingsData();
 	[Export] public string SaveDirectory { get; set; } = "user://saves/";
+	public MetaData MetaData { get; set; }
+	public RunData RunData { get; set; }
+	public SettingsData SettingsData { get; set; }
 
 	public override void _Ready()
+	{
+		GD.Print(DefaultRunData + "testtest");
+		ExecuteReady();
+	}
+
+	public void ExecuteReady()
 	{
 		DirAccess.MakeDirRecursiveAbsolute(SaveDirectory);
 		LoadAllData();
@@ -28,7 +37,7 @@ public partial class SaveNode : Node
 			GD.PrintErr($"Failed to save data to {filePath}: {error}");
 		}
 		else
-		{
+		{	
 			GD.Print($"Data successfully saved to {filePath}");
 		}
 	}
@@ -72,6 +81,14 @@ public partial class SaveNode : Node
 
 	}
 
+	public void DeleteMetaData() => DeleteData(FileType.Meta);
+	public void DeleteRunData() => DeleteData(FileType.Run);
+	public void DeleteSettingsData() => DeleteData(FileType.Settings);
+	public bool FileExists(FileType type) => FileAccess.FileExists(GetSavePath(type));
+	public bool MetaDataExists() => FileExists(FileType.Meta);
+	public bool RunDataExists() => FileExists(FileType.Run);
+	public bool SettingsDataExists() => FileExists(FileType.Settings);
+
 	public void DeleteAllData()
 	{
 		DeleteData(FileType.Meta);
@@ -88,13 +105,9 @@ public partial class SaveNode : Node
 
 	public void LoadAllData()
 	{
-		MetaData = LoadData(FileType.Meta) as MetaData ?? new MetaData();
-		RunData = LoadData(FileType.Run) as RunData ?? new RunData();
-		SettingsData = LoadData(FileType.Settings) as SettingsData ?? new SettingsData();
-
-
-		if (MetaData == null || RunData == null || SettingsData == null)
-			throw new System.FieldAccessException("One or more data files failed to load. Default instances have been created for missing files.");
+		MetaData = LoadData(FileType.Meta) as MetaData ?? DefaultMetaData;
+		RunData = LoadData(FileType.Run) as RunData ?? DefaultRunData;
+		SettingsData = LoadData(FileType.Settings) as SettingsData ?? DefaultSettingsData;
 
 		if (MetaData.IsFirstTimePlayer)
 		{
@@ -115,12 +128,4 @@ public partial class SaveNode : Node
 			   FileAccess.FileExists(GetSavePath(FileType.Run)) &&
 			   FileAccess.FileExists(GetSavePath(FileType.Settings));
 	}
-
-	public enum FileType
-	{
-		Meta,
-		Run,
-		Settings
-	}
-
 }

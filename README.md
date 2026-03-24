@@ -4,13 +4,13 @@ A singleplayer 2D roguelite with a procedurally generated map.
 
 ### Core Goal
 
-```id="2kz8mq"
+```
 Collect the 3 gems by defeating the 3 different bosses across runs
 ```
 
 ### Core Loop
 
-```id="5xv1qn"
+```
 Start → Choose Path → Fight → Upgrade → Boss → Reward → Repeat
 ```
 

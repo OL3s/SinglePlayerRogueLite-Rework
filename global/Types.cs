@@ -2,6 +2,7 @@ using Godot;
 using System;
 
 namespace MyTypes {
+
 	public enum Biomes
 	{
 		GrasslandsA = 0,
@@ -14,10 +15,21 @@ namespace MyTypes {
 		JungleBossD = 7,
 		LavaBossD = 8,
 	}
+
 	public enum Locations 
 	{
 		Village = 0,
 		Sanctuary = 1,
 		Campsite = 2
+	}
+}
+
+namespace SaveData
+{
+	public enum FileType
+	{
+		Meta,
+		Run,
+		Settings
 	}
 }

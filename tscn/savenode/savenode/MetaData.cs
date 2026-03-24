@@ -1,17 +1,20 @@
 using Godot;
-using Godot.Collections;
 
 namespace SaveData
 {
 	[GlobalClass]
 	public partial class MetaData : SaveResource
 	{
-		public bool[] CollectedGems { get; set; } = [false, false, false];
+		[ExportGroup("Gem Collection")]
+		[Export] public bool GemRedCollected { get; set; } = false;
+		[Export] public bool GemGreenCollected { get; set; } = false;
+		[Export] public bool GemBlueCollected { get; set; } = false;
+		[ExportGroup("Run Data")]
 		[Export] public int RunCount { get; set; } = 0;
-		[Export] public bool IsFirstTimePlayer { get; set; } = true;
+		public bool IsFirstTimePlayer => RunCount == 0;
 		public override string ToString()
 		{
-			return $"MetaData: RunCount={RunCount}, IsFirstTimePlayer={IsFirstTimePlayer}, CollectedGems=[{string.Join(", ", CollectedGems)}]";
+			return $"MetaData: RunCount={RunCount}, IsFirstTimePlayer={IsFirstTimePlayer}, CollectedGems=[Red={GemRedCollected}, Green={GemGreenCollected}, Blue={GemBlueCollected}]";
 		}
 	}
 

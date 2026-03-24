@@ -5,13 +5,14 @@ public partial class Gem2D : Sprite2D
 {
 	[Export] public GemType Type { get; set; } = GemType.Red;
 	[Export] public Sprite2D GemSprite { get; set; }
+	[Export] public bool ForceShowGem { get; set; } = false;
+	[ExportGroup("Gem Textures")]
 	[Export] public Texture2D GemTextureRed { get; set; }
 	[Export] public Texture2D GemTextureGreen { get; set; }
 	[Export] public Texture2D GemTextureBlue { get; set; }
 	[Export] public Texture2D GemTextureRedBackground { get; set; }
 	[Export] public Texture2D GemTextureGreenBackground { get; set; }
 	[Export] public Texture2D GemTextureBlueBackground { get; set; }
-	[Export] public bool ForceShowGem { get; set; } = false;
 	private double _timer = 0f;
 
 	public enum GemType
@@ -60,7 +61,13 @@ public partial class Gem2D : Sprite2D
 	{
 		var saveNode = GetNode<SaveNode>("/root/SaveNode");
 		var metaData = saveNode.MetaData;
-		GemSprite.Visible = ForceShowGem || metaData.CollectedGems[(int)Type];
+		GemSprite.Visible = ForceShowGem || (Type switch
+		{
+			GemType.Red => metaData.GemRedCollected,
+			GemType.Green => metaData.GemGreenCollected,
+			GemType.Blue => metaData.GemBlueCollected,
+			_ => true
+		});
 	}
 
 
