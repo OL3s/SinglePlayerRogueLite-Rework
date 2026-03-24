@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://f62llffiii3s"]
 
 [ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.tscn" id="1_6xmcy"]
+[ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://career.tscn" id="2_2ab2i"]
+[ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="2_6i732"]
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/startmenu/TapToStart.cs" id="2_07mxg"]
+[ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://codex.tscn" id="2_fle81"]
 [ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://tscn/scene/tests/TestMapgen.tscn" id="3_07mxg"]
+[ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://settings.tscn" id="4_d64ox"]
 [ext_resource type="PackedScene" uid="uid://cohjplfasmpo3" path="res://gem_2d.tscn" id="4_u0rcl"]
+[ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://sosials.tscn" id="6_fuu6a"]
 
 [node name="StartMenu" type="Control" unique_id=193297777]
 layout_mode = 3
@@ -33,19 +38,24 @@ metadata/_edit_lock_ = true
 
 [node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
-text = "Codex"
+text = "Career"
+UiScene = ExtResource("2_2ab2i")
 
 [node name="Button2" parent="Footer" unique_id=1699150195 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
-text = "Settings"
+text = "Codex"
+UiScene = ExtResource("2_fle81")
 
 [node name="Button3" parent="Footer" unique_id=167639075 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
-text = "Options"
+text = "Settings"
+UiScene = ExtResource("4_d64ox")
 
 [node name="Button4" parent="Footer" unique_id=961371023 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
 text = "Socials"
+icon = ExtResource("2_6i732")
+UiScene = ExtResource("6_fuu6a")
 
 [node name="Tap" type="Control" parent="." unique_id=980406163]
 layout_mode = 1
@@ -84,6 +94,7 @@ metadata/_edit_lock_ = true
 [node name="Gem2D" parent="." unique_id=918468913 instance=ExtResource("4_u0rcl")]
 position = Vector2(384, 256)
 scale = Vector2(4, 4)
+Type = 1
 
 [node name="Gem2D2" parent="." unique_id=506248094 instance=ExtResource("4_u0rcl")]
 position = Vector2(768, 256)
@@ -93,4 +104,3 @@ Type = 2
 [node name="Gem2D3" parent="." unique_id=207524389 instance=ExtResource("4_u0rcl")]
 position = Vector2(576, 256)
 scale = Vector2(4, 4)
-Type = 1

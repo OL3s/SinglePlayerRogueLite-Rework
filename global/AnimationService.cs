@@ -9,6 +9,11 @@ namespace Animation
 			return (float)(Math.Sin(time * speed) * height);
 		}
 
+		public static float InvertedFloating(double time, float speed, float height)
+		{
+			return (float)(Math.Cos(time * speed) * height);
+		}
+
 		public static float Bounce(double time, float speed, float amplitude)
 		{
 			return (float)(Math.Abs(Math.Sin(time * speed)) * amplitude);

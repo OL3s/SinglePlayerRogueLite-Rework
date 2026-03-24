@@ -1,4 +1,5 @@
 using Godot;
+using Animation;
 
 public partial class Gem2D : Sprite2D
 {
@@ -10,6 +11,8 @@ public partial class Gem2D : Sprite2D
 	[Export] public Texture2D GemTextureRedBackground { get; set; }
 	[Export] public Texture2D GemTextureGreenBackground { get; set; }
 	[Export] public Texture2D GemTextureBlueBackground { get; set; }
+	[Export] public bool ForceShowGem { get; set; } = false;
+	private double _timer = 0f;
 
 	public enum GemType
 	{
@@ -23,6 +26,14 @@ public partial class Gem2D : Sprite2D
 		base._Ready();
 		UpdateGemAppearance();
 		CheckForCollection();
+	}
+
+	public override void _Process(double delta)
+	{
+		// animate the gem
+		float setHeight = 4f;
+		GemSprite.Position = new Vector2(0, -setHeight + PositionModifiers.InvertedFloating(_timer, 4f, setHeight * GemSprite.Scale.Y));
+		_timer += delta;
 	}
 
 	private void UpdateGemAppearance()
@@ -44,11 +55,12 @@ public partial class Gem2D : Sprite2D
 		}
 	}
 
+
 	private void CheckForCollection()
 	{
 		var saveNode = GetNode<SaveNode>("/root/SaveNode");
 		var metaData = saveNode.MetaData;
-		GemSprite.Visible = metaData.CollectedGems[(int)Type];
+		GemSprite.Visible = ForceShowGem || metaData.CollectedGems[(int)Type];
 	}
 
 
