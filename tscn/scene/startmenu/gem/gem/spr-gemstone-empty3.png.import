@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5ruhkulwircd"
-path="res://.godot/imported/spr-gemstone-empty3.png-3cbe1f9b53368fd35b367bdbff441e8e.ctex"
+path="res://.godot/imported/spr-gemstone-empty3.png-93325d480593b511e12f1ed314440881.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/savenode/spr-gemstone-empty3.png"
-dest_files=["res://.godot/imported/spr-gemstone-empty3.png-3cbe1f9b53368fd35b367bdbff441e8e.ctex"]
+source_file="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty3.png"
+dest_files=["res://.godot/imported/spr-gemstone-empty3.png-93325d480593b511e12f1ed314440881.ctex"]
 
 [params]
 

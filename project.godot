@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="GodotSingleplayerProject"
+config/name="Relics of Ruin"
 run/main_scene="uid://f62llffiii3s"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dtn51446psviv"
 
 [autoload]
 

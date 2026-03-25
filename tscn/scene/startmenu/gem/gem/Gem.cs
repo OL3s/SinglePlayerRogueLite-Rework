@@ -7,6 +7,7 @@ public partial class Gem : TextureRect
 	[ExportGroup("Gem Properties")]
 	[Export] public GemType Type { get; set; } = GemType.Red;
 	[Export] public TextureRect GemSprite { get; set; }
+	[Export] public bool ForceShow { get; set; } = false;
 	[ExportGroup("Gem Textures")]
 	[Export] public Texture2D GemTextureRed { get; set; }
 	[Export] public Texture2D GemTextureGreen { get; set; }
@@ -14,7 +15,7 @@ public partial class Gem : TextureRect
 	[Export] public Texture2D GemTextureRedBackground { get; set; }
 	[Export] public Texture2D GemTextureGreenBackground { get; set; }
 	[Export] public Texture2D GemTextureBlueBackground { get; set; }
-	private bool CollectedData;
+	private double _timer = 0f;
 
 	public enum GemType
 	{
@@ -26,11 +27,19 @@ public partial class Gem : TextureRect
 	public override void _Ready()
 	{
 		base._Ready();
-		UpdateGemAppearance();
+		UpdateGemType();
 		CheckForCollection();
 	}
+	
+	public override void _Process(double delta)
+	{
+		// animate the gem
+		float setHeight = 12f;
+		GemSprite.Position = new Vector2(0, -setHeight + PositionModifiers.InvertedFloating(_timer, 4f, setHeight * GemSprite.Scale.Y));
+		_timer += delta;
+	}
 
-	private void UpdateGemAppearance()
+	private void UpdateGemType()
 	{
 		switch (Type)
 		{
@@ -60,6 +69,7 @@ public partial class Gem : TextureRect
 			GemType.Blue => metaData.GemBlueCollected,
 			_ => true
 		};
+		GemSprite.Visible = ForceShow ? true : GemSprite.Visible;
 	}
 
 }

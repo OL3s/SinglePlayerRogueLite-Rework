@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://651x51lpcdua"]
 
-[ext_resource type="Script" uid="uid://cag7g0vpwetb5" path="res://tscn/scene/startmenu/gem/Gem.cs" id="1_whk3i"]
-[ext_resource type="Texture2D" uid="uid://ympwa0f1wv17" path="res://tscn/savenode/spr-gemstones-full2.png" id="2_cumba"]
-[ext_resource type="Texture2D" uid="uid://stfhwx7gjgum" path="res://tscn/savenode/spr-gemstones-full3.png" id="3_5kdxr"]
-[ext_resource type="Texture2D" uid="uid://ckptiq420umnc" path="res://tscn/savenode/spr-gemstones-full1.png" id="4_jwt51"]
-[ext_resource type="Texture2D" uid="uid://cp15bdbw3hdb7" path="res://tscn/savenode/spr-gemstone-empty2.png" id="5_rfgq4"]
-[ext_resource type="Texture2D" uid="uid://5ruhkulwircd" path="res://tscn/savenode/spr-gemstone-empty3.png" id="6_qhmda"]
-[ext_resource type="Texture2D" uid="uid://bmpv515l7e8on" path="res://tscn/savenode/spr-gemstone-empty1.png" id="7_68k2a"]
+[ext_resource type="Script" uid="uid://cag7g0vpwetb5" path="res://tscn/scene/startmenu/gem/gem/Gem.cs" id="1_whk3i"]
+[ext_resource type="Texture2D" uid="uid://ympwa0f1wv17" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full2.png" id="2_cumba"]
+[ext_resource type="Texture2D" uid="uid://stfhwx7gjgum" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full3.png" id="3_5kdxr"]
+[ext_resource type="Texture2D" uid="uid://ckptiq420umnc" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full1.png" id="4_jwt51"]
+[ext_resource type="Texture2D" uid="uid://cp15bdbw3hdb7" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty2.png" id="5_rfgq4"]
+[ext_resource type="Texture2D" uid="uid://5ruhkulwircd" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty3.png" id="6_qhmda"]
+[ext_resource type="Texture2D" uid="uid://bmpv515l7e8on" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty1.png" id="7_68k2a"]
 
 [node name="Gem" type="TextureRect" unique_id=1132184861 node_paths=PackedStringArray("GemSprite")]
+self_modulate = Color(1, 1, 1, 0.47058824)
 offset_right = 16.0
 offset_bottom = 32.0
 texture = ExtResource("6_qhmda")

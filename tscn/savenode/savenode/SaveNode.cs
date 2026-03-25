@@ -1,5 +1,7 @@
 using Godot;
 using SaveData;
+using MyTypes;
+using System;
 
 public partial class SaveNode : Node
 {
@@ -7,12 +9,27 @@ public partial class SaveNode : Node
 	[Export] public RunData DefaultRunData { get; set; } = new RunData();
 	[Export] public SettingsData DefaultSettingsData { get; set; } = new SettingsData();
 	[Export] public string SaveDirectory { get; set; } = "user://saves/";
+	[ExportGroup("Location Scenes")]
+	[Export] public PackedScene VillageScene { get; set; }
+	[Export] public PackedScene SanctuaryScene { get; set; }
+	[Export] public PackedScene CampsiteScene { get; set; }
 	public MetaData MetaData { get; set; }
 	public RunData RunData { get; set; }
 	public SettingsData SettingsData { get; set; }
 
 	public override void _Ready()
 	{
+		// Exception on missing export values.
+		if (DefaultMetaData == null || DefaultRunData == null || DefaultSettingsData == null)
+		{
+			throw new InvalidOperationException("DefaultMetaData, DefaultRunData, and DefaultSettingsData must be assigned in the inspector.");
+		}
+
+		if (VillageScene == null || SanctuaryScene == null || CampsiteScene == null)
+		{
+			throw new InvalidOperationException("All location scenes (VillageScene, SanctuaryScene, CampsiteScene) must be assigned in the inspector.");
+		}
+
 		GD.Print(DefaultRunData + "testtest");
 		ExecuteReady();
 	}
@@ -65,6 +82,12 @@ public partial class SaveNode : Node
 		
 	}
 
+	public void _ExitTree()
+	{
+		SaveAllData();
+		GD.Print("SaveNode is exiting. All data has been saved.");
+	}
+
 	public void DeleteData(FileType type)
 	{
 		var filePath = GetSavePath(type);
@@ -88,6 +111,9 @@ public partial class SaveNode : Node
 	public bool MetaDataExists() => FileExists(FileType.Meta);
 	public bool RunDataExists() => FileExists(FileType.Run);
 	public bool SettingsDataExists() => FileExists(FileType.Settings);
+	public void SaveMetaData() => SaveData(MetaData, FileType.Meta);
+	public void SaveRunData() => SaveData(RunData, FileType.Run);
+	public void SaveSettingsData() => SaveData(SettingsData, FileType.Settings);
 
 	public void DeleteAllData()
 	{
@@ -98,9 +124,9 @@ public partial class SaveNode : Node
 
 	public void SaveAllData()
 	{
-		SaveData(MetaData, FileType.Meta);
-		SaveData(RunData, FileType.Run);
-		SaveData(SettingsData, FileType.Settings);
+		SaveMetaData();
+		SaveRunData();
+		SaveSettingsData();
 	}
 
 	public void LoadAllData()
@@ -127,5 +153,18 @@ public partial class SaveNode : Node
 		return FileAccess.FileExists(GetSavePath(FileType.Meta)) &&
 			   FileAccess.FileExists(GetSavePath(FileType.Run)) &&
 			   FileAccess.FileExists(GetSavePath(FileType.Settings));
+	}
+
+	public PackedScene LoadPackedSceneFromLocation()
+	{
+		var location = RunData.CurrentLocation;	
+		var scene = location switch
+		{
+			Locations.Village => VillageScene,
+			Locations.Sanctuary => SanctuaryScene,
+			Locations.Campsite => CampsiteScene,
+			_ => throw new ArgumentOutOfRangeException(nameof(location), $"Unsupported location: {location}")
+		};
+		return scene;
 	}
 }

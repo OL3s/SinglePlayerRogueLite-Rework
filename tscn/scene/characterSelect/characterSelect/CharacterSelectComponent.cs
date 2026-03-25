@@ -23,6 +23,8 @@ public partial class CharacterSelectComponent : Control
 		GD.Print("CharacterSelectComponent clicked. Starting new game with StartingGear: " + StartingGear);
 		var saveNode = GetNode<SaveNode>("/root/SaveNode");
 		saveNode.RunData.PlayerData = StartingGear;
+		saveNode.RunData.IsCharacterSelection = false;
+		saveNode.SaveRunData();
 		GetTree().ChangeSceneToPacked(SceneGoto);
 	}
 }

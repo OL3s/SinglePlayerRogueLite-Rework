@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cohjplfasmpo3"]
 
-[ext_resource type="Texture2D" uid="uid://5ruhkulwircd" path="res://tscn/savenode/spr-gemstone-empty3.png" id="1_uycv2"]
-[ext_resource type="Script" uid="uid://dq6c1uh5j3uq3" path="res://tscn/scene/startmenu/gem/Gem2D.cs" id="1_xqrft"]
-[ext_resource type="Texture2D" uid="uid://ympwa0f1wv17" path="res://tscn/savenode/spr-gemstones-full2.png" id="3_023sb"]
-[ext_resource type="Texture2D" uid="uid://stfhwx7gjgum" path="res://tscn/savenode/spr-gemstones-full3.png" id="4_4flxt"]
-[ext_resource type="Texture2D" uid="uid://ckptiq420umnc" path="res://tscn/savenode/spr-gemstones-full1.png" id="5_ikqbh"]
-[ext_resource type="Texture2D" uid="uid://cp15bdbw3hdb7" path="res://tscn/savenode/spr-gemstone-empty2.png" id="6_qltlq"]
-[ext_resource type="Texture2D" uid="uid://bmpv515l7e8on" path="res://tscn/savenode/spr-gemstone-empty1.png" id="7_y6ahb"]
+[ext_resource type="Texture2D" uid="uid://5ruhkulwircd" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty3.png" id="1_uycv2"]
+[ext_resource type="Script" uid="uid://dq6c1uh5j3uq3" path="res://tscn/scene/startmenu/gem/gem/Gem2D.cs" id="1_xqrft"]
+[ext_resource type="Texture2D" uid="uid://ympwa0f1wv17" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full2.png" id="3_023sb"]
+[ext_resource type="Texture2D" uid="uid://stfhwx7gjgum" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full3.png" id="4_4flxt"]
+[ext_resource type="Texture2D" uid="uid://ckptiq420umnc" path="res://tscn/scene/startmenu/gem/gem/spr-gemstones-full1.png" id="5_ikqbh"]
+[ext_resource type="Texture2D" uid="uid://cp15bdbw3hdb7" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty2.png" id="6_qltlq"]
+[ext_resource type="Texture2D" uid="uid://bmpv515l7e8on" path="res://tscn/scene/startmenu/gem/gem/spr-gemstone-empty1.png" id="7_y6ahb"]
 
 [node name="Gem2D" type="Sprite2D" unique_id=918468913 node_paths=PackedStringArray("GemSprite")]
 texture = ExtResource("1_uycv2")

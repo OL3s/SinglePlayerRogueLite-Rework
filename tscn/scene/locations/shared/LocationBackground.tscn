@@ -11,3 +11,4 @@ anchor_bottom = 1.2
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_43ry2")
+stretch_mode = 3

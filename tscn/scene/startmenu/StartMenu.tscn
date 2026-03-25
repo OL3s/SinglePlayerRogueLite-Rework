@@ -6,9 +6,19 @@
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/TapToStart.cs" id="2_07mxg"]
 [ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://tscn/scene/startmenu/codex/codex.tscn" id="2_fle81"]
 [ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://tscn/scene/startmenu/settings/settings.tscn" id="4_d64ox"]
-[ext_resource type="PackedScene" uid="uid://cohjplfasmpo3" path="res://tscn/scene/startmenu/gem/gem_2d.tscn" id="4_u0rcl"]
 [ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://tscn/scene/startmenu/socials/sosials.tscn" id="6_fuu6a"]
 [ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://tscn/scene/characterSelect/CharacterSelect.tscn" id="8_2ab2i"]
+[ext_resource type="PackedScene" uid="uid://651x51lpcdua" path="res://tscn/scene/startmenu/gem/gem.tscn" id="9_2ab2i"]
+[ext_resource type="FontFile" uid="uid://dsie2lugfvqf8" path="res://shared/font/GothicByte.ttf" id="10_d64ox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fuu6a"]
+font = ExtResource("10_d64ox")
+font_size = 99
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 0.3764706)
+shadow_offset = Vector2(0, 4)
 
 [node name="StartMenu" type="Control" unique_id=193297777]
 layout_mode = 3
@@ -91,16 +101,44 @@ text = "Tap to start the game"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Gem2D" parent="." unique_id=918468913 instance=ExtResource("4_u0rcl")]
-position = Vector2(384, 256)
-scale = Vector2(4, 4)
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=956628274]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -60.0
+offset_right = 348.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gem" parent="HBoxContainer" unique_id=1132184861 instance=ExtResource("9_2ab2i")]
+layout_mode = 2
+size_flags_horizontal = 3
 Type = 1
 
-[node name="Gem2D2" parent="." unique_id=506248094 instance=ExtResource("4_u0rcl")]
-position = Vector2(768, 256)
-scale = Vector2(4, 4)
-Type = 2
+[node name="Gem2" parent="HBoxContainer" unique_id=1190872367 instance=ExtResource("9_2ab2i")]
+layout_mode = 2
+size_flags_horizontal = 3
+Type = 0
+ForceShow = true
 
-[node name="Gem2D3" parent="." unique_id=207524389 instance=ExtResource("4_u0rcl")]
-position = Vector2(576, 256)
-scale = Vector2(4, 4)
+[node name="Gem3" parent="HBoxContainer" unique_id=1203954500 instance=ExtResource("9_2ab2i")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="." unique_id=1400079770]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 100.0
+offset_right = 20.0
+offset_bottom = 123.0
+grow_horizontal = 2
+text = "Relics of Ruin"
+label_settings = SubResource("LabelSettings_fuu6a")

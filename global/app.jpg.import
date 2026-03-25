@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckptiq420umnc"
-path="res://.godot/imported/spr-gemstones-full1.png-208ade1f0947e596c80491eb9e2ba4d6.ctex"
+uid="uid://dtn51446psviv"
+path="res://.godot/imported/app.jpg-7f69ce422960ae321fb960ce10585a78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/savenode/spr-gemstones-full1.png"
-dest_files=["res://.godot/imported/spr-gemstones-full1.png-208ade1f0947e596c80491eb9e2ba4d6.ctex"]
+source_file="res://global/app.jpg"
+dest_files=["res://.godot/imported/app.jpg-7f69ce422960ae321fb960ce10585a78.ctex"]
 
 [params]
 

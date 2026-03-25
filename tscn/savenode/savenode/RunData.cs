@@ -11,6 +11,7 @@ namespace SaveData
 		[Export] public bool IsTutorialGameplay { get; set; } = false;
 		[Export] public PlayerData PlayerData { get; set; } = new PlayerData();
 		[Export] public int Gold { get; set; } = 0;
+		[Export] public bool IsCharacterSelection { get; set; } = true;
 		public override string ToString()
 		{
 			return $"RunData: CurrentBiome={CurrentBiome}, IsTutorialGameplay={IsTutorialGameplay}, PlayerData={PlayerData}, Gold={Gold}";
