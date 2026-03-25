@@ -62,17 +62,8 @@ public partial class TapToStart : Control
 			throw new InvalidOperationException("TargetScene is not assigned in the inspector.");
 		}
 
-		// Goto scene from loadfile if character select
-		var saveNode = GetTree().Root.GetNode<SaveNode>("SaveNode");
-		if (!pathCharacterSelect)
-		{
-
-			GetTree().ChangeSceneToPacked(TargetScene);
-			return;
-		}
-
-		// Otherwise, go to character select
-		GetTree().ChangeSceneToPacked(TargetScene);
+		// Go to the next scene (character select or outpost) when the button is pressed.
+		GlobalOverlay.ChangeScenePackedStatic(TargetScene);
 
 	}
 }

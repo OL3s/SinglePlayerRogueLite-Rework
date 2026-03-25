@@ -18,6 +18,7 @@ config/icon="uid://dtn51446psviv"
 [autoload]
 
 SaveNode="*res://tscn/savenode/SaveNode.tscn"
+GlobalOverlay="*uid://c1xmwaxlv3rk4"
 
 [display]
 
