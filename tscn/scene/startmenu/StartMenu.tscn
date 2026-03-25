@@ -1,15 +1,36 @@
 [gd_scene format=3 uid="uid://f62llffiii3s"]
 
 [ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/buttonTscn/ButtonExecuteTscn.tscn" id="1_6xmcy"]
+[ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/background/LocationBackground.tscn" id="1_kkedn"]
+[ext_resource type="Shader" uid="uid://2asqpftmfxqp" path="res://tscn/scene/locations/shared/background/BgShader.gdshader" id="2_1yyro"]
 [ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://tscn/scene/startmenu/career/career.tscn" id="2_2ab2i"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="2_6i732"]
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/TapToStart.cs" id="2_07mxg"]
 [ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://tscn/scene/startmenu/codex/codex.tscn" id="2_fle81"]
+[ext_resource type="Texture2D" uid="uid://bxteanit1lwlc" path="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundMenu.png" id="2_qtkcg"]
 [ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://tscn/scene/startmenu/settings/settings.tscn" id="4_d64ox"]
 [ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://tscn/scene/startmenu/socials/sosials.tscn" id="6_fuu6a"]
 [ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://tscn/scene/characterSelect/CharacterSelect.tscn" id="8_2ab2i"]
 [ext_resource type="PackedScene" uid="uid://651x51lpcdua" path="res://tscn/scene/startmenu/gem/gem.tscn" id="9_2ab2i"]
 [ext_resource type="FontFile" uid="uid://dsie2lugfvqf8" path="res://shared/font/GothicByte.ttf" id="10_d64ox"]
+[ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="11_qtkcg"]
+[ext_resource type="PackedScene" uid="uid://dj4h4307bhrb" path="res://tscn/scene/locations/shared/outpost/outpost.tscn" id="12_0x27t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x27t"]
+shader = ExtResource("2_1yyro")
+shader_parameter/move_speed = 0.18
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 11.0
+shader_parameter/shimmer_strength = 0.015
+shader_parameter/pulse_strength = 0.1
+shader_parameter/enable_hot_side_motion = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yyro"]
+font = ExtResource("11_qtkcg")
+font_size = 48
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.3372549)
+shadow_offset = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fuu6a"]
 font = ExtResource("10_d64ox")
@@ -29,6 +50,12 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
+[node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_kkedn")]
+material = SubResource("ShaderMaterial_0x27t")
+layout_mode = 1
+texture = ExtResource("2_qtkcg")
+IgnoreUpdateTexture = true
+
 [node name="Footer" type="HBoxContainer" parent="." unique_id=1024642939]
 layout_mode = 1
 anchors_preset = -1
@@ -37,14 +64,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -462.5
-offset_top = -83.0
+offset_top = -98.0
 offset_right = 462.5
-offset_bottom = -10.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 223
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
 layout_mode = 2
@@ -67,7 +93,7 @@ text = "Socials"
 icon = ExtResource("2_6i732")
 UiScene = ExtResource("6_fuu6a")
 
-[node name="Tap" type="Control" parent="." unique_id=980406163]
+[node name="Tap" type="Control" parent="." unique_id=980406163 node_paths=PackedStringArray("LabelTapToStart")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,7 +107,9 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_07mxg")
-TargetScene = ExtResource("8_2ab2i")
+CharacterSelectScene = ExtResource("8_2ab2i")
+OutpostScene = ExtResource("12_0x27t")
+LabelTapToStart = NodePath("Label")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Tap" unique_id=1514062504]
@@ -91,13 +119,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.5
-offset_top = 79.75
-offset_right = 115.5
-offset_bottom = 102.75
+offset_left = -193.5
+offset_top = 150.0
+offset_right = 193.5
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Tap to start the game"
+text = "Tap Label"
+label_settings = SubResource("LabelSettings_1yyro")
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -111,24 +140,28 @@ anchor_bottom = 0.5
 offset_left = -348.0
 offset_top = -60.0
 offset_right = 348.0
-offset_bottom = 60.0
+offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Gem" parent="HBoxContainer" unique_id=1132184861 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gem2" parent="HBoxContainer" unique_id=1190872367 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
 layout_mode = 2
 size_flags_horizontal = 3
 Type = 1
+TimerOffset = 0.6
 
-[node name="Gem2" parent="HBoxContainer" unique_id=1190872367 instance=ExtResource("9_2ab2i")]
+[node name="Gem3" parent="HBoxContainer" unique_id=1203954500 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
 layout_mode = 2
 size_flags_horizontal = 3
 Type = 0
-ForceShow = true
-
-[node name="Gem3" parent="HBoxContainer" unique_id=1203954500 instance=ExtResource("9_2ab2i")]
-layout_mode = 2
-size_flags_horizontal = 3
+TimerOffset = 1.2
 
 [node name="Label" type="Label" parent="." unique_id=1400079770]
 layout_mode = 1

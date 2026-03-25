@@ -8,13 +8,12 @@ namespace SaveData
 	{
 		[Export] public Biomes CurrentBiome { get; set; } = Biomes.GrasslandsA;
 		[Export] public Locations CurrentLocation { get; set; } = Locations.Village;
-		[Export] public bool IsTutorialGameplay { get; set; } = false;
-		[Export] public PlayerData PlayerData { get; set; } = new PlayerData();
+		[Export] public PlayerData PlayerData { get; set; } = null;
+		[Export] public Contract CurrentContract { get; set; } = null;
 		[Export] public int Gold { get; set; } = 0;
-		[Export] public bool IsCharacterSelection { get; set; } = true;
 		public override string ToString()
 		{
-			return $"RunData: CurrentBiome={CurrentBiome}, IsTutorialGameplay={IsTutorialGameplay}, PlayerData={PlayerData}, Gold={Gold}";
+			return $"RunData: CurrentBiome={CurrentBiome} PlayerData={PlayerData}, CurrentContract={CurrentContract}, Gold={Gold}";
 		}
 	}
 

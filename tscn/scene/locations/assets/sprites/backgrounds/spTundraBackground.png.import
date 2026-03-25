@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlw5pqw5h1ccc"
-path="res://.godot/imported/spBackgroundLava.png-fb9130ae1e4c67ee54213948f29b551e.ctex"
+uid="uid://ckv57rk0dpdw6"
+path="res://.godot/imported/spTundraBackground.png-55117df632a5bee6cbab84c1e60c5d93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spBackgroundLava.png"
-dest_files=["res://.godot/imported/spBackgroundLava.png-fb9130ae1e4c67ee54213948f29b551e.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/backgrounds/spTundraBackground.png"
+dest_files=["res://.godot/imported/spTundraBackground.png-55117df632a5bee6cbab84c1e60c5d93.ctex"]
 
 [params]
 

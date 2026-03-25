@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkvqgrt80mry0"
-path="res://.godot/imported/spIcyBackground.png-f357e1ac972bd24a5fea5c3515bd15ff.ctex"
+uid="uid://btc41x167k3lt"
+path="res://.godot/imported/spBackgroundCharacter.png-8021ff2c296d75fe8d0657da47882aa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spIcyBackground.png"
-dest_files=["res://.godot/imported/spIcyBackground.png-f357e1ac972bd24a5fea5c3515bd15ff.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundCharacter.png"
+dest_files=["res://.godot/imported/spBackgroundCharacter.png-8021ff2c296d75fe8d0657da47882aa4.ctex"]
 
 [params]
 

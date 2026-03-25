@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bhin4fj36u1xo"]
 
+[ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/background/LocationBackground.tscn" id="1_2oxio"]
 [ext_resource type="PackedScene" uid="uid://bdginsyvktxh" path="res://tscn/scene/characterSelect/characterSelect/CharacterSelectComponent.tscn" id="1_hwwje"]
+[ext_resource type="Texture2D" uid="uid://btc41x167k3lt" path="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundCharacter.png" id="2_2oxio"]
 
 [node name="CharacterSelect" type="Control" unique_id=102404099]
 layout_mode = 3
@@ -9,6 +11,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_2oxio")]
+layout_mode = 1
+texture = ExtResource("2_2oxio")
+IgnoreUpdateTexture = true
 
 [node name="Label" type="Label" parent="." unique_id=499451608]
 layout_mode = 1
@@ -45,4 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="CharacterSelect2" parent="HBoxContainer" unique_id=1500264049 instance=ExtResource("1_hwwje")]
+layout_mode = 2
+
+[node name="CharacterSelect3" parent="HBoxContainer" unique_id=1084063684 instance=ExtResource("1_hwwje")]
 layout_mode = 2

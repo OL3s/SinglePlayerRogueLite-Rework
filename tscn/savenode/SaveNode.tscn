@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bnoakhb4l8iru" path="res://tscn/savenode/savenode/SaveNode.cs" id="1_2h2c8"]
 [ext_resource type="Script" uid="uid://b3l4nrmq6p8c8" path="res://tscn/savenode/savenode/MetaData.cs" id="2_78l8q"]
-[ext_resource type="Script" uid="uid://celm5xvuktvmo" path="res://global/PlayerData.cs" id="3_brvqa"]
 [ext_resource type="Script" uid="uid://g4uqrps1xrur" path="res://tscn/savenode/savenode/RunData.cs" id="3_x7dqs"]
 [ext_resource type="Script" uid="uid://dokw4vlauqtom" path="res://tscn/savenode/savenode/SettingsData.cs" id="5_x7dqs"]
 [ext_resource type="PackedScene" uid="uid://daw1o3pj6khnl" path="res://tscn/scene/locations/village/Village.tscn" id="6_yngsu"]
@@ -11,13 +10,13 @@
 
 [sub_resource type="Resource" id="Resource_bkhlg"]
 script = ExtResource("2_78l8q")
+GemGreenCollected = true
+GemBlueCollected = true
 metadata/_custom_type_script = "uid://b3l4nrmq6p8c8"
-
-[sub_resource type="Resource" id="Resource_756da"]
-script = ExtResource("3_brvqa")
 
 [sub_resource type="Resource" id="Resource_68aqy"]
 script = ExtResource("3_x7dqs")
+CurrentLocation = 1
 metadata/_custom_type_script = "uid://g4uqrps1xrur"
 
 [sub_resource type="Resource" id="Resource_yngsu"]

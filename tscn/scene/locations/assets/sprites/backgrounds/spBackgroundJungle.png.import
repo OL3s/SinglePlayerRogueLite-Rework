@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdym0eau77atf"
-path="res://.godot/imported/spDesertBackground.png-e59d204d031a16e43a98fe66e5347a16.ctex"
+uid="uid://chh7n4hgipqd4"
+path="res://.godot/imported/spBackgroundJungle.png-eac5f7138d9e4380249b300faac024c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spDesertBackground.png"
-dest_files=["res://.godot/imported/spDesertBackground.png-e59d204d031a16e43a98fe66e5347a16.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundJungle.png"
+dest_files=["res://.godot/imported/spBackgroundJungle.png-eac5f7138d9e4380249b300faac024c0.ctex"]
 
 [params]
 

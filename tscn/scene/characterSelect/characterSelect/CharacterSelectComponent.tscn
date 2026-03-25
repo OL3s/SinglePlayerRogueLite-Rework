@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1w8ff64e8ssb" path="res://tscn/scene/characterSelect/characterSelect/CharacterSelectComponent.cs" id="1_uvclk"]
 [ext_resource type="Script" uid="uid://celm5xvuktvmo" path="res://global/PlayerData.cs" id="2_v803i"]
-[ext_resource type="PackedScene" uid="uid://daw1o3pj6khnl" path="res://tscn/scene/locations/village/Village.tscn" id="3_na7ni"]
+[ext_resource type="PackedScene" uid="uid://dj4h4307bhrb" path="res://tscn/scene/locations/shared/outpost/outpost.tscn" id="3_jrbsg"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="4_pq166"]
 
 [sub_resource type="Resource" id="Resource_1ueel"]
@@ -18,7 +18,7 @@ offset_bottom = 400.0
 size_flags_horizontal = 0
 script = ExtResource("1_uvclk")
 StartingGear = SubResource("Resource_1ueel")
-SceneGoto = ExtResource("3_na7ni")
+OutpostScene = ExtResource("3_jrbsg")
 ButtonSelect = NodePath("Button")
 
 [node name="Button" type="Button" parent="." unique_id=967459872]

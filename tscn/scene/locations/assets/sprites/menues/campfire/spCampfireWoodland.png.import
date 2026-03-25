@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chh7n4hgipqd4"
-path="res://.godot/imported/spBackgroundJungle.png-1c93eda64c8859061637f054627af4dd.ctex"
+uid="uid://bvw2tr4wxriaw"
+path="res://.godot/imported/spCampfireWoodland.png-afe6bcecdfd81ce5c695bc09fc316faa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spBackgroundJungle.png"
-dest_files=["res://.godot/imported/spBackgroundJungle.png-1c93eda64c8859061637f054627af4dd.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/menues/campfire/spCampfireWoodland.png"
+dest_files=["res://.godot/imported/spCampfireWoodland.png-afe6bcecdfd81ce5c695bc09fc316faa.ctex"]
 
 [params]
 

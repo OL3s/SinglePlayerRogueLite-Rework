@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7akmop22buxk"
-path="res://.godot/imported/spGrasslandBackground.png-2dcf03d866bd63f0e96e61ccff2cacef.ctex"
+uid="uid://bxteanit1lwlc"
+path="res://.godot/imported/spBackgroundMenu.png-f893784aaf13e73270eaf121e48b03fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spGrasslandBackground.png"
-dest_files=["res://.godot/imported/spGrasslandBackground.png-2dcf03d866bd63f0e96e61ccff2cacef.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundMenu.png"
+dest_files=["res://.godot/imported/spBackgroundMenu.png-f893784aaf13e73270eaf121e48b03fa.ctex"]
 
 [params]
 

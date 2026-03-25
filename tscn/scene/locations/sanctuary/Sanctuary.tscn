@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://fmfrykvvmi4u"]
 
-[ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/LocationBackground.tscn" id="1_qbylm"]
-
 [node name="Sanctuary" type="Control" unique_id=2013846606]
 layout_mode = 3
 anchors_preset = 15
@@ -9,7 +7,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_qbylm")]
-layout_mode = 0
-anchors_preset = 0

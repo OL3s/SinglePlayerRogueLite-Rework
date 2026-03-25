@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckv57rk0dpdw6"
-path="res://.godot/imported/spTundraBackground.png-f15fb97632f82c78d3cf77cd7854a64d.ctex"
+uid="uid://bkvqgrt80mry0"
+path="res://.godot/imported/spIcyBackground.png-4c2ed205aa801bbc6904e7c24720859b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tscn/scene/locations/assets/sprites/spTundraBackground.png"
-dest_files=["res://.godot/imported/spTundraBackground.png-f15fb97632f82c78d3cf77cd7854a64d.ctex"]
+source_file="res://tscn/scene/locations/assets/sprites/backgrounds/spIcyBackground.png"
+dest_files=["res://.godot/imported/spIcyBackground.png-4c2ed205aa801bbc6904e7c24720859b.ctex"]
 
 [params]
 

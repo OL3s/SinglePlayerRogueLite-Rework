@@ -7,7 +7,9 @@ public partial class Gem : TextureRect
 	[ExportGroup("Gem Properties")]
 	[Export] public GemType Type { get; set; } = GemType.Red;
 	[Export] public TextureRect GemSprite { get; set; }
+	[ExportGroup("Gem Behavior")]
 	[Export] public bool ForceShow { get; set; } = false;
+	[Export] public double TimerOffset { get; set; }
 	[ExportGroup("Gem Textures")]
 	[Export] public Texture2D GemTextureRed { get; set; }
 	[Export] public Texture2D GemTextureGreen { get; set; }
@@ -27,6 +29,7 @@ public partial class Gem : TextureRect
 	public override void _Ready()
 	{
 		base._Ready();
+		_timer = TimerOffset;
 		UpdateGemType();
 		CheckForCollection();
 	}
@@ -34,8 +37,8 @@ public partial class Gem : TextureRect
 	public override void _Process(double delta)
 	{
 		// animate the gem
-		float setHeight = 12f;
-		GemSprite.Position = new Vector2(0, -setHeight + PositionModifiers.InvertedFloating(_timer, 4f, setHeight * GemSprite.Scale.Y));
+		float setHeight = 8f;
+		GemSprite.Position = new Vector2(0, -setHeight + PositionModifiers.InvertedFloating(_timer, 2f, setHeight * GemSprite.Scale.Y));
 		_timer += delta;
 	}
 

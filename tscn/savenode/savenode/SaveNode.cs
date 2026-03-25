@@ -9,10 +9,6 @@ public partial class SaveNode : Node
 	[Export] public RunData DefaultRunData { get; set; } = new RunData();
 	[Export] public SettingsData DefaultSettingsData { get; set; } = new SettingsData();
 	[Export] public string SaveDirectory { get; set; } = "user://saves/";
-	[ExportGroup("Location Scenes")]
-	[Export] public PackedScene VillageScene { get; set; }
-	[Export] public PackedScene SanctuaryScene { get; set; }
-	[Export] public PackedScene CampsiteScene { get; set; }
 	public MetaData MetaData { get; set; }
 	public RunData RunData { get; set; }
 	public SettingsData SettingsData { get; set; }
@@ -25,12 +21,6 @@ public partial class SaveNode : Node
 			throw new InvalidOperationException("DefaultMetaData, DefaultRunData, and DefaultSettingsData must be assigned in the inspector.");
 		}
 
-		if (VillageScene == null || SanctuaryScene == null || CampsiteScene == null)
-		{
-			throw new InvalidOperationException("All location scenes (VillageScene, SanctuaryScene, CampsiteScene) must be assigned in the inspector.");
-		}
-
-		GD.Print(DefaultRunData + "testtest");
 		ExecuteReady();
 	}
 
@@ -137,7 +127,6 @@ public partial class SaveNode : Node
 
 		if (MetaData.IsFirstTimePlayer)
 		{
-			RunData.IsTutorialGameplay = true;
 			GD.Print("First time player detected. Tutorial gameplay enabled.");
 		}
 
@@ -153,18 +142,5 @@ public partial class SaveNode : Node
 		return FileAccess.FileExists(GetSavePath(FileType.Meta)) &&
 			   FileAccess.FileExists(GetSavePath(FileType.Run)) &&
 			   FileAccess.FileExists(GetSavePath(FileType.Settings));
-	}
-
-	public PackedScene LoadPackedSceneFromLocation()
-	{
-		var location = RunData.CurrentLocation;	
-		var scene = location switch
-		{
-			Locations.Village => VillageScene,
-			Locations.Sanctuary => SanctuaryScene,
-			Locations.Campsite => CampsiteScene,
-			_ => throw new ArgumentOutOfRangeException(nameof(location), $"Unsupported location: {location}")
-		};
-		return scene;
 	}
 }
