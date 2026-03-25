@@ -12,6 +12,7 @@
 self_modulate = Color(1, 1, 1, 0.47058824)
 offset_right = 16.0
 offset_bottom = 32.0
+mouse_filter = 2
 texture = ExtResource("6_qhmda")
 stretch_mode = 5
 script = ExtResource("1_whk3i")
@@ -31,5 +32,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_5kdxr")
 stretch_mode = 5

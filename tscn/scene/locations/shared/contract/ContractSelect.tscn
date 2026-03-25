@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cueqgmxe10gfe"]
 
+[ext_resource type="PackedScene" uid="uid://0idefv620cem" path="res://tscn/scene/locations/shared/contract/contract/ContractSelectComponent.tscn" id="1_txbqd"]
+
 [node name="ContractSelect" type="Control" unique_id=102404099]
 layout_mode = 3
 anchors_preset = 15
@@ -37,3 +39,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
+
+[node name="ContractSelectComp" parent="HBoxContainer" unique_id=75407820 instance=ExtResource("1_txbqd")]
+layout_mode = 2
+
+[node name="ContractSelectComp2" parent="HBoxContainer" unique_id=1743079724 instance=ExtResource("1_txbqd")]
+layout_mode = 2

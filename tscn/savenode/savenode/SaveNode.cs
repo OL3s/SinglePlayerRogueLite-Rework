@@ -12,6 +12,7 @@ public partial class SaveNode : Node
 	public MetaData MetaData { get; set; }
 	public RunData RunData { get; set; }
 	public SettingsData SettingsData { get; set; }
+	public static SaveNode Get() => Engine.GetMainLoop() is SceneTree tree ? tree.Root.GetNode<SaveNode>("SaveNode") : null;
 
 	public override void _Ready()
 	{
@@ -72,7 +73,7 @@ public partial class SaveNode : Node
 		
 	}
 
-	public void _ExitTree()
+	public override void _ExitTree()
 	{
 		SaveAllData();
 		GD.Print("SaveNode is exiting. All data has been saved.");

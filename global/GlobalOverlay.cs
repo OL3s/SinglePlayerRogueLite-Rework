@@ -12,7 +12,7 @@ public partial class GlobalOverlay : Control
 	public static void AddOverlayStatic(Control overlay) => Get().AddOverlay(overlay);
 	public static void RemoveOverlayStatic() => Get().RemoveOverlay();
 	public static void ChangeScenePackedStatic(PackedScene newScene) => Get().ChangeScenePacked(newScene);
-    public static bool IsOverlayActive() => Get().GetChildCount() > 0;
+	public static bool IsOverlayActive() => Get().GetChildCount() > 0;
 	public override void _Ready()
 	{
 		base._Ready();

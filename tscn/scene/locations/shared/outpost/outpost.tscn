@@ -17,6 +17,7 @@ offset_top = -0.079956055
 offset_bottom = 0.079956055
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 2
 
 [node name="OverlayUI" parent="." unique_id=1103172097 instance=ExtResource("2_ckiti")]
 layout_mode = 1

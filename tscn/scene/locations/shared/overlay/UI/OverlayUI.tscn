@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhxlssw3dsr0l"]
 
-[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="1_0uh3d"]
+[ext_resource type="PackedScene" uid="uid://bfm8enyilqglk" path="res://tscn/scene/locations/shared/overlay/UI/GoldPanel.tscn" id="1_wttsq"]
 [ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="2_fq30k"]
 [ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="3_wttsq"]
 [ext_resource type="PackedScene" uid="uid://cueqgmxe10gfe" path="res://tscn/scene/locations/shared/contract/ContractSelect.tscn" id="4_wttsq"]
@@ -19,38 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TopUI" type="HBoxContainer" parent="." unique_id=1141372132]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.05
-anchor_right = 0.95
-anchor_bottom = 0.05
-offset_bottom = 64.0
-grow_vertical = 2
-alignment = 1
-
-[node name="GoldLabel" type="TextureRect" parent="TopUI" unique_id=1969124072]
-clip_contents = true
-custom_minimum_size = Vector2(100, 16)
-layout_mode = 2
-texture = ExtResource("1_0uh3d")
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="TopUI/GoldLabel" unique_id=1880690085]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 34.400024
-offset_top = -11.400002
-offset_right = 69.400024
-offset_bottom = 11.599998
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_fq30k")
-text = "$Gold"
-vertical_alignment = 1
+mouse_filter = 2
 
 [node name="SideUI" type="BoxContainer" parent="." unique_id=1747428201]
 layout_mode = 1
@@ -95,3 +64,17 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_wttsq")
 UiScene = ExtResource("4_wttsq")
+
+[node name="TopUI" type="HBoxContainer" parent="." unique_id=216838028]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
+offset_bottom = 32.0
+grow_vertical = 2
+alignment = 1
+
+[node name="GoldPanel" parent="TopUI" unique_id=1405363896 instance=ExtResource("1_wttsq")]
+layout_mode = 2

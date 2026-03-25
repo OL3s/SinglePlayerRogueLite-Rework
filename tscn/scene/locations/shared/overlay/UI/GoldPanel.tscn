@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfm8enyilqglk"]
+
+[ext_resource type="Script" uid="uid://ulpg6lkfx7x5" path="res://tscn/scene/locations/shared/overlay/UI/GoldPanel.cs" id="1_pkfia"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="2_kjk24"]
+[ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="3_obqla"]
+
+[node name="GoldPanel" type="PanelContainer" unique_id=1405363896 node_paths=PackedStringArray("GoldAmountLabel")]
+clip_contents = true
+custom_minimum_size = Vector2(96, 32)
+offset_right = 96.0
+offset_bottom = 32.0
+script = ExtResource("1_pkfia")
+GoldAmountLabel = NodePath("Image/Label")
+
+[node name="Image" type="TextureRect" parent="." unique_id=597800310]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("2_kjk24")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Image" unique_id=1228450565]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 5.0
+offset_right = 88.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("3_obqla")
+text = "$Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
