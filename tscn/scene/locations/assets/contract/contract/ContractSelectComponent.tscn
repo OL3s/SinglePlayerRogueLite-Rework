@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0idefv620cem"]
 
-[ext_resource type="Script" uid="uid://d2y3wankwtpoj" path="res://tscn/scene/Locations/shared/ContractSelectComponent.cs" id="1_2pacs"]
+[ext_resource type="Script" uid="uid://d2y3wankwtpoj" path="res://tscn/scene/locations/assets/contract/contract/ContractSelectComponent.cs" id="1_2pacs"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="4_tgg34"]
 
 [node name="ContractSelectComp" type="Control" unique_id=75407820 node_paths=PackedStringArray("ButtonSelect")]

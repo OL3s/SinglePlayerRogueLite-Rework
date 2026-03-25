@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qqlyoxnobitw"]
 
 [ext_resource type="Script" uid="uid://bd674pobvwqyj" path="res://tscn/player/player/Player.cs" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://spBox.png" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="1_xhfnw"]
 [ext_resource type="PackedScene" uid="uid://ln8jbcu1x0fq" path="res://tscn/input/Input.tscn" id="3_kne1u"]
 
 [sub_resource type="Gradient" id="Gradient_wr5v1"]

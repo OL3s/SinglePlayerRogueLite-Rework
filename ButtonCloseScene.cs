@@ -3,7 +3,6 @@ using System;
 
 public partial class ButtonCloseScene : Button
 {
-
 	[Export] Node NodeToClose;
 
 	public override void _Ready()

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://f62llffiii3s"]
 
-[ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.tscn" id="1_6xmcy"]
-[ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://career.tscn" id="2_2ab2i"]
+[ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://tscn/scene/startmenu/buttonTscn/ButtonExecuteTscn.tscn" id="1_6xmcy"]
+[ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://tscn/scene/startmenu/career/career.tscn" id="2_2ab2i"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="2_6i732"]
-[ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/startmenu/TapToStart.cs" id="2_07mxg"]
-[ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://codex.tscn" id="2_fle81"]
-[ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://settings.tscn" id="4_d64ox"]
-[ext_resource type="PackedScene" uid="uid://cohjplfasmpo3" path="res://gem_2d.tscn" id="4_u0rcl"]
-[ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://sosials.tscn" id="6_fuu6a"]
-[ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://tscn/scene/Locations/CharacterSelect.tscn" id="8_2ab2i"]
+[ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/TapToStart.cs" id="2_07mxg"]
+[ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://tscn/scene/startmenu/codex/codex.tscn" id="2_fle81"]
+[ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://tscn/scene/startmenu/settings/settings.tscn" id="4_d64ox"]
+[ext_resource type="PackedScene" uid="uid://cohjplfasmpo3" path="res://tscn/scene/startmenu/gem/gem_2d.tscn" id="4_u0rcl"]
+[ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://tscn/scene/startmenu/socials/sosials.tscn" id="6_fuu6a"]
+[ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://tscn/scene/characterSelect/CharacterSelect.tscn" id="8_2ab2i"]
 
 [node name="StartMenu" type="Control" unique_id=193297777]
 layout_mode = 3

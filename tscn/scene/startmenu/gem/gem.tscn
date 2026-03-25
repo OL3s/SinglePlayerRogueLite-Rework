@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://651x51lpcdua"]
 
-[ext_resource type="Script" uid="uid://cag7g0vpwetb5" path="res://Gem.cs" id="1_whk3i"]
+[ext_resource type="Script" uid="uid://cag7g0vpwetb5" path="res://tscn/scene/startmenu/gem/Gem.cs" id="1_whk3i"]
 [ext_resource type="Texture2D" uid="uid://ympwa0f1wv17" path="res://tscn/savenode/spr-gemstones-full2.png" id="2_cumba"]
 [ext_resource type="Texture2D" uid="uid://stfhwx7gjgum" path="res://tscn/savenode/spr-gemstones-full3.png" id="3_5kdxr"]
 [ext_resource type="Texture2D" uid="uid://ckptiq420umnc" path="res://tscn/savenode/spr-gemstones-full1.png" id="4_jwt51"]

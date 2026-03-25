@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw70hqevlbkkg"]
 
-[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://spBox.png" id="1_vxajp"]
-[ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/startmenu/ButtonExecuteTscn.cs" id="2_ys2bl"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="1_vxajp"]
+[ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteTscn.cs" id="2_ys2bl"]
 
 [node name="Button" type="Button" unique_id=1312708125]
 anchors_preset = 15

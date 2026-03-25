@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsw6as5roh6v8"]
 
-[ext_resource type="Script" uid="uid://b3okwo83trmvn" path="res://SettingsSave.cs" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://b3okwo83trmvn" path="res://tscn/scene/startmenu/settings/settings/SettingsSave.cs" id="1_x2hje"]
 
 [node name="Settings" type="Control" unique_id=599583592]
 layout_mode = 3

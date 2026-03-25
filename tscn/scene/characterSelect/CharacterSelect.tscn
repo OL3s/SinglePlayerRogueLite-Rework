@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhin4fj36u1xo"]
 
-[ext_resource type="PackedScene" uid="uid://bdginsyvktxh" path="res://tscn/scene/Locations/newgame/CharacterSelectComponent.tscn" id="1_hwwje"]
+[ext_resource type="PackedScene" uid="uid://bdginsyvktxh" path="res://tscn/scene/characterSelect/characterSelect/CharacterSelectComponent.tscn" id="1_hwwje"]
 
 [node name="CharacterSelect" type="Control" unique_id=102404099]
 layout_mode = 3

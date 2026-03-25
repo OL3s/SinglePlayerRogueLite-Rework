@@ -1,0 +1,108 @@
+=== WOODLAND ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped grassy clearing (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, clean and readable, soft grass, very light details like small flowers.
+
+Outside the oval: dense forest filling all remaining space — thick trees, bushes, roots, rocks, layered foliage forming a solid natural wall. No gaps.
+
+The transition from center to border should feel natural (grass blending into dense forest).
+
+Edges must be very dense and the outer border should occupy ~40–50% of the image to support all screen aspect ratios (ultrawide, mobile, etc).
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+No cliffs, no voids, no perspective tilt. Strict top-down pixel art.
+
+
+=== TUNDRA ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped open snow field (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, clean surface with subtle snow and ice variation, minimal clutter.
+
+Outside the oval: dense snowy environment — snow-covered pine trees, ice rocks, frozen bushes, heavy snow buildup forming a closed natural boundary.
+
+Smooth transition from open snow to dense frozen border.
+
+Edges must be packed with detail and the outer border should occupy ~40–50% of the image to safely fill any extra visible area on different screen ratios.
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+No cliffs into void, no empty edges, strict top-down pixel art.
+
+
+=== DESERT ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped open sandy ground (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, clean and readable, light texture, minimal clutter.
+
+Outside the oval: dense desert border — rocks, cliffs, cacti, dry bushes, bones, and rough terrain forming a natural enclosure.
+
+The border should feel like a contained arena with no exits.
+
+Smooth transition from open sand to dense rocky edges.
+
+Edges must be visually heavy and the outer border should occupy ~40–50% of the image to support all aspect ratios without exposing empty space.
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+Strict top-down pixel art, warm desert palette, no perspective tilt.
+
+
+=== ICY ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped frozen clearing (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, clean and readable, smooth ice surface with subtle cracks and light reflections, minimal clutter.
+
+Outside the oval: dense icy environment — sharp ice formations, glaciers, jagged ice rocks, frozen spikes, and heavy frost buildup forming a solid natural barrier.
+
+The border should feel dangerous and enclosed, with no gaps or exits.
+
+Smooth transition from clean ice center to dense frozen edges.
+
+Edges must be very dense and the outer border should occupy ~40–50% of the image to support all screen aspect ratios.
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+Strict top-down pixel art, cold blue palette, no perspective tilt.
+
+
+=== JUNGLE ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped jungle clearing (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, slightly worn ground with dirt and grass mix, clean enough for gameplay visibility, very light foliage.
+
+Outside the oval: extremely dense jungle — thick trees, large leaves, vines, roots, bushes, and layered vegetation forming an impenetrable natural wall.
+
+The border should feel alive and overgrown, tightly enclosing the area.
+
+Smooth transition from open clearing to dense vegetation.
+
+Edges must be heavily packed and the outer border should occupy ~40–50% of the image to handle all aspect ratios.
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+Strict top-down pixel art, rich green palette with variation, no perspective tilt.
+
+
+=== LAVA ===
+
+Top-down 2D pixel art background, square 1:1 image.
+
+Center area: an oval-shaped rocky ground (intended 16:9 gameplay area), scaled down to occupy ~50–60% of the image, dark volcanic rock, slightly cracked, clean and readable for gameplay.
+
+Outside the oval: intense volcanic border — flowing lava, glowing cracks, magma pools, sharp black rocks, and volcanic formations forming a dangerous enclosed boundary.
+
+The border should feel hot and hostile, with no exits or empty gaps.
+
+Strong contrast between dark center and glowing lava edges.
+
+Edges must be dense and visually strong, and the outer border should occupy ~40–50% of the image to support all screen aspect ratios.
+
+Props and environmental details must be small-scale but high in quantity, avoiding large objects that block space. Keep enough open usable area so buildings, enemies, and gameplay elements can be placed freely. Border density should come from many small elements rather than large structures.
+
+Strict top-down pixel art, warm red/orange glow, no perspective tilt.
