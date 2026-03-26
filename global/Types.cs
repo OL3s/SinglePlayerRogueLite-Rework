@@ -33,3 +33,11 @@ namespace SaveData
 		Settings
 	}
 }
+
+namespace SignalTypes
+{
+	public enum Signals
+	{
+		ContractSelected
+	}
+}

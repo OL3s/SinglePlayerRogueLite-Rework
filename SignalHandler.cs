@@ -1,0 +1,69 @@
+using Godot;
+using System.Collections.Generic;
+
+public partial class SignalHandler : Node
+{
+	[Signal] public delegate void SignalRecievedEventHandler(SignalTypes.Signals singlaltype);
+
+	private static readonly Dictionary<(SignalTypes.Signals signalType, SignalRecievedEventHandler handler), SignalRecievedEventHandler> SubscriptionWrappers = new();
+
+	public static void Subscribe(SignalTypes.Signals signalType, SignalRecievedEventHandler handler)
+	{
+		var signalHandler = Get();
+		if (signalHandler == null)
+		{
+			return;
+		}
+
+		var key = (signalType, handler);
+		if (SubscriptionWrappers.ContainsKey(key))
+		{
+			return;
+		}
+
+		SignalRecievedEventHandler wrapper = receivedSignalType =>
+		{
+			if (receivedSignalType == signalType)
+			{
+				handler(receivedSignalType);
+			}
+		};
+
+		SubscriptionWrappers[key] = wrapper;
+		signalHandler.SignalRecieved += wrapper;
+	}
+
+	public static void Unsubscribe(SignalTypes.Signals signalType, SignalRecievedEventHandler handler)
+	{
+		var signalHandler = Get();
+		if (signalHandler == null)
+		{
+			return;
+		}
+
+		var key = (signalType, handler);
+		if (!SubscriptionWrappers.TryGetValue(key, out var wrapper))
+		{
+			return;
+		}
+
+		signalHandler.SignalRecieved -= wrapper;
+		SubscriptionWrappers.Remove(key);
+	}
+
+	public static SignalHandler Get()
+	{
+		var sceneTree = Engine.GetMainLoop() as SceneTree;
+		return sceneTree?.Root?.GetNodeOrNull<SignalHandler>("/root/SignalHandler");
+	}
+
+	public override void _Ready()
+	{
+		GD.Print("SignalHandler is ready and can now manage signals.");
+	}
+
+	public void EmitSignal(SignalTypes.Signals signalType)
+	{
+		EmitSignal(SignalName.SignalRecieved, Variant.From(signalType));
+	}
+}

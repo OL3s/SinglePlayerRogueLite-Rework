@@ -1,3 +1,4 @@
+using System.Collections;
 using Godot;
 using MyTypes;
 
@@ -20,6 +21,13 @@ public partial class ContractSelectComponent : Control
 
 	private void OnButtonPressed()
 	{
-		GD.Print("TODO: ContractSelectComponent clicked. Starting new game with Contract: " + SetPath);
+		if (SetPath == null)
+		{
+			GD.PrintErr("SetPath must be assigned in the editor.");
+			return;
+		}
+		SaveNode.Get().RunData.CurrentContract = SetPath;
+		SignalHandler.Get()?.EmitSignal(SignalTypes.Signals.ContractSelected);
+		GlobalOverlay.CloseOverlayStatic();
 	}
 }

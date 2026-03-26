@@ -19,6 +19,7 @@ config/icon="uid://dtn51446psviv"
 
 SaveNode="*res://tscn/savenode/SaveNode.tscn"
 GlobalOverlay="*uid://c1xmwaxlv3rk4"
+SignalHandler="*uid://mv1fpf8v6gus"
 
 [display]
 

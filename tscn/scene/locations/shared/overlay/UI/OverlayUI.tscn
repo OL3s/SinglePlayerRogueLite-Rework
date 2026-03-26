@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bfm8enyilqglk" path="res://tscn/scene/locations/shared/overlay/UI/GoldPanel.tscn" id="1_wttsq"]
 [ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="2_fq30k"]
+[ext_resource type="Script" uid="uid://cw7hr8cub344o" path="res://tscn/scene/locations/shared/overlay/UI/ContractButton.cs" id="3_j623e"]
 [ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="3_wttsq"]
 [ext_resource type="PackedScene" uid="uid://cueqgmxe10gfe" path="res://tscn/scene/locations/shared/contract/ContractSelect.tscn" id="4_wttsq"]
+[ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://tscn/scene/tests/TestMapgen.tscn" id="5_asqy2"]
+[ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="6_mc2b1"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="7_1ly5g"]
 
 [sub_resource type="Theme" id="Theme_fklev"]
 default_font = ExtResource("2_fq30k")
@@ -62,8 +66,11 @@ focus_mode = 0
 icon = SubResource("CompressedTexture2D_wttsq")
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("3_wttsq")
+script = ExtResource("3_j623e")
 UiScene = ExtResource("4_wttsq")
+ExecuteScene = ExtResource("5_asqy2")
+NoContractTexture = ExtResource("6_mc2b1")
+HasContractTexture = ExtResource("7_1ly5g")
 
 [node name="TopUI" type="HBoxContainer" parent="." unique_id=216838028]
 layout_mode = 1

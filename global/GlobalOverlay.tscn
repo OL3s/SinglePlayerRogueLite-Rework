@@ -2,11 +2,5 @@
 
 [ext_resource type="Script" uid="uid://ija6jy0lltlf" path="res://global/GlobalOverlay.cs" id="1_jfhyl"]
 
-[node name="GlobalOverlay" type="Control" unique_id=397565428]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GlobalOverlay" type="CanvasLayer" unique_id=397565428]
 script = ExtResource("1_jfhyl")

@@ -1,8 +1,9 @@
 using Godot;
 using System;
 
-public partial class GlobalOverlay : Control
+public partial class GlobalOverlay : CanvasLayer
 {
+	private const int OverlayLayer = 100;
 	private string currentChildName => GetChildCount() > 0 ? GetChild(0).Name : null;
 	public static GlobalOverlay Get()
 	{
@@ -10,14 +11,14 @@ public partial class GlobalOverlay : Control
 		return sceneTree?.Root?.GetNodeOrNull<GlobalOverlay>("/root/GlobalOverlay");
 	}
 	public static void AddOverlayStatic(Control overlay) => Get().AddOverlay(overlay);
-	public static void RemoveOverlayStatic() => Get().RemoveOverlay();
+	public static void CloseOverlayStatic() => Get().CloseOverlay();
 	public static void ChangeScenePackedStatic(PackedScene newScene) => Get().ChangeScenePacked(newScene);
 	public static bool IsOverlayActive() => Get().GetChildCount() > 0;
 	public override void _Ready()
 	{
 		base._Ready();
 		GD.Print("GlobalOverlay is ready and can now manage overlays.");
-		ZIndex = 1000; // Ensure this overlay is on top of everything else
+		Layer = OverlayLayer;
 	}
 	public void AddOverlay(Control overlay)
 	{
@@ -48,16 +49,16 @@ public partial class GlobalOverlay : Control
 		GD.Print($"Added overlay: {overlay.Name}");
 	}
 
-	public void RemoveOverlay()
+	public void CloseOverlay()
 	{
 		if (GetChildCount() > 0)
 		{
-			GD.Print($"Removing overlay: {currentChildName}");
+			GD.Print($"Closing overlay: {currentChildName}");
 			GetChild(0).QueueFree();
 		}
 		else
 		{
-			GD.Print("No overlay to remove.");
+			GD.Print("No overlay to close.");
 		}
 	}
 
