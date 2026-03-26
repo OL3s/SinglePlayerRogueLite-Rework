@@ -11,6 +11,7 @@ public partial class ContractButton : Button
 	private bool _hasContract => SaveNode.Get().RunData.CurrentContract != null;
 	public override void _Ready()
 	{
+		UpdateTexture();
 		SignalHandler.Subscribe(SignalTypes.Signals.ContractSelected, UpdateTexture);
 	}
 
@@ -45,6 +46,11 @@ public partial class ContractButton : Button
 	}
 
 	private void UpdateTexture(SignalTypes.Signals signalType)
+	{
+		Icon = _hasContract ? HasContractTexture : NoContractTexture;
+	}
+
+	private void UpdateTexture()
 	{
 		Icon = _hasContract ? HasContractTexture : NoContractTexture;
 	}

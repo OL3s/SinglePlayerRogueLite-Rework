@@ -12,6 +12,7 @@ public partial class InputNode : Control
 	[Export] public Label DebugLabel { get; set; }
 	[Export] public InputStick LeftStick { get; set; }
 	[Export] public InputStick RightStick { get; set; }
+	[Export] public bool EnableDebugOutput { get; set; } = false;
 
 	public PlayerInput PlayerInput = new PlayerInput();
 	private ulong _btn1PressedUntilFrame = ulong.MaxValue;
@@ -37,6 +38,11 @@ public partial class InputNode : Control
 		Btn2.ButtonDown += () => OnButtonDown(ref _btn2PressedUntilFrame);
 		Btn3.ButtonDown += () => OnButtonDown(ref _btn3PressedUntilFrame);
 		Btn4.ButtonDown += () => OnButtonDown(ref _btn4PressedUntilFrame);
+
+		if (DebugLabel != null)
+		{
+			DebugLabel.Visible = EnableDebugOutput;
+		}
 	}
 
 	public override void _Input(InputEvent @event)
