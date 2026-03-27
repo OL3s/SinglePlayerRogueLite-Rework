@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dj4h4307bhrb"]
 
 [ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/background/LocationBackground.tscn" id="1_30bgb"]
+[ext_resource type="Texture2D" uid="uid://cbvje7evrie81" path="res://spBackgroundTemplatePhone.png" id="2_2csk3"]
 [ext_resource type="PackedScene" uid="uid://dhxlssw3dsr0l" path="res://tscn/scene/locations/shared/overlay/UI/OverlayUI.tscn" id="2_ckiti"]
 
 [node name="Outpost" type="Control" unique_id=929791031]
@@ -14,10 +15,10 @@ grow_vertical = 2
 [node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_30bgb")]
 layout_mode = 1
 offset_top = -0.079956055
-offset_bottom = 0.079956055
-grow_horizontal = 1
-grow_vertical = 1
+offset_bottom = 0.07989502
 mouse_filter = 2
+texture = ExtResource("2_2csk3")
+IgnoreUpdateTexture = true
 
 [node name="OverlayUI" parent="." unique_id=1103172097 instance=ExtResource("2_ckiti")]
 layout_mode = 1
