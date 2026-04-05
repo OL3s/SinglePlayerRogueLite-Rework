@@ -1,9 +1,11 @@
 using Godot;
 using System;
+using Animation;
 
 public partial class GlobalOverlay : CanvasLayer
 {
 	private const int OverlayLayer = 100;
+	private float OverlayScale = 1f;
 	private string currentChildName => GetChildCount() > 0 ? GetChild(0).Name : null;
 	public static GlobalOverlay Get()
 	{
@@ -19,6 +21,17 @@ public partial class GlobalOverlay : CanvasLayer
 		base._Ready();
 		GD.Print("GlobalOverlay is ready and can now manage overlays.");
 		Layer = OverlayLayer;
+	}
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+		if (OverlayScale < 1) OverlayScale = PositionModifiers.Lerp(OverlayScale, 1, .3f);
+		if (IsOverlayActive())
+		{
+			var child = GetChildOrNull<Control>(0);
+			if (child != null) child.Scale = new Vector2(OverlayScale, OverlayScale);
+		}
+
 	}
 	public void AddOverlay(Control overlay)
 	{
@@ -46,6 +59,7 @@ public partial class GlobalOverlay : CanvasLayer
 
 		// Add the new overlay.
 		this.AddChild(overlay);
+		OverlayScale = .75f;
 		GD.Print($"Added overlay: {overlay.Name}");
 	}
 

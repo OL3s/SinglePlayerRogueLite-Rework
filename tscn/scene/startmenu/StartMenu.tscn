@@ -59,6 +59,7 @@ material = SubResource("ShaderMaterial_0x27t")
 layout_mode = 1
 texture = ExtResource("2_qtkcg")
 IgnoreUpdateTexture = true
+metadata/_edit_lock_ = true
 
 [node name="Footer" type="HBoxContainer" parent="." unique_id=1024642939]
 layout_mode = 1
