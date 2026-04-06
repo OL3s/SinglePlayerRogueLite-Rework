@@ -2,19 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://bfm8enyilqglk" path="res://tscn/scene/locations/shared/overlay/UI/GoldPanel.tscn" id="1_wttsq"]
 [ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="2_fq30k"]
+[ext_resource type="StyleBox" uid="uid://b60q5k8mpp2wj" path="res://global/buttonUIstyle.tres" id="2_rcicl"]
+[ext_resource type="PackedScene" uid="uid://d13mpxjudq7gy" path="res://tscn/scene/locations/shared/outpost/inventory/inventory.tscn" id="3_8yash"]
 [ext_resource type="Script" uid="uid://cw7hr8cub344o" path="res://tscn/scene/locations/shared/overlay/UI/ContractButton.cs" id="3_j623e"]
+[ext_resource type="Texture2D" uid="uid://cys4dlm2fg527" path="res://sprites/icons/spIconBackpack.png" id="3_rqmha"]
 [ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="3_wttsq"]
 [ext_resource type="PackedScene" uid="uid://cueqgmxe10gfe" path="res://tscn/scene/locations/shared/contract/ContractSelect.tscn" id="4_wttsq"]
+[ext_resource type="PackedScene" uid="uid://bobbm3ix3nim2" path="res://tscn/scene/locations/shared/outpost/character/character.tscn" id="4_x2qtx"]
 [ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://tscn/scene/tests/TestMapgen.tscn" id="5_asqy2"]
-[ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="6_mc2b1"]
-[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="7_1ly5g"]
+[ext_resource type="Texture2D" uid="uid://cl2kg183fguem" path="res://sprites/icons/spIconCharacter.png" id="6_2rdy7"]
+[ext_resource type="Texture2D" uid="uid://cu7pgvym5rbm3" path="res://sprites/icons/spIconContractBefore.png" id="8_ou3hp"]
+[ext_resource type="Texture2D" uid="uid://dff4suf7542uv" path="res://sprites/icons/spIconContractAfter.png" id="12_g0tb1"]
 
 [sub_resource type="Theme" id="Theme_fklev"]
 default_font = ExtResource("2_fq30k")
 default_font_size = 14
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wttsq"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="OverlayUI" type="Control" unique_id=1103172097]
 layout_mode = 3
@@ -24,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="SideUI" type="BoxContainer" parent="." unique_id=1747428201]
 layout_mode = 1
@@ -31,8 +34,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -96.0
-offset_bottom = -18.0
+offset_top = -132.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_fklev")
@@ -40,37 +43,44 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Inventory" type="Button" parent="SideUI" unique_id=80206375]
-custom_minimum_size = Vector2(74, 0)
+custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_rcicl")
 text = "Inventory"
-icon = SubResource("CompressedTexture2D_wttsq")
+icon = ExtResource("3_rqmha")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("3_wttsq")
+UiScene = ExtResource("3_8yash")
 
 [node name="Character" type="Button" parent="SideUI" unique_id=22627246]
-custom_minimum_size = Vector2(74, 0)
+custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_rcicl")
 text = "Character"
-icon = SubResource("CompressedTexture2D_wttsq")
+icon = ExtResource("6_2rdy7")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("3_wttsq")
+UiScene = ExtResource("4_x2qtx")
 
 [node name="Contract" type="Button" parent="SideUI" unique_id=185081624]
-custom_minimum_size = Vector2(74, 0)
+custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
 focus_mode = 0
-icon = SubResource("CompressedTexture2D_wttsq")
+theme_override_styles/normal = ExtResource("2_rcicl")
+text = "Contract"
+icon = ExtResource("8_ou3hp")
 icon_alignment = 1
+vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("3_j623e")
 UiScene = ExtResource("4_wttsq")
 ExecuteScene = ExtResource("5_asqy2")
-NoContractTexture = ExtResource("6_mc2b1")
-HasContractTexture = ExtResource("7_1ly5g")
+NoContractTexture = ExtResource("8_ou3hp")
+HasContractTexture = ExtResource("12_g0tb1")
 
 [node name="TopUI" type="HBoxContainer" parent="." unique_id=216838028]
 layout_mode = 1

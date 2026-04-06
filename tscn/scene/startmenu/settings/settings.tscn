@@ -10,6 +10,7 @@ anchor_right = 0.9
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1364794471]
 layout_mode = 1

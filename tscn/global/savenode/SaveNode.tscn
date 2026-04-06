@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dt730oshvg4ot"]
 
-[ext_resource type="Script" uid="uid://bnoakhb4l8iru" path="res://tscn/savenode/savenode/SaveNode.cs" id="1_2h2c8"]
-[ext_resource type="Script" uid="uid://b3l4nrmq6p8c8" path="res://tscn/savenode/savenode/MetaData.cs" id="2_78l8q"]
-[ext_resource type="Script" uid="uid://g4uqrps1xrur" path="res://tscn/savenode/savenode/RunData.cs" id="3_x7dqs"]
-[ext_resource type="Script" uid="uid://dokw4vlauqtom" path="res://tscn/savenode/savenode/SettingsData.cs" id="5_x7dqs"]
+[ext_resource type="Script" uid="uid://bnoakhb4l8iru" path="res://tscn/global/savenode/savenode/SaveNode.cs" id="1_2h2c8"]
+[ext_resource type="Script" uid="uid://b3l4nrmq6p8c8" path="res://tscn/global/savenode/savenode/MetaData.cs" id="2_78l8q"]
+[ext_resource type="Script" uid="uid://g4uqrps1xrur" path="res://tscn/global/savenode/savenode/RunData.cs" id="3_x7dqs"]
+[ext_resource type="Script" uid="uid://dokw4vlauqtom" path="res://tscn/global/savenode/savenode/SettingsData.cs" id="5_x7dqs"]
 [ext_resource type="PackedScene" uid="uid://daw1o3pj6khnl" path="res://tscn/scene/locations/village/Village.tscn" id="6_yngsu"]
 [ext_resource type="PackedScene" uid="uid://fmfrykvvmi4u" path="res://tscn/scene/locations/sanctuary/Sanctuary.tscn" id="7_nrwms"]
 [ext_resource type="PackedScene" uid="uid://q7wsvd5moudv" path="res://tscn/scene/locations/campsite/Campsite.tscn" id="8_dj4in"]

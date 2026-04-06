@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1xmwaxlv3rk4"]
 
-[ext_resource type="Script" uid="uid://ija6jy0lltlf" path="res://global/GlobalOverlay.cs" id="1_jfhyl"]
+[ext_resource type="Script" uid="uid://ija6jy0lltlf" path="res://tscn/global/globaloverlay/GlobalOverlay.cs" id="1_jfhyl"]
 
 [node name="GlobalOverlay" type="CanvasLayer" unique_id=397565428]
 script = ExtResource("1_jfhyl")

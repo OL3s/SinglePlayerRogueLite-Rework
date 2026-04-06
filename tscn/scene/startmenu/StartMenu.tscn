@@ -4,17 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/background/LocationBackground.tscn" id="1_kkedn"]
 [ext_resource type="Shader" uid="uid://2asqpftmfxqp" path="res://tscn/scene/locations/shared/background/BgShader.gdshader" id="2_1yyro"]
 [ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://tscn/scene/startmenu/career/career.tscn" id="2_2ab2i"]
-[ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="2_6i732"]
 [ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/TapToStart.cs" id="2_07mxg"]
 [ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://tscn/scene/startmenu/codex/codex.tscn" id="2_fle81"]
 [ext_resource type="Texture2D" uid="uid://bxteanit1lwlc" path="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundMenu.png" id="2_qtkcg"]
 [ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://tscn/scene/startmenu/settings/settings.tscn" id="4_d64ox"]
 [ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://tscn/scene/startmenu/socials/sosials.tscn" id="6_fuu6a"]
+[ext_resource type="Texture2D" uid="uid://4deeet6drapm" path="res://sprites/icons/spIconCareer.png" id="6_ssdki"]
 [ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://tscn/scene/characterSelect/CharacterSelect.tscn" id="8_2ab2i"]
+[ext_resource type="Texture2D" uid="uid://cgjo16cdfusc" path="res://sprites/icons/spIconCodex.png" id="8_mhrp7"]
 [ext_resource type="PackedScene" uid="uid://651x51lpcdua" path="res://tscn/scene/startmenu/gem/gem.tscn" id="9_2ab2i"]
+[ext_resource type="Texture2D" uid="uid://cuahdpdqih778" path="res://sprites/icons/spIconSettings.png" id="10_2f6f5"]
 [ext_resource type="FontFile" uid="uid://dsie2lugfvqf8" path="res://shared/font/GothicByte.ttf" id="10_d64ox"]
 [ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="11_qtkcg"]
 [ext_resource type="PackedScene" uid="uid://dj4h4307bhrb" path="res://tscn/scene/locations/shared/outpost/outpost.tscn" id="12_0x27t"]
+[ext_resource type="Texture2D" uid="uid://cd8qymt3rmkbl" path="res://sprites/icons/spIconSocial.png" id="12_ssdki"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0x27t"]
 shader = ExtResource("2_1yyro")
@@ -69,13 +72,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -462.5
-offset_top = -112.0
+offset_top = -136.0
 offset_right = 462.5
-offset_bottom = -34.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_0x27t")
-theme_override_constants/separation = 223
+theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
@@ -83,7 +86,7 @@ layout_mode = 2
 size_flags_horizontal = 1
 theme_override_font_sizes/font_size = 18
 text = "Career"
-icon = ExtResource("2_6i732")
+icon = ExtResource("6_ssdki")
 UiScene = ExtResource("2_2ab2i")
 
 [node name="Button2" parent="Footer" unique_id=1699150195 instance=ExtResource("1_6xmcy")]
@@ -91,7 +94,7 @@ layout_mode = 2
 size_flags_horizontal = 1
 theme_override_font_sizes/font_size = 18
 text = "Codex"
-icon = ExtResource("2_6i732")
+icon = ExtResource("8_mhrp7")
 UiScene = ExtResource("2_fle81")
 
 [node name="Button3" parent="Footer" unique_id=167639075 instance=ExtResource("1_6xmcy")]
@@ -99,7 +102,7 @@ layout_mode = 2
 size_flags_horizontal = 1
 theme_override_font_sizes/font_size = 18
 text = "Settings"
-icon = ExtResource("2_6i732")
+icon = ExtResource("10_2f6f5")
 UiScene = ExtResource("4_d64ox")
 
 [node name="Button4" parent="Footer" unique_id=961371023 instance=ExtResource("1_6xmcy")]
@@ -107,7 +110,7 @@ layout_mode = 2
 size_flags_horizontal = 1
 theme_override_font_sizes/font_size = 18
 text = "Socials"
-icon = ExtResource("2_6i732")
+icon = ExtResource("12_ssdki")
 UiScene = ExtResource("6_fuu6a")
 
 [node name="Tap" type="Control" parent="." unique_id=980406163 node_paths=PackedStringArray("LabelTapToStart")]

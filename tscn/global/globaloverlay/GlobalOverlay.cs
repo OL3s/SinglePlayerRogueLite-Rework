@@ -7,6 +7,8 @@ public partial class GlobalOverlay : CanvasLayer
 	private const int OverlayLayer = 100;
 	private float OverlayScale = 1f;
 	private string currentChildName => GetChildCount() > 0 ? GetChild(0).Name : null;
+
+	// Static method to access the GlobalOverlay instance from anywhere in the code.
 	public static GlobalOverlay Get()
 	{
 		var sceneTree = Engine.GetMainLoop() as SceneTree;
