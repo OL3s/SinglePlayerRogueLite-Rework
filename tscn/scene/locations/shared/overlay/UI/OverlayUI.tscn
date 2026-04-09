@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cl2kg183fguem" path="res://sprites/icons/spIconCharacter.png" id="6_2rdy7"]
 [ext_resource type="Texture2D" uid="uid://cu7pgvym5rbm3" path="res://sprites/icons/spIconContractBefore.png" id="8_ou3hp"]
 [ext_resource type="Texture2D" uid="uid://dff4suf7542uv" path="res://sprites/icons/spIconContractAfter.png" id="12_g0tb1"]
+[ext_resource type="PackedScene" uid="uid://drao5mnk5rwux" path="res://tscn/scene/locations/shared/overlay/UI/BiomePanel.tscn" id="14_rqmha"]
 
 [sub_resource type="Theme" id="Theme_fklev"]
 default_font = ExtResource("2_fq30k")
@@ -120,7 +121,11 @@ anchor_bottom = 0.05
 offset_top = -16.400002
 offset_bottom = 15.599998
 grow_vertical = 2
+theme_override_constants/separation = 64
 alignment = 1
+
+[node name="BiomePanel" parent="TopUI" unique_id=50258801 instance=ExtResource("14_rqmha")]
+layout_mode = 2
 
 [node name="GoldPanel" parent="TopUI" unique_id=1405363896 instance=ExtResource("1_wttsq")]
 layout_mode = 2

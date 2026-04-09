@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://drao5mnk5rwux"]
+
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="1_80qhg"]
+[ext_resource type="Script" uid="uid://bqqctn2x5p8jj" path="res://tscn/scene/locations/shared/overlay/UI/BiomePanel.cs" id="1_cku6u"]
+[ext_resource type="Resource" uid="uid://bugq0aq0b62ri" path="res://global/contractIconsDict.tres" id="2_ycc7q"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="3_y7o7p"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/defTheme.tres" id="4_7g2xv"]
+
+[node name="BiomePanel" type="PanelContainer" unique_id=50258801 node_paths=PackedStringArray("BiomeNameLabel", "BiomeIcon")]
+custom_minimum_size = Vector2(214, 0)
+offset_right = 36.0
+offset_bottom = 36.0
+theme_override_styles/panel = ExtResource("1_80qhg")
+script = ExtResource("1_cku6u")
+BiomeNameLabel = NodePath("TextureRect/Label")
+BiomeIcon = NodePath("TextureRect")
+IconDict = ExtResource("2_ycc7q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=91731821]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("4_7g2xv")
+texture = ExtResource("3_y7o7p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1668378597]
+layout_mode = 0
+offset_left = 35.0
+offset_right = 207.0
+offset_bottom = 32.0
+text = "$Biome"
+horizontal_alignment = 1
