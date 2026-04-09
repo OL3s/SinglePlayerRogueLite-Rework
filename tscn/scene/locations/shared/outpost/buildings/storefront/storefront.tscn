@@ -27,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/panel = ExtResource("1_j1eq5")
 
 [node name="StoreLabel" type="Label" parent="Panel" unique_id=1555836556]
@@ -74,12 +75,17 @@ label_settings = ExtResource("2_wh0ve")
 horizontal_alignment = 1
 
 [node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=407736957]
-layout_mode = 0
-offset_left = 318.8
-offset_top = 134.2
-offset_right = 863.8
-offset_bottom = 390.2
-border_width = 6.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 4.0
 editor_only = false
 
 [node name="GridContainer" type="GridContainer" parent="ReferenceRect" unique_id=482864902]

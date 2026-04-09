@@ -66,4 +66,13 @@ public partial class SignalHandler : Node
 	{
 		EmitSignal(SignalName.SignalRecieved, Variant.From(signalType));
 	}
+
+	public static void EmitSignalStatic(SignalTypes.Signals signalType)
+	{
+		var signalHandler = Get();
+		if (signalHandler == null)
+			throw new System.Exception("SignalHandler instance not found in the scene tree. Ensure it is added as a child of the root node.");
+
+		signalHandler.EmitSignal(signalType);
+	}
 }
