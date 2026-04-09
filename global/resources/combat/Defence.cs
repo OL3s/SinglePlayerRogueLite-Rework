@@ -1,33 +1,46 @@
+#nullable enable
+
 using Godot;
 using Godot.Collections;
+using System;
 
 namespace Combat {
     [GlobalClass]
     public partial class Defence : Resource
     {
+        [ExportGroup("Defence Percentages")]
         [Export] public Dictionary<DamageType, float> DamageReflectPercentages { get; set; } = new Dictionary<DamageType, float>();
         [Export] public Dictionary<StatusEffectType, float> StatusEffectReflectPercentages { get; set; } = new Dictionary<StatusEffectType, float>();
+        [ExportGroup("Flat Defence Overrides")]
+        [Export(PropertyHint.Range, "0,1,hide_slider")] public float FlatDamagePercentage { get; set; } = 0f;
+        [Export(PropertyHint.Range, "0,1,hide_slider")] public float FlatEffectPercentage { get; set; } = 0f;
         public Defence() { }
-        public Defence(Dictionary<DamageType, float> damageReflectPercentages, Dictionary<StatusEffectType, float> statusEffectReflectPercentages)
+        public Defence(Dictionary<DamageType, float>? damageReflectPercentages, Dictionary<StatusEffectType, float>? statusEffectReflectPercentages, float flatDamagePercentage = 0, float flatEffectPercentage = 0)
         {            
-            DamageReflectPercentages = damageReflectPercentages;
-            StatusEffectReflectPercentages = statusEffectReflectPercentages;
-        }
-        public Defence(float slashing = 0, float piercing = 0, float blunt = 0, float fire = 0, float ice = 0, float lightning = 0, float poison = 0,
-                       float burn = 0, float freeze = 0, float shock = 0, float poisonEffect = 0)
-        {
-            DamageReflectPercentages[DamageType.Slashing] = slashing;
-            DamageReflectPercentages[DamageType.Piercing] = piercing;
-            DamageReflectPercentages[DamageType.Blunt] = blunt;
-            DamageReflectPercentages[DamageType.Fire] = fire;
-            DamageReflectPercentages[DamageType.Ice] = ice;
-            DamageReflectPercentages[DamageType.Lightning] = lightning;
-            DamageReflectPercentages[DamageType.Poison] = poison;
+            if (flatDamagePercentage < 0 || flatDamagePercentage > 1 || flatEffectPercentage < 0 || flatEffectPercentage > 1)
+                throw new ArgumentException("Flat damage and effect percentages must be between 0 and 1.");
 
-            StatusEffectReflectPercentages[StatusEffectType.Burn] = burn;
-            StatusEffectReflectPercentages[StatusEffectType.Freeze] = freeze;
-            StatusEffectReflectPercentages[StatusEffectType.Shock] = shock;
-            StatusEffectReflectPercentages[StatusEffectType.Poison] = poisonEffect;
+            FlatDamagePercentage = flatDamagePercentage;
+            FlatEffectPercentage = flatEffectPercentage;
+            DamageReflectPercentages = damageReflectPercentages ?? new Dictionary<DamageType, float>();
+            StatusEffectReflectPercentages = statusEffectReflectPercentages ?? new Dictionary<StatusEffectType, float>();
+
+            if (FlatDamagePercentage != 0)
+            {
+                foreach (var damageType in Enum.GetValues<DamageType>())
+                {
+                    if (!DamageReflectPercentages.ContainsKey(damageType))
+                        DamageReflectPercentages[damageType] = FlatDamagePercentage;
+                }
+            }
+            if (FlatEffectPercentage != 0)
+            {
+                foreach (var effectType in Enum.GetValues<StatusEffectType>())
+                {
+                    if (!StatusEffectReflectPercentages.ContainsKey(effectType))
+                        StatusEffectReflectPercentages[effectType] = FlatEffectPercentage;
+                }
+            }
         }
     }
 }

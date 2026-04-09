@@ -1,8 +1,10 @@
 using Godot;
+using Combat;
 
 [GlobalClass]
 public partial class ItemArmor : ItemBase
 {
     [Export] public int ConditionMax { get; set; } = 0;
     [Export] public int ConditionCurrent { get; set; } = 0;
+    [Export] public Defence Defence { get; set; } = new Defence();
 }
