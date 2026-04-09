@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfm8enyilqglk" path="res://tscn/scene/locations/shared/overlay/UI/GoldPanel.tscn" id="1_wttsq"]
 [ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="2_fq30k"]
-[ext_resource type="StyleBox" uid="uid://b60q5k8mpp2wj" path="res://global/buttonUIstyle.tres" id="2_rcicl"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="2_rcicl"]
 [ext_resource type="PackedScene" uid="uid://d13mpxjudq7gy" path="res://tscn/scene/locations/shared/outpost/inventory/inventory.tscn" id="3_8yash"]
 [ext_resource type="Script" uid="uid://cw7hr8cub344o" path="res://tscn/scene/locations/shared/overlay/UI/ContractButton.cs" id="3_j623e"]
 [ext_resource type="Texture2D" uid="uid://cys4dlm2fg527" path="res://sprites/icons/spIconBackpack.png" id="3_rqmha"]
@@ -28,14 +28,14 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="SideUI" type="BoxContainer" parent="." unique_id=1747428201]
+[node name="SideUI" type="HBoxContainer" parent="." unique_id=1538312688]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -132.0
-offset_bottom = -36.0
+offset_top = -116.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_fklev")
@@ -46,6 +46,10 @@ alignment = 1
 custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("2_rcicl")
+theme_override_styles/pressed = ExtResource("2_rcicl")
+theme_override_styles/hover = ExtResource("2_rcicl")
+theme_override_styles/disabled = ExtResource("2_rcicl")
+theme_override_styles/focus = ExtResource("2_rcicl")
 text = "Inventory"
 icon = ExtResource("3_rqmha")
 icon_alignment = 1
@@ -58,6 +62,10 @@ UiScene = ExtResource("3_8yash")
 custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("2_rcicl")
+theme_override_styles/pressed = ExtResource("2_rcicl")
+theme_override_styles/hover = ExtResource("2_rcicl")
+theme_override_styles/disabled = ExtResource("2_rcicl")
+theme_override_styles/focus = ExtResource("2_rcicl")
 text = "Character"
 icon = ExtResource("6_2rdy7")
 icon_alignment = 1
@@ -66,12 +74,32 @@ expand_icon = true
 script = ExtResource("3_wttsq")
 UiScene = ExtResource("4_x2qtx")
 
-[node name="Contract" type="Button" parent="SideUI" unique_id=185081624]
+[node name="Control" type="Control" parent="SideUI" unique_id=1522582380]
 custom_minimum_size = Vector2(112, 96)
 layout_mode = 2
+
+[node name="Contract" type="Button" parent="SideUI/Control" unique_id=185081624]
+custom_minimum_size = Vector2(112, 96)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -48.0
+offset_right = 56.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 focus_mode = 0
 theme_override_styles/normal = ExtResource("2_rcicl")
-text = "Contract"
+theme_override_styles/pressed = ExtResource("2_rcicl")
+theme_override_styles/hover = ExtResource("2_rcicl")
+theme_override_styles/disabled = ExtResource("2_rcicl")
+theme_override_styles/focus = ExtResource("2_rcicl")
+text = "$Contract"
 icon = ExtResource("8_ou3hp")
 icon_alignment = 1
 vertical_icon_alignment = 0
@@ -89,7 +117,8 @@ anchor_left = 0.05
 anchor_top = 0.05
 anchor_right = 0.95
 anchor_bottom = 0.05
-offset_bottom = 32.0
+offset_top = -16.400002
+offset_bottom = 15.599998
 grow_vertical = 2
 alignment = 1
 

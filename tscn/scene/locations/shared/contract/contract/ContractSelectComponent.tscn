@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://0idefv620cem"]
 
 [ext_resource type="Script" uid="uid://d2y3wankwtpoj" path="res://tscn/scene/locations/shared/contract/contract/ContractSelectComponent.cs" id="1_2pacs"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/defTheme.tres" id="1_kkbov"]
 [ext_resource type="Script" uid="uid://ofkphtrm65hk" path="res://tscn/scene/locations/shared/contract/contract/Contract.cs" id="2_spxgy"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="4_tgg34"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="4_ytjq5"]
 
 [sub_resource type="Resource" id="Resource_diyui"]
 script = ExtResource("2_spxgy")
 metadata/_custom_type_script = "uid://ofkphtrm65hk"
 
 [node name="ContractSelectComp" type="Control" unique_id=75407820 node_paths=PackedStringArray("ButtonSelect")]
-custom_minimum_size = Vector2(200, 400)
+custom_minimum_size = Vector2(200, 300)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 200.0
-offset_bottom = 400.0
+offset_bottom = 300.0
 size_flags_horizontal = 0
 mouse_filter = 2
+theme = ExtResource("1_kkbov")
 script = ExtResource("1_2pacs")
 SetPath = SubResource("Resource_diyui")
 ButtonSelect = NodePath("Button")
@@ -27,6 +30,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = ExtResource("4_ytjq5")
+theme_override_styles/pressed = ExtResource("4_ytjq5")
+theme_override_styles/hover = ExtResource("4_ytjq5")
+theme_override_styles/disabled = ExtResource("4_ytjq5")
+theme_override_styles/focus = ExtResource("4_ytjq5")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Button" unique_id=1963836970]

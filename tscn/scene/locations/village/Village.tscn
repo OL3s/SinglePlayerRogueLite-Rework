@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://daw1o3pj6khnl"]
 
+[ext_resource type="PackedScene" uid="uid://di5otlf5ppewb" path="res://tscn/scene/locations/shared/storefront/storefrontButton.tscn" id="1_eeojv"]
+[ext_resource type="PackedScene" uid="uid://cl4r07gdfn11b" path="res://tscn/scene/locations/shared/outpost/buildings/storefront/storefront.tscn" id="2_t83ds"]
+
 [node name="Village" type="Control" unique_id=386909464]
 layout_mode = 3
 anchors_preset = 15
@@ -9,10 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Button" type="Button" parent="." unique_id=1769269552]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 130.0
-offset_right = 319.0
-offset_bottom = 281.0
-text = "Store"
+[node name="SceneButton" parent="." unique_id=1770943004 instance=ExtResource("1_eeojv")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = 104.0
+offset_right = -688.0
+offset_bottom = -368.0
+StoreType = 2
+UiScene = ExtResource("2_t83ds")

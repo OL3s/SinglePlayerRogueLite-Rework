@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://d13mpxjudq7gy"]
 
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="1_m3mhc"]
+[ext_resource type="LabelSettings" uid="uid://8pe427jgf6ls" path="res://global/defLabelSettings.tres" id="2_lvxen"]
+[ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/CloseButton.tscn" id="3_lvxen"]
+
 [node name="Inventory" type="Control" unique_id=113333181]
 layout_mode = 3
 anchor_left = 0.1
@@ -18,3 +22,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_m3mhc")
+
+[node name="Label" type="Label" parent="Panel" unique_id=83909589]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.00003
+offset_top = 8.0
+offset_right = 93.99997
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "Inventory"
+label_settings = ExtResource("2_lvxen")
+horizontal_alignment = 1
+
+[node name="CloseButton" parent="." unique_id=1884065516 instance=ExtResource("3_lvxen")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 72.0

@@ -38,6 +38,38 @@ namespace SignalTypes
 {
 	public enum Signals
 	{
-		ContractSelected
+		ContractSelected,
+		ItemBought
+	}
+}
+
+namespace BuildingTypes
+{
+	public enum StorefrontTypes
+	{
+		General,
+		Merchant,
+		Blacksmith,
+		Alchemist,
+		Fletcher,
+		Letherworker,
+		Mage,
+		Florist,
+		Innkeeper
+	}
+
+	public enum UpgradeTypes
+	{
+		Smithy,
+		Enchanter,
+		Florist,
+		Bakery
+	}
+
+	public enum BuildingTypes
+	{
+		Storefront,
+		Tavern,
+		Upgrade
 	}
 }

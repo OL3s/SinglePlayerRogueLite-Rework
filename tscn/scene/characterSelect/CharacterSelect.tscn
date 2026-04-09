@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bhin4fj36u1xo"]
 
 [ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://tscn/scene/locations/shared/background/LocationBackground.tscn" id="1_2oxio"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/defTheme.tres" id="1_e6k3f"]
 [ext_resource type="PackedScene" uid="uid://bdginsyvktxh" path="res://tscn/scene/characterSelect/characterSelect/CharacterSelectComponent.tscn" id="1_hwwje"]
 [ext_resource type="Texture2D" uid="uid://btc41x167k3lt" path="res://tscn/scene/locations/assets/sprites/backgrounds/spBackgroundCharacter.png" id="2_2oxio"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="4_u57r3"]
 
 [node name="CharacterSelect" type="Control" unique_id=102404099]
 layout_mode = 3
@@ -11,27 +13,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_e6k3f")
 
 [node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_2oxio")]
 layout_mode = 1
 texture = ExtResource("2_2oxio")
 IgnoreUpdateTexture = true
 
-[node name="Label" type="Label" parent="." unique_id=499451608]
+[node name="Panel" type="Panel" parent="." unique_id=166724545]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_u57r3")
+
+[node name="Label" type="Label" parent="Panel" unique_id=499451608]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 0.5
 anchor_bottom = 0.1
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -299.99997
+offset_top = -15.360004
+offset_right = 300.00003
+offset_bottom = 12.639996
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
 text = "Select an adventurer to start your quest with"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=448907279]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=448907279]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,20 +55,22 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -400.0
-offset_top = -200.0
+offset_top = -150.0
 offset_right = 400.0
-offset_bottom = 200.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="CharacterSelect" parent="HBoxContainer" unique_id=75407820 instance=ExtResource("1_hwwje")]
+[node name="CharacterSelect" parent="Panel/HBoxContainer" unique_id=75407820 instance=ExtResource("1_hwwje")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="CharacterSelect2" parent="HBoxContainer" unique_id=1500264049 instance=ExtResource("1_hwwje")]
+[node name="CharacterSelect2" parent="Panel/HBoxContainer" unique_id=1500264049 instance=ExtResource("1_hwwje")]
 layout_mode = 2
+TimerOffset = 0.3
 
-[node name="CharacterSelect3" parent="HBoxContainer" unique_id=1084063684 instance=ExtResource("1_hwwje")]
+[node name="CharacterSelect3" parent="Panel/HBoxContainer" unique_id=1084063684 instance=ExtResource("1_hwwje")]
 layout_mode = 2
+TimerOffset = 0.6

@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class ButtonExecuteOverlay : Button
+public partial class ButtonExecuteOverlay : BaseButton
 {
 	[Export] public PackedScene UiScene;
 	public override void _Pressed()
@@ -11,6 +11,6 @@ public partial class ButtonExecuteOverlay : Button
 			return;
 		}
 
-		GetTree().Root.GetNode<GlobalOverlay>("GlobalOverlay").AddOverlay(UiScene.Instantiate<Control>());
+		GlobalOverlay.AddOverlayStatic(UiScene.Instantiate<Control>());
 	}
 }

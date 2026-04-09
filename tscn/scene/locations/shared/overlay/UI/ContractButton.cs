@@ -8,6 +8,10 @@ public partial class ContractButton : Button
 	[ExportGroup("TexturePaths")]
 	[Export] public Texture2D NoContractTexture;
 	[Export] public Texture2D HasContractTexture;
+	[ExportGroup("LabelProperties")]
+	[Export] public string MsgSelect = "Contract";
+	[Export] public string MsgStart = "GO!";
+	private double _timer;
 	private bool _hasContract => SaveNode.Get().RunData.CurrentContract != null;
 	public override void _Ready()
 	{
@@ -45,13 +49,23 @@ public partial class ContractButton : Button
 		}
 	}
 
+	public override void _Process(double delta)
+	{
+		Rotation = (_hasContract)
+			? Animation.PositionModifiers.Sway(_timer, 4f, Mathf.Pi / 32f)
+			: 0f;
+		_timer += delta;
+	}
+
 	private void UpdateTexture(SignalTypes.Signals signalType)
 	{
 		Icon = _hasContract ? HasContractTexture : NoContractTexture;
+		Text = _hasContract ? MsgStart : MsgSelect;
 	}
 
 	private void UpdateTexture()
 	{
 		Icon = _hasContract ? HasContractTexture : NoContractTexture;
+		Text = _hasContract ? MsgStart : MsgSelect;
 	}
 }

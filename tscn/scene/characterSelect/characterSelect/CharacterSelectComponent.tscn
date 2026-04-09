@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://bdginsyvktxh"]
 
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/defTheme.tres" id="1_nkshr"]
 [ext_resource type="Script" uid="uid://d1w8ff64e8ssb" path="res://tscn/scene/characterSelect/characterSelect/CharacterSelectComponent.cs" id="1_uvclk"]
 [ext_resource type="Script" uid="uid://celm5xvuktvmo" path="res://global/PlayerData.cs" id="2_v803i"]
 [ext_resource type="PackedScene" uid="uid://dj4h4307bhrb" path="res://tscn/scene/locations/shared/outpost/outpost.tscn" id="3_jrbsg"]
 [ext_resource type="Texture2D" uid="uid://dpnwap2u0mj3x" path="res://icon.svg" id="4_pq166"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="5_5hc06"]
 
 [sub_resource type="Resource" id="Resource_1ueel"]
 script = ExtResource("2_v803i")
 metadata/_custom_type_script = "uid://celm5xvuktvmo"
 
 [node name="CharacterSelectNew" type="Control" unique_id=75407820 node_paths=PackedStringArray("ButtonSelect")]
-custom_minimum_size = Vector2(200, 400)
+custom_minimum_size = Vector2(200, 300)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 200.0
-offset_bottom = 400.0
+offset_bottom = 300.0
 size_flags_horizontal = 0
+theme = ExtResource("1_nkshr")
 script = ExtResource("1_uvclk")
 StartingGear = SubResource("Resource_1ueel")
 OutpostScene = ExtResource("3_jrbsg")
@@ -28,6 +31,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = ExtResource("5_5hc06")
+theme_override_styles/pressed = ExtResource("5_5hc06")
+theme_override_styles/hover = ExtResource("5_5hc06")
+theme_override_styles/disabled = ExtResource("5_5hc06")
+theme_override_styles/focus = ExtResource("5_5hc06")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Button" unique_id=1963836970]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw70hqevlbkkg"]
 
-[ext_resource type="StyleBox" uid="uid://b60q5k8mpp2wj" path="res://global/buttonUIstyle.tres" id="1_o5ytr"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/buttonUIstyle.tres" id="1_o5ytr"]
 [ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://tscn/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="2_ys2bl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sagur"]
