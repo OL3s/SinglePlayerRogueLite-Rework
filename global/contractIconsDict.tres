@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ContractIconsDict" format=3 uid="uid://bugq0aq0b62ri"]
+
+[ext_resource type="Script" uid="uid://bi3c47xyqd2v5" path="res://ContractIconsDict.cs" id="1_dlwef"]
+[ext_resource type="Texture2D" uid="uid://ccs3dxm8l2pon" path="res://sprites/icons/biomes/spIconBiomeDesert.png" id="1_wxdwx"]
+[ext_resource type="Texture2D" uid="uid://dqi5hafi47f3f" path="res://sprites/icons/biomes/spIconBiomeGrasslands.png" id="2_0pgpn"]
+[ext_resource type="Texture2D" uid="uid://bwlc7c0qli4ox" path="res://sprites/icons/biomes/spIconBiomeIcy.png" id="3_b830s"]
+[ext_resource type="Texture2D" uid="uid://bds3x1qeffdgb" path="res://sprites/icons/biomes/spIconBiomeJungle.png" id="4_ppgn2"]
+[ext_resource type="Texture2D" uid="uid://dovk3tr05d74o" path="res://sprites/icons/biomes/spIconBiomeLava.png" id="5_5a3q6"]
+[ext_resource type="Texture2D" uid="uid://0ajt3gkl70vy" path="res://sprites/icons/biomes/spIconBiomeTundra.png" id="6_di3e1"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="7_0pgpn"]
+[ext_resource type="Texture2D" uid="uid://bff8devd3x2pl" path="res://sprites/icons/locations/spCampsite.png" id="7_4v2iu"]
+
+[resource]
+script = ExtResource("1_dlwef")
+IconFallback = ExtResource("7_0pgpn")
+IconLocationCampfire = ExtResource("7_4v2iu")
+IconBiomeGrasslands = ExtResource("2_0pgpn")
+IconBiomeTundra = ExtResource("6_di3e1")
+IconBiomeDesert = ExtResource("1_wxdwx")
+IconBiomeIcy = ExtResource("3_b830s")
+IconBiomeJungle = ExtResource("4_ppgn2")
+IconBiomeLava = ExtResource("5_5a3q6")
+metadata/_custom_type_script = "uid://bi3c47xyqd2v5"

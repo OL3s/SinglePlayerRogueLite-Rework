@@ -5,22 +5,24 @@ namespace MyTypes {
 
 	public enum Biomes
 	{
-		GrasslandsA = 0,
-		TundraB = 1,
-		DesertB = 2,
-		IcyC = 3,
-		JungleC = 4,
-		LavaC = 5,
-		IceBossD = 6,
-		JungleBossD = 7,
-		LavaBossD = 8,
+		Undefined = 0,
+		GrasslandsA = 1,
+		TundraB = 2,
+		DesertB = 3,
+		IcyC = 4,
+		JungleC = 5,
+		LavaC = 6,
+		IceBossD = 7,
+		JungleBossD = 8,
+		LavaBossD = 9,
 	}
 
 	public enum Locations 
 	{
-		Village = 0,
-		Sanctuary = 1,
-		Campsite = 2
+		Undefined = 0,
+		Village = 1,
+		Sanctuary = 2,
+		Campsite = 3
 	}
 }
 
