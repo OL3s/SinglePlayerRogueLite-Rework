@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemArmor" format=3 uid="uid://bufi78ybpt138"]
 
 [ext_resource type="Script" uid="uid://nojfpnvylhej" path="res://global/resources/combat/Defence.cs" id="1_ukcqn"]
-[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://shared/sprite/spBox.png" id="2_le4uy"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://global/resources/sprite/spBox.png" id="2_le4uy"]
 [ext_resource type="Script" uid="uid://nyytvwomohpq" path="res://global/resources/items/ItemArmor.cs" id="2_trxyc"]
 
 [sub_resource type="Resource" id="Resource_ukcqn"]

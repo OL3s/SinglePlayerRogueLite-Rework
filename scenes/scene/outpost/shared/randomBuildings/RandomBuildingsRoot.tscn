@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dgh5pf1xhen06"]
+
+[ext_resource type="Script" uid="uid://bbalq1yfihyly" path="res://scenes/scene/outpost/shared/randomBuildings/RandomBuildingsRoot.cs" id="1_5vpct"]
+
+[node name="RandomBuildingsRoot" type="Node" unique_id=1671964658 node_paths=PackedStringArray("NodesToRandomize")]
+script = ExtResource("1_5vpct")
+NodesToRandomize = []

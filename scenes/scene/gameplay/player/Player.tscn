@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://qqlyoxnobitw"]
+
+[ext_resource type="Script" uid="uid://bd674pobvwqyj" path="res://scenes/scene/gameplay/player/player/Player.cs" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://global/resources/sprite/spBox.png" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://ln8jbcu1x0fq" path="res://scenes/scene/gameplay/input/Input.tscn" id="3_kne1u"]
+
+[sub_resource type="Gradient" id="Gradient_wr5v1"]
+offsets = PackedFloat32Array(0.10469314, 0.48736462)
+colors = PackedColorArray(0, 0, 0, 0.3372549, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qjuqw"]
+gradient = SubResource("Gradient_wr5v1")
+width = 16
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.51282054)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=552206351 node_paths=PackedStringArray("PlayerInput", "Sprite")]
+script = ExtResource("1_kpjcp")
+PlayerInput = NodePath("CanvasLayer/Control/Input")
+Sprite = NodePath("Sprite2D")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1747756745]
+position = Vector2(0, 3)
+texture = SubResource("GradientTexture2D_qjuqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70423679]
+shape = SubResource("CircleShape2D_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=697083700]
+texture = ExtResource("1_xhfnw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=263009321]
+zoom = Vector2(6, 6)
+limit_enabled = false
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1779369453]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=364057020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Input" parent="CanvasLayer/Control" unique_id=535424120 instance=ExtResource("3_kne1u")]
+layout_mode = 1

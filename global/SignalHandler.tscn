@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cpmhnwb4dsl6c"]
-
-[ext_resource type="Script" path="res://SignalHandler.cs" id="1_gm675"]
-
-[node name="SignalHandler" type="Node" unique_id=1512493294]
-script = ExtResource("1_gm675")

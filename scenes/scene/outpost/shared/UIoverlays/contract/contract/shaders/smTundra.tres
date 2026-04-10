@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dt5at8kgsd8ay"]
+
+[ext_resource type="Shader" uid="uid://ceojqnpaoc64y" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/shaders/shFallback.gdshader" id="1_hu5ob"]
+
+[resource]
+shader = ExtResource("1_hu5ob")
+shader_parameter/color_a = Color(0.5311776, 0.7894617, 0.63560665, 1)
+shader_parameter/color_b = Color(0.6810007, 0.7805116, 0.7954223, 1)
+shader_parameter/swirl_strength = 0.18
+shader_parameter/fragment_density = 6.0
+shader_parameter/edge_softness = 0.12
+shader_parameter/alpha_strength = 0.85
+shader_parameter/speed = 0.6

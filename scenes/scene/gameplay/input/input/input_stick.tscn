@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ddb7ugg105xpi"]
+
+[ext_resource type="StyleBox" uid="uid://cj5q7ig2o1h4x" path="res://scenes/scene/gameplay/input/input/JoystickStyle.tres" id="1_wwncq"]
+[ext_resource type="Script" uid="uid://bmmt4bvspkad2" path="res://scenes/scene/gameplay/input/input/InputStick.cs" id="2_qhwly"]
+
+[node name="Stick" type="Panel" unique_id=456875372 node_paths=PackedStringArray("DrawStick")]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(128, 128)
+theme_override_styles/panel = ExtResource("1_wwncq")
+script = ExtResource("2_qhwly")
+DrawStick = NodePath("Stick")
+
+[node name="Stick" type="Panel" parent="." unique_id=1153117971]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+localize_numeral_system = false
+theme_override_styles/panel = ExtResource("1_wwncq")

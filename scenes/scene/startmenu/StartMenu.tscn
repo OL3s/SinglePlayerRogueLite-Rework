@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://f62llffiii3s"]
+
+[ext_resource type="PackedScene" uid="uid://bw70hqevlbkkg" path="res://scenes/scene/startmenu/buttonTscn/ButtonExecuteOverlay.tscn" id="1_6xmcy"]
+[ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://scenes/scene/outpost/shared/background/LocationBackground.tscn" id="1_kkedn"]
+[ext_resource type="Shader" uid="uid://2asqpftmfxqp" path="res://scenes/scene/outpost/shared/background/BgShader.gdshader" id="2_1yyro"]
+[ext_resource type="PackedScene" uid="uid://bm4j55pgw6i4f" path="res://scenes/scene/startmenu/career/career.tscn" id="2_2ab2i"]
+[ext_resource type="Script" uid="uid://bnmtr8kbtinga" path="res://scenes/scene/startmenu/buttonTscn/buttonTscn/TapToStart.cs" id="2_07mxg"]
+[ext_resource type="PackedScene" uid="uid://7kpbrbrio3sm" path="res://scenes/scene/startmenu/codex/codex.tscn" id="2_fle81"]
+[ext_resource type="Texture2D" uid="uid://bxteanit1lwlc" path="res://scenes/scene/outpost/shared/background/sprites/spBackgroundMenu.png" id="2_qtkcg"]
+[ext_resource type="PackedScene" uid="uid://dsw6as5roh6v8" path="res://scenes/scene/startmenu/settings/settings.tscn" id="4_d64ox"]
+[ext_resource type="PackedScene" uid="uid://sxyqcftyb5r8" path="res://scenes/scene/startmenu/socials/socials.tscn" id="6_fuu6a"]
+[ext_resource type="Texture2D" uid="uid://4deeet6drapm" path="res://scenes/scene/startmenu/icons/spIconCareer.png" id="6_ssdki"]
+[ext_resource type="PackedScene" uid="uid://bhin4fj36u1xo" path="res://scenes/scene/characterSelect/CharacterSelect.tscn" id="8_2ab2i"]
+[ext_resource type="Texture2D" uid="uid://cgjo16cdfusc" path="res://scenes/scene/startmenu/icons/spIconCodex.png" id="8_mhrp7"]
+[ext_resource type="PackedScene" uid="uid://651x51lpcdua" path="res://scenes/scene/startmenu/gem/gem.tscn" id="9_2ab2i"]
+[ext_resource type="Texture2D" uid="uid://cuahdpdqih778" path="res://scenes/scene/startmenu/icons/spIconSettings.png" id="10_2f6f5"]
+[ext_resource type="FontFile" uid="uid://dsie2lugfvqf8" path="res://global/resources/font/GothicByte.ttf" id="10_d64ox"]
+[ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://global/resources/font/RetroByte.ttf" id="11_qtkcg"]
+[ext_resource type="PackedScene" uid="uid://dj4h4307bhrb" path="res://scenes/scene/outpost/shared/outpost/outpost.tscn" id="12_0x27t"]
+[ext_resource type="Texture2D" uid="uid://cd8qymt3rmkbl" path="res://scenes/scene/startmenu/icons/spIconSocial.png" id="12_ssdki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x27t"]
+shader = ExtResource("2_1yyro")
+shader_parameter/move_speed = 0.18
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 11.0
+shader_parameter/shimmer_strength = 0.015
+shader_parameter/pulse_strength = 0.1
+shader_parameter/enable_hot_side_motion = 1.0
+
+[sub_resource type="Theme" id="Theme_0x27t"]
+default_font = ExtResource("11_qtkcg")
+default_font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yyro"]
+font = ExtResource("11_qtkcg")
+font_size = 48
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.3372549)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fuu6a"]
+font = ExtResource("10_d64ox")
+font_size = 99
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 0.3764706)
+shadow_offset = Vector2(0, 4)
+
+[node name="StartMenu" type="Control" unique_id=193297777]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_kkedn")]
+material = SubResource("ShaderMaterial_0x27t")
+layout_mode = 1
+texture = ExtResource("2_qtkcg")
+IgnoreUpdateTexture = true
+metadata/_edit_lock_ = true
+
+[node name="Footer" type="HBoxContainer" parent="." unique_id=1024642939]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -462.5
+offset_top = -116.0
+offset_right = 462.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_0x27t")
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Button" parent="Footer" unique_id=1312708125 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_font_sizes/font_size = 18
+text = "Career"
+icon = ExtResource("6_ssdki")
+UiScene = ExtResource("2_2ab2i")
+
+[node name="Button2" parent="Footer" unique_id=1699150195 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_font_sizes/font_size = 18
+text = "Codex"
+icon = ExtResource("8_mhrp7")
+UiScene = ExtResource("2_fle81")
+
+[node name="Button3" parent="Footer" unique_id=167639075 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_font_sizes/font_size = 18
+text = "Settings"
+icon = ExtResource("10_2f6f5")
+UiScene = ExtResource("4_d64ox")
+
+[node name="Button4" parent="Footer" unique_id=961371023 instance=ExtResource("1_6xmcy")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_font_sizes/font_size = 18
+text = "Socials"
+icon = ExtResource("12_ssdki")
+UiScene = ExtResource("6_fuu6a")
+
+[node name="Tap" type="Control" parent="." unique_id=980406163 node_paths=PackedStringArray("LabelTapToStart")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_07mxg")
+CharacterSelectScene = ExtResource("8_2ab2i")
+OutpostScene = ExtResource("12_0x27t")
+LabelTapToStart = NodePath("Label")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Tap" unique_id=1514062504]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = 125.0
+offset_right = 193.5
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tap Label"
+label_settings = SubResource("LabelSettings_1yyro")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="GemContainer" type="HBoxContainer" parent="." unique_id=956628274]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -60.0
+offset_right = 348.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 5
+
+[node name="Gem" parent="GemContainer" unique_id=1132184861 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Gem2" parent="GemContainer" unique_id=1190872367 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 2
+size_flags_horizontal = 3
+Type = 1
+TimerOffset = 0.6
+
+[node name="Gem3" parent="GemContainer" unique_id=1203954500 instance=ExtResource("9_2ab2i")]
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 2
+size_flags_horizontal = 3
+Type = 0
+TimerOffset = 1.2
+
+[node name="Label" type="Label" parent="." unique_id=1400079770]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 100.0
+offset_right = 20.0
+offset_bottom = 123.0
+grow_horizontal = 2
+text = "Relics of Ruin"
+label_settings = SubResource("LabelSettings_fuu6a")

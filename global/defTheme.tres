@@ -1,7 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://2xtitfiievtl"]
-
-[ext_resource type="FontFile" uid="uid://btoe3fg4yatdy" path="res://shared/font/RetroByte.ttf" id="1_jy8tq"]
-
-[resource]
-default_font = ExtResource("1_jy8tq")
-default_font_size = 36

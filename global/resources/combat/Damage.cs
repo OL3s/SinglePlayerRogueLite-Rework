@@ -14,21 +14,51 @@ namespace Combat {
             DamageValues = damageValues;
             StatusEffectValues = statusEffectValues;
         }
-        public Damage(int slashing = 0, int piercing = 0, int blunt = 0, int fire = 0, int ice = 0, int lightning = 0, int poison = 0,
-                      int burn = 0, int freeze = 0, int shock = 0, int poisonEffect = 0)
-        {
-            DamageValues[DamageType.Slashing] = slashing;
-            DamageValues[DamageType.Piercing] = piercing;
-            DamageValues[DamageType.Blunt] = blunt;
-            DamageValues[DamageType.Fire] = fire;
-            DamageValues[DamageType.Ice] = ice;
-            DamageValues[DamageType.Lightning] = lightning;
-            DamageValues[DamageType.Poison] = poison;
 
-            StatusEffectValues[StatusEffectType.Burn] = burn;
-            StatusEffectValues[StatusEffectType.Freeze] = freeze;
-            StatusEffectValues[StatusEffectType.Shock] = shock;
-            StatusEffectValues[StatusEffectType.Poison] = poisonEffect;
+        public Damage Merge(Damage other)
+        {
+            var mergedDamage = new Damage();
+
+            foreach (var damageType in DamageValues.Keys)
+            {
+                mergedDamage.DamageValues[damageType] = DamageValues[damageType] + (other.DamageValues.ContainsKey(damageType) ? other.DamageValues[damageType] : 0);
+            }
+
+            foreach (var statusEffectType in StatusEffectValues.Keys)
+            {
+                mergedDamage.StatusEffectValues[statusEffectType] = StatusEffectValues[statusEffectType] + (other.StatusEffectValues.ContainsKey(statusEffectType) ? other.StatusEffectValues[statusEffectType] : 0);
+            }
+
+            return mergedDamage;
+        }
+
+        public Damage Merge(Array<Damage> damages)
+        {
+            var mergedDamage = new Damage();
+
+            foreach (var damage in damages)
+            {
+                mergedDamage = mergedDamage.Merge(damage);
+            }
+
+            return mergedDamage;
+        }
+
+        public Damage Scale(float multiplier)
+        {
+            var scaledDamage = new Damage();
+
+            foreach (var damageType in DamageValues.Keys)
+            {
+                scaledDamage.DamageValues[damageType] = DamageValues[damageType] * multiplier;
+            }
+
+            foreach (var statusEffectType in StatusEffectValues.Keys)
+            {
+                scaledDamage.StatusEffectValues[statusEffectType] = StatusEffectValues[statusEffectType] * multiplier;
+            }
+
+            return scaledDamage;
         }
 
     }

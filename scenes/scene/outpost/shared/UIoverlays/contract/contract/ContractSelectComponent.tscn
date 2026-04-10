@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://0idefv620cem"]
+
+[ext_resource type="Script" uid="uid://d2y3wankwtpoj" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/scripts/ContractSelectComponent.cs" id="1_2pacs"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_kkbov"]
+[ext_resource type="Script" uid="uid://ofkphtrm65hk" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/scripts/Contract.cs" id="2_spxgy"]
+[ext_resource type="Resource" uid="uid://bugq0aq0b62ri" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/contractIconsDict.tres" id="3_kkbov"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="4_ytjq5"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://global/resources/sprite/spBox.png" id="5_ytjq5"]
+[ext_resource type="LabelSettings" uid="uid://bqi5257wrph24" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/lablelContract.tres" id="7_tuxlc"]
+
+[sub_resource type="Resource" id="Resource_ytjq5"]
+script = ExtResource("2_spxgy")
+Biome = 1
+EndLocation = 3
+metadata/_custom_type_script = "uid://ofkphtrm65hk"
+
+[node name="ContractSelectComp" type="Control" unique_id=75407820 node_paths=PackedStringArray("IconLocation", "IconBiome", "ShaderBackground", "LabelLocation", "LabelBiome", "PanelFloat")]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 300.0
+size_flags_horizontal = 0
+theme = ExtResource("1_kkbov")
+script = ExtResource("1_2pacs")
+SetContract = SubResource("Resource_ytjq5")
+IconDict = ExtResource("3_kkbov")
+IconLocation = NodePath("Panel/TexLocation")
+IconBiome = NodePath("Panel/TexBiome")
+ShaderBackground = NodePath("Panel/ShaderPanel")
+LabelLocation = NodePath("Panel/TexLocation/Label")
+LabelBiome = NodePath("Panel/TexBiome/Label")
+PanelFloat = NodePath("Panel")
+
+[node name="Panel" type="Panel" parent="." unique_id=1282367929]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_ytjq5")
+metadata/_edit_lock_ = true
+
+[node name="ShaderPanel" type="Panel" parent="Panel" unique_id=1324605704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_ytjq5")
+metadata/_edit_lock_ = true
+
+[node name="TexBiome" type="TextureRect" parent="Panel" unique_id=1695803458]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("5_ytjq5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/TexBiome" unique_id=406154004]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.75
+offset_top = -35.0
+offset_right = 101.75
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$BiomeTypeHere"
+label_settings = ExtResource("7_tuxlc")
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="TexLocation" type="TextureRect" parent="Panel" unique_id=480803129]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_ytjq5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Panel/TexLocation" unique_id=1944397148]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.75
+offset_top = -35.0
+offset_right = 101.75
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$LocationTypeHere"
+label_settings = ExtResource("7_tuxlc")
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true
+text_overrun_behavior = 1

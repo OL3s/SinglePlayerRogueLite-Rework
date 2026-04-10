@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dsw6as5roh6v8"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_n2btt"]
+[ext_resource type="Script" uid="uid://b3okwo83trmvn" path="res://scenes/scene/startmenu/settings/settings/SettingsSave.cs" id="1_x2hje"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="2_imj16"]
+[ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="4_imj16"]
+
+[node name="Settings" type="Control" unique_id=599583592]
+layout_mode = 3
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_n2btt")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1364794471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_imj16")
+current_tab = 1
+
+[node name="Video" type="Control" parent="TabContainer" unique_id=1848909529]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Save" type="Control" parent="TabContainer" unique_id=1961521664 node_paths=PackedStringArray("ClearRunButton", "ClearMetaButton", "ClearSettingsButton", "DeleteAllButton")]
+layout_mode = 2
+script = ExtResource("1_x2hje")
+ClearRunButton = NodePath("VBoxContainer/Run")
+ClearMetaButton = NodePath("VBoxContainer/Meta")
+ClearSettingsButton = NodePath("VBoxContainer/Settings")
+DeleteAllButton = NodePath("VBoxContainer/All")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Save" unique_id=1461709285]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.99998
+offset_top = -121.02501
+offset_right = 163.99998
+offset_bottom = 121.02501
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Run" type="Button" parent="TabContainer/Save/VBoxContainer" unique_id=1840307377]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_imj16")
+theme_override_styles/pressed = ExtResource("2_imj16")
+theme_override_styles/hover = ExtResource("2_imj16")
+theme_override_styles/disabled = ExtResource("2_imj16")
+theme_override_styles/focus = ExtResource("2_imj16")
+text = "Clear Run"
+
+[node name="Meta" type="Button" parent="TabContainer/Save/VBoxContainer" unique_id=1891065594]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_imj16")
+theme_override_styles/pressed = ExtResource("2_imj16")
+theme_override_styles/hover = ExtResource("2_imj16")
+theme_override_styles/disabled = ExtResource("2_imj16")
+theme_override_styles/focus = ExtResource("2_imj16")
+text = "Clear Metadata"
+
+[node name="Settings" type="Button" parent="TabContainer/Save/VBoxContainer" unique_id=263332892]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_imj16")
+theme_override_styles/pressed = ExtResource("2_imj16")
+theme_override_styles/hover = ExtResource("2_imj16")
+theme_override_styles/disabled = ExtResource("2_imj16")
+theme_override_styles/focus = ExtResource("2_imj16")
+text = "Reset Settings"
+
+[node name="All" type="Button" parent="TabContainer/Save/VBoxContainer" unique_id=1701817653]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_imj16")
+theme_override_styles/pressed = ExtResource("2_imj16")
+theme_override_styles/hover = ExtResource("2_imj16")
+theme_override_styles/disabled = ExtResource("2_imj16")
+theme_override_styles/focus = ExtResource("2_imj16")
+text = "Revert Everything"
+
+[node name="CloseButton" parent="." unique_id=1884065516 instance=ExtResource("4_imj16")]
+layout_mode = 0
+offset_left = -75.200005
+offset_top = 7.199997
+offset_right = -11.200005
+offset_bottom = 71.2

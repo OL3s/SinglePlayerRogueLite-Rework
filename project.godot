@@ -17,7 +17,7 @@ config/icon="uid://dtn51446psviv"
 
 [autoload]
 
-SaveNode="*res://tscn/global/savenode/SaveNode.tscn"
+SaveNode="*res://scenes/autoload/savenode/SaveNode.tscn"
 GlobalOverlay="*uid://c1xmwaxlv3rk4"
 SignalHandler="*uid://mv1fpf8v6gus"
 

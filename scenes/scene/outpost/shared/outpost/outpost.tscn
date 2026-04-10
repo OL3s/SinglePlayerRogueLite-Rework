@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dj4h4307bhrb"]
+
+[ext_resource type="PackedScene" uid="uid://bmkue0qfhc0nk" path="res://scenes/scene/outpost/shared/background/LocationBackground.tscn" id="1_30bgb"]
+[ext_resource type="Script" uid="uid://cwwbj1pwfrbsy" path="res://scenes/scene/outpost/shared/outpost/Outpost.cs" id="1_ktfuj"]
+[ext_resource type="Texture2D" uid="uid://cbvje7evrie81" path="res://scenes/scene/outpost/shared/background/sprites/spBackgroundTemplatePhone.png" id="2_2csk3"]
+[ext_resource type="PackedScene" uid="uid://dhxlssw3dsr0l" path="res://scenes/scene/outpost/shared/UI/OverlayUI.tscn" id="2_ckiti"]
+[ext_resource type="PackedScene" uid="uid://fmfrykvvmi4u" path="res://scenes/scene/outpost/location/sanctuary/Sanctuary.tscn" id="3_7t3hb"]
+[ext_resource type="PackedScene" uid="uid://daw1o3pj6khnl" path="res://scenes/scene/outpost/location/village/Village.tscn" id="4_icbru"]
+[ext_resource type="PackedScene" uid="uid://q7wsvd5moudv" path="res://scenes/scene/outpost/location/campsite/Campsite.tscn" id="4_qcolc"]
+
+[node name="Outpost" type="Control" unique_id=929791031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktfuj")
+AssetVillage = ExtResource("4_icbru")
+AssetSanctuary = ExtResource("3_7t3hb")
+AssetCampsite = ExtResource("4_qcolc")
+
+[node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_30bgb")]
+layout_mode = 1
+offset_top = -0.079956055
+offset_bottom = 0.07989502
+mouse_filter = 2
+texture = ExtResource("2_2csk3")
+FallBack = ExtResource("2_2csk3")
+metadata/_edit_lock_ = true
+
+[node name="OverlayUI" parent="." unique_id=1103172097 instance=ExtResource("2_ckiti")]
+layout_mode = 1

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bw70hqevlbkkg"]
+
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="1_o5ytr"]
+[ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://scenes/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="2_ys2bl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sagur"]
+
+[node name="Button" type="Button" unique_id=1312708125]
+custom_minimum_size = Vector2(112, 96)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("1_o5ytr")
+theme_override_styles/pressed = ExtResource("1_o5ytr")
+theme_override_styles/hover = ExtResource("1_o5ytr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sagur")
+theme_override_styles/focus = ExtResource("1_o5ytr")
+text = "$Name"
+autowrap_mode = 2
+autowrap_trim_flags = 192
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_ys2bl")
