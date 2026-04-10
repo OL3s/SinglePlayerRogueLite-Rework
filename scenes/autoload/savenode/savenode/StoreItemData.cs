@@ -16,19 +16,18 @@ public partial class StoreItemData : Resource
 
 	public StoreItemData()
 	{
-		GenerateMissingItems();
 	}
 
-	public void GenerateMissingItems()
+	public void GenerateMissingItems(MyTypes.Biomes biome)
 	{
-		TavernItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Tavern);
-		MerchantItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Merchant);
-		BlacksmithItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Blacksmith);
-		GoldsmithItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Goldsmith);
-		AlchemistItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Alchemist);
-		FletcherItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Fletcher);
-		ArcanistItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Arcanist);
-		EnchanterItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Enchanter);
+		TavernItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Tavern, biome);
+		MerchantItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Merchant, biome);
+		BlacksmithItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Blacksmith, biome);
+		GoldsmithItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Goldsmith, biome);
+		AlchemistItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Alchemist, biome);
+		FletcherItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Fletcher, biome);
+		ArcanistItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Arcanist, biome);
+		EnchanterItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Enchanter, biome);
 	}
 
 	public Array<ItemBase> GetItemsForBuildingType(MyTypes.BuildingTypes buildingType)
@@ -54,9 +53,8 @@ public partial class StoreItemData : Resource
 		return storeData.GetItemsForBuildingType(buildingType);
 	}
 
-	private Array<ItemBase> GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes buildingType)
+	private Array<ItemBase> GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes buildingType, MyTypes.Biomes biome)
 	{
-		var biome = SaveNode.Get().RunData.CurrentBiome;
 		var placeholderimage = new PlaceholderTexture2D();
 		placeholderimage.Size = new Vector2(64, 64);
 		return new Array<ItemBase>() { 

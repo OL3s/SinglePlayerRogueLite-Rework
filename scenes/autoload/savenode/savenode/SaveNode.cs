@@ -34,8 +34,9 @@ public partial class SaveNode : Node
 		if (!FilesExist())
 			SaveAllData();
 
-		// Add missing StoreData if it doesn't exist (for backward compatibility with older saves)
+		// Add missing StoreData if it doesn't exist.
 		RunData.StoreData ??= new StoreItemData();
+		RunData.StoreData.GenerateMissingItems(RunData.CurrentBiome);
 		GD.Print("SaveNode is ready. MetaData, RunData, and SettingsData have been initialized.");
 	}
 
