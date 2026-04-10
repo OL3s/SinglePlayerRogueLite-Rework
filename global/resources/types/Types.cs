@@ -54,6 +54,6 @@ namespace SignalTypes
 	public enum Signals
 	{
 		ContractSelected,
-		ItemBought
+		PurchaseItem,
 	}
 }

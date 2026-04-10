@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://c7dpdusc456h6"
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yi5dh"]
 
 [node name="StoreItem" type="ReferenceRect" unique_id=159814637 node_paths=PackedStringArray("ItemCostLabel", "ItemNameLabel", "ItemIcon")]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(128, 198)
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
@@ -22,7 +22,6 @@ offset_bottom = 64.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = ExtResource("1_j3qlc")
 border_color = Color(0.62153065, 0.50750226, 0.4508894, 1)
-editor_only = false
 script = ExtResource("2_j3qlc")
 ItemData = SubResource("Resource_45kjp")
 ItemCostLabel = NodePath("HBoxContainer/Label")

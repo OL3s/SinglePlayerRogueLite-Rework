@@ -9,11 +9,12 @@ namespace SaveData
 		[Export] public Biomes CurrentBiome { get; set; } = Biomes.GrasslandsA;
 		[Export] public Locations CurrentLocation { get; set; } = Locations.Village;
 		[Export] public PlayerData PlayerData { get; set; } = null;
+		[Export] public StoreItemData StoreData { get; set; } = null;
 		[Export] public Contract CurrentContract { get; set; } = null;
 		[Export] public int Gold { get; set; } = 0;
 		public override string ToString()
 		{
-			return $"RunData: CurrentBiome={CurrentBiome} PlayerData={PlayerData}, CurrentContract={CurrentContract}, Gold={Gold}";
+			return $"RunData: CurrentBiome={CurrentBiome} PlayerData={PlayerData}, StoreData={StoreData}, CurrentContract={CurrentContract}, Gold={Gold}";
 		}
 	}
 

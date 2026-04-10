@@ -12,8 +12,9 @@ public partial class SaveNode : Node
 	public MetaData MetaData { get; set; }
 	public RunData RunData { get; set; }
 	public SettingsData SettingsData { get; set; }
+	public PlayerData PlayerData => RunData.PlayerData;
+	public StoreItemData StoreData => RunData.StoreData;
 	public static SaveNode Get() => Engine.GetMainLoop() is SceneTree tree ? tree.Root.GetNode<SaveNode>("SaveNode") : throw new InvalidOperationException("SaveNode: Unable to find SaveNode in the scene tree. Ensure that SaveNode is added as a child of the root node and is named 'SaveNode'.");
-
 	public override void _Ready()
 	{
 		// Exception on missing export values.
@@ -33,6 +34,8 @@ public partial class SaveNode : Node
 		if (!FilesExist())
 			SaveAllData();
 
+		// Add missing StoreData if it doesn't exist (for backward compatibility with older saves)
+		RunData.StoreData ??= new StoreItemData();
 		GD.Print("SaveNode is ready. MetaData, RunData, and SettingsData have been initialized.");
 	}
 
@@ -69,6 +72,7 @@ public partial class SaveNode : Node
 
 		
 		GD.Print($"Data successfully loaded from {filePath}");
+
 		return resource;
 		
 	}

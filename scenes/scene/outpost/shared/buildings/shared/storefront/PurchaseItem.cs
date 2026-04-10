@@ -29,6 +29,8 @@ public partial class PurchaseItem : Control
 			GD.Print("PurchaseItem: No item data assigned, cannot process purchase.");
 			return;
 		}
+		
+		SignalHandler.EmitSignalStatic(SignalTypes.Signals.PurchaseItem);
 		throw new NotImplementedException("PurchaseItem: Purchase logic not implemented yet.");
 	}
 
@@ -39,6 +41,7 @@ public partial class PurchaseItem : Control
 
 	public void UpdateItemDisplay(ItemBase itemData)
 	{
+		ItemData = itemData;
 		if (itemData == null)
 			throw new ArgumentNullException(nameof(itemData), "PurchaseItem: ItemData cannot be null when updating display.");
 

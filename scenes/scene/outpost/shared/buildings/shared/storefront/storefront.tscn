@@ -19,7 +19,7 @@ script = ExtResource("1_wh0ve")
 StoreNameLabel = NodePath("Panel/StoreLabel")
 StoreSellerName = NodePath("Panel/TextureRect/CharLabel")
 StoreItemScene = ExtResource("4_s5p1u")
-StoreItemsContainer = NodePath("Panel/ReferenceRect/ContainerGenerateItems")
+StoreItemsContainer = NodePath("Panel/ContainerGenerateItems")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="ReferenceRect" parent="." unique_id=921602271]
@@ -76,24 +76,16 @@ text = "$Name"
 label_settings = ExtResource("2_wh0ve")
 horizontal_alignment = 1
 
-[node name="ReferenceRect" type="ReferenceRect" parent="Panel" unique_id=1667408418]
+[node name="ContainerGenerateItems" type="HBoxContainer" parent="Panel" unique_id=1299625988]
+custom_minimum_size = Vector2(0, 260)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.33800003
-anchor_top = 0.30200002
-anchor_right = 0.92800003
-anchor_bottom = 0.851
-offset_left = 0.29919434
-offset_top = 0.21278381
-offset_right = -0.44476318
-offset_bottom = 0.18637085
-editor_only = false
-
-[node name="ContainerGenerateItems" type="HBoxContainer" parent="Panel/ReferenceRect" unique_id=1299625988]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.30100003
+anchor_top = 0.28
+anchor_right = 0.97200006
+anchor_bottom = 0.85400003
+offset_left = 0.39837646
+offset_top = 0.19198608
+offset_right = 0.0048217773
+offset_bottom = -0.17443848
 alignment = 1
