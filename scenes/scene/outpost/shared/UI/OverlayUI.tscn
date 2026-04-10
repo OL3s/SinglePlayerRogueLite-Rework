@@ -5,12 +5,10 @@
 [ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="2_rcicl"]
 [ext_resource type="PackedScene" uid="uid://d13mpxjudq7gy" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory.tscn" id="3_8yash"]
 [ext_resource type="Script" uid="uid://cw7hr8cub344o" path="res://scenes/scene/outpost/shared/UIoverlays/contract/contract/scripts/ContractButton.cs" id="3_j623e"]
-[ext_resource type="Texture2D" uid="uid://cys4dlm2fg527" path="res://scenes/scene/outpost/shared/UI/icons/spIconBackpack.png" id="3_rqmha"]
 [ext_resource type="Script" uid="uid://jmleehxcyfws" path="res://scenes/scene/startmenu/buttonTscn/buttonTscn/ButtonExecuteOverlay.cs" id="3_wttsq"]
 [ext_resource type="PackedScene" uid="uid://cueqgmxe10gfe" path="res://scenes/scene/outpost/shared/UIoverlays/contract/ContractSelect.tscn" id="4_wttsq"]
 [ext_resource type="PackedScene" uid="uid://bobbm3ix3nim2" path="res://scenes/scene/outpost/shared/UIoverlays/character/character.tscn" id="4_x2qtx"]
 [ext_resource type="PackedScene" uid="uid://bnxt2v5ew8uyc" path="res://scenes/scene/tests/TestMapgen.tscn" id="5_asqy2"]
-[ext_resource type="Texture2D" uid="uid://cl2kg183fguem" path="res://scenes/scene/outpost/shared/UI/icons/spIconCharacter.png" id="6_2rdy7"]
 [ext_resource type="Texture2D" uid="uid://cu7pgvym5rbm3" path="res://scenes/scene/outpost/shared/UI/icons/spIconContractBefore.png" id="8_ou3hp"]
 [ext_resource type="Texture2D" uid="uid://dff4suf7542uv" path="res://scenes/scene/outpost/shared/UI/icons/spIconContractAfter.png" id="12_g0tb1"]
 [ext_resource type="PackedScene" uid="uid://drao5mnk5rwux" path="res://scenes/scene/outpost/shared/UI/components/BiomePanel.tscn" id="14_rqmha"]
@@ -18,6 +16,12 @@
 [sub_resource type="Theme" id="Theme_fklev"]
 default_font = ExtResource("2_fq30k")
 default_font_size = 14
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_60xks"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_m6mta"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d7mvl"]
 
 [node name="OverlayUI" type="Control" unique_id=1103172097]
 layout_mode = 3
@@ -52,7 +56,7 @@ theme_override_styles/hover = ExtResource("2_rcicl")
 theme_override_styles/disabled = ExtResource("2_rcicl")
 theme_override_styles/focus = ExtResource("2_rcicl")
 text = "Inventory"
-icon = ExtResource("3_rqmha")
+icon = SubResource("PlaceholderTexture2D_60xks")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -68,7 +72,7 @@ theme_override_styles/hover = ExtResource("2_rcicl")
 theme_override_styles/disabled = ExtResource("2_rcicl")
 theme_override_styles/focus = ExtResource("2_rcicl")
 text = "Character"
-icon = ExtResource("6_2rdy7")
+icon = SubResource("PlaceholderTexture2D_m6mta")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -101,7 +105,7 @@ theme_override_styles/hover = ExtResource("2_rcicl")
 theme_override_styles/disabled = ExtResource("2_rcicl")
 theme_override_styles/focus = ExtResource("2_rcicl")
 text = "$Contract"
-icon = ExtResource("8_ou3hp")
+icon = SubResource("PlaceholderTexture2D_d7mvl")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

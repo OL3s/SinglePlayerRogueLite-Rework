@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cl4r07gdfn11b"]
 
-[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="1_j1eq5"]
 [ext_resource type="Script" uid="uid://b587vli8rddgf" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/Storefront.cs" id="1_wh0ve"]
 [ext_resource type="LabelSettings" uid="uid://8pe427jgf6ls" path="res://global/resources/tres/defLabelSettings.tres" id="2_wh0ve"]
-[ext_resource type="Texture2D" uid="uid://dn7goev8jlisb" path="res://scenes/scene/outpost/shared/buildings/spStorekeeperGeneric.png" id="3_f3bh5"]
-[ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="5_f3bh5"]
+[ext_resource type="Script" uid="uid://2fhbjwdu47uh" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/ContainerGenerateItems.cs" id="4_0uhn3"]
+[ext_resource type="PackedScene" uid="uid://1qjiwcmb4ebk" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.tscn" id="5_s7gb5"]
 
-[node name="Storefront" type="Control" unique_id=1642659416 node_paths=PackedStringArray("StoreNameLabel", "StoreSellerName", "StoreItemGrid")]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0uhn3"]
+
+[node name="Storefront" type="Control" unique_id=1642659416 node_paths=PackedStringArray("StoreNameLabel", "StoreSellerName", "ContainerGenerateItems")]
 layout_mode = 3
 anchor_left = 0.1
 anchor_top = 0.1
@@ -18,9 +19,10 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_wh0ve")
 StoreNameLabel = NodePath("Panel/StoreLabel")
 StoreSellerName = NodePath("Panel/TextureRect/CharLabel")
-StoreItemGrid = NodePath("ReferenceRect/GridContainer")
+ContainerGenerateItems = NodePath("Panel/ReferenceRect/ContainerGenerateItems")
+metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="." unique_id=1364484642]
+[node name="Panel" type="ReferenceRect" parent="." unique_id=921602271]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_styles/panel = ExtResource("1_j1eq5")
+metadata/_edit_lock_ = true
 
 [node name="StoreLabel" type="Label" parent="Panel" unique_id=1555836556]
 layout_mode = 1
@@ -54,9 +56,9 @@ offset_top = -54.60002
 offset_right = 261.80002
 offset_bottom = 141.4
 grow_vertical = 2
-texture = ExtResource("3_f3bh5")
+texture = SubResource("PlaceholderTexture2D_0uhn3")
 expand_mode = 2
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="CharLabel" type="Label" parent="Panel/TextureRect" unique_id=1463279257]
 layout_mode = 1
@@ -74,33 +76,26 @@ text = "$Name"
 label_settings = ExtResource("2_wh0ve")
 horizontal_alignment = 1
 
-[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=407736957]
+[node name="ReferenceRect" type="ReferenceRect" parent="Panel" unique_id=1667408418]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 300.0
-offset_top = 100.0
-offset_right = -100.0
-offset_bottom = -100.0
-grow_horizontal = 2
-grow_vertical = 2
-border_width = 4.0
+anchor_left = 0.33800003
+anchor_top = 0.30200002
+anchor_right = 0.92800003
+anchor_bottom = 0.851
+offset_left = 0.29919434
+offset_top = 0.21278381
+offset_right = -0.44476318
+offset_bottom = 0.18637085
 editor_only = false
 
-[node name="GridContainer" type="GridContainer" parent="ReferenceRect" unique_id=482864902]
+[node name="ContainerGenerateItems" type="HBoxContainer" parent="Panel/ReferenceRect" unique_id=1299625988]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
-
-[node name="CloseButton" parent="." unique_id=1884065516 instance=ExtResource("5_f3bh5")]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 72.0
+alignment = 1
+script = ExtResource("4_0uhn3")
+StoreItemTscn = ExtResource("5_s7gb5")

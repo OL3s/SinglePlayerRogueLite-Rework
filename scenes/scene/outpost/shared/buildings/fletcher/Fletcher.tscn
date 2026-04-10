@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://diodr0j65jdoq"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_6w6ln"]
+[ext_resource type="StyleBox" uid="uid://dq6ypmjqrllos" path="res://global/resources/tres/TabContainerTheme.tres" id="2_v225l"]
+[ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="3_du0it"]
+[ext_resource type="PackedScene" uid="uid://cl4r07gdfn11b" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/storefront.tscn" id="3_v225l"]
+
+[node name="Fletcher" type="Control" unique_id=1396042038]
+layout_mode = 3
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=6584953]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6w6ln")
+theme_override_styles/panel = ExtResource("2_v225l")
+current_tab = 0
+
+[node name="Purchase" parent="TabContainer" unique_id=1642659416 instance=ExtResource("3_v225l")]
+layout_mode = 2
+StoreType = 5
+metadata/_tab_index = 0
+
+[node name="Tab" type="Control" parent="TabContainer" unique_id=1021461775]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="CloseButton" parent="." unique_id=1884065516 instance=ExtResource("3_du0it")]
+layout_mode = 0
+offset_left = -75.200005
+offset_top = 7.199997
+offset_right = -11.200005
+offset_bottom = 71.2

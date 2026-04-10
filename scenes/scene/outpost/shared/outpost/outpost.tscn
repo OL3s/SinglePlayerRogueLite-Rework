@@ -19,6 +19,7 @@ script = ExtResource("1_ktfuj")
 AssetVillage = ExtResource("4_icbru")
 AssetSanctuary = ExtResource("3_7t3hb")
 AssetCampsite = ExtResource("4_qcolc")
+metadata/_edit_lock_ = true
 
 [node name="LocationBackground" parent="." unique_id=6892724 instance=ExtResource("1_30bgb")]
 layout_mode = 1

@@ -19,8 +19,7 @@ public partial class StorefrontButton : ButtonExecuteOverlay
 			GD.PushError("Failed to instantiate Storefront scene. Ensure the PackedScene is of type Control and has a Storefront script attached.");
 			return;
 		}
-		storefrontScene.StoreType = StoreType; // Set the store type before adding to overlay
-		storefrontScene.UpdateStorefront(); // Update the storefront to reflect the new store type
+		storefrontScene.UpdateStorefront(StoreType); // Update the storefront to reflect the new store type
 		GlobalOverlay.AddOverlayStatic(storefrontScene);
 	}
 

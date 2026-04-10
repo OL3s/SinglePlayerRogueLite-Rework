@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://1qjiwcmb4ebk"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_j3qlc"]
+[ext_resource type="Script" uid="uid://bhwtiuwbs4lf8" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.cs" id="2_j3qlc"]
+[ext_resource type="PackedScene" uid="uid://dcsjc7p2etynb" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/PurchaseItem.tscn" id="3_j3qlc"]
+[ext_resource type="Script" uid="uid://c7dpdusc456h6" path="res://global/resources/items/ItemBase.cs" id="4_ar4gr"]
+
+[sub_resource type="Resource" id="Resource_45kjp"]
+script = ExtResource("4_ar4gr")
+metadata/_custom_type_script = "uid://c7dpdusc456h6"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bvgk5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yi5dh"]
+
+[node name="StoreItem" type="ReferenceRect" unique_id=159814637 node_paths=PackedStringArray("ItemCostLabel", "ItemNameLabel", "ItemIcon")]
+custom_minimum_size = Vector2(128, 128)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_j3qlc")
+border_color = Color(0.62153065, 0.50750226, 0.4508894, 1)
+editor_only = false
+script = ExtResource("2_j3qlc")
+ItemData = SubResource("Resource_45kjp")
+ItemCostLabel = NodePath("HBoxContainer/Label")
+ItemNameLabel = NodePath("Label")
+ItemIcon = NodePath("TextureRect")
+ItemDetailScene = ExtResource("3_j3qlc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=425040069]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 23.0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CoinRect" type="TextureRect" parent="HBoxContainer" unique_id=519725240]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_bvgk5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=329856447]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "$Cost"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1801684319]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_yi5dh")
+
+[node name="Label" type="Label" parent="." unique_id=45134704]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "$Name"
+horizontal_alignment = 1
+vertical_alignment = 2

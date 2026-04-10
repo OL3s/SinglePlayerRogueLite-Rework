@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BuildingExtensions" format=3 uid="uid://cnm36nqruy47n"]
+
+[ext_resource type="PackedScene" uid="uid://bgeet4yjgqrne" path="res://scenes/scene/outpost/shared/buildings/alchemist/Alchemist.tscn" id="1_2lw0a"]
+[ext_resource type="Script" uid="uid://cx0u8btsax3i7" path="res://global/resources/types/building/BuildingExtensions.cs" id="1_43i6m"]
+[ext_resource type="PackedScene" uid="uid://d0v1yjj5w45mf" path="res://scenes/scene/outpost/shared/buildings/blacksmith/Blacksmith.tscn" id="1_s1xq6"]
+[ext_resource type="PackedScene" uid="uid://bf3dhu1rxow8" path="res://scenes/scene/outpost/shared/buildings/arcanist/Arcanist.tscn" id="2_0cymp"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://global/resources/sprite/spBox.png" id="2_02k7c"]
+[ext_resource type="PackedScene" uid="uid://dshclpg0yv8tx" path="res://scenes/scene/outpost/shared/buildings/goldsmith/Goldsmith.tscn" id="2_bocrx"]
+[ext_resource type="PackedScene" uid="uid://rtti0468aion" path="res://scenes/scene/outpost/shared/buildings/merchant/Merchant.tscn" id="3_mhr2a"]
+[ext_resource type="PackedScene" uid="uid://ig6yinjkevtv" path="res://scenes/scene/outpost/shared/buildings/enchanter/Enchanter.tscn" id="4_02k7c"]
+[ext_resource type="PackedScene" uid="uid://bgi1dagnwrtmu" path="res://scenes/scene/outpost/shared/buildings/tavern/Tavern.tscn" id="4_jn224"]
+[ext_resource type="PackedScene" uid="uid://diodr0j65jdoq" path="res://scenes/scene/outpost/shared/buildings/fletcher/Fletcher.tscn" id="5_rt3kl"]
+
+[resource]
+script = ExtResource("1_43i6m")
+TavernScene = ExtResource("4_jn224")
+MerchantScene = ExtResource("3_mhr2a")
+BlacksmithScene = ExtResource("1_s1xq6")
+GoldsmithScene = ExtResource("2_bocrx")
+AlchemistScene = ExtResource("1_2lw0a")
+FletcherScene = ExtResource("5_rt3kl")
+ArcanistScene = ExtResource("2_0cymp")
+EnchanterScene = ExtResource("4_02k7c")
+TavernTextureGrasslands = ExtResource("2_02k7c")
+TavernTextureTundra = ExtResource("2_02k7c")
+TavernTextureDesert = ExtResource("2_02k7c")
+TavernTextureIcy = ExtResource("2_02k7c")
+TavernTextureJungle = ExtResource("2_02k7c")
+TavernTextureLava = ExtResource("2_02k7c")
+MerchantTextureGrasslands = ExtResource("2_02k7c")
+MerchantTextureTundra = ExtResource("2_02k7c")
+MerchantTextureDesert = ExtResource("2_02k7c")
+MerchantTextureIcy = ExtResource("2_02k7c")
+MerchantTextureJungle = ExtResource("2_02k7c")
+MerchantTextureLava = ExtResource("2_02k7c")
+BlacksmithTextureGrasslands = ExtResource("2_02k7c")
+BlacksmithTextureTundra = ExtResource("2_02k7c")
+BlacksmithTextureDesert = ExtResource("2_02k7c")
+BlacksmithTextureIcy = ExtResource("2_02k7c")
+BlacksmithTextureJungle = ExtResource("2_02k7c")
+BlacksmithTextureLava = ExtResource("2_02k7c")
+GoldsmithTextureGrasslands = ExtResource("2_02k7c")
+GoldsmithTextureTundra = ExtResource("2_02k7c")
+GoldsmithTextureDesert = ExtResource("2_02k7c")
+GoldsmithTextureIcy = ExtResource("2_02k7c")
+GoldsmithTextureJungle = ExtResource("2_02k7c")
+GoldsmithTextureLava = ExtResource("2_02k7c")
+AlchemistTextureGrasslands = ExtResource("2_02k7c")
+AlchemistTextureTundra = ExtResource("2_02k7c")
+AlchemistTextureDesert = ExtResource("2_02k7c")
+AlchemistTextureIcy = ExtResource("2_02k7c")
+AlchemistTextureJungle = ExtResource("2_02k7c")
+AlchemistTextureLava = ExtResource("2_02k7c")
+FletcherTextureGrasslands = ExtResource("2_02k7c")
+FletcherTextureTundra = ExtResource("2_02k7c")
+FletcherTextureDesert = ExtResource("2_02k7c")
+FletcherTextureIcy = ExtResource("2_02k7c")
+FletcherTextureJungle = ExtResource("2_02k7c")
+FletcherTextureLava = ExtResource("2_02k7c")
+ArcanistTextureGrasslands = ExtResource("2_02k7c")
+ArcanistTextureTundra = ExtResource("2_02k7c")
+ArcanistTextureDesert = ExtResource("2_02k7c")
+ArcanistTextureIcy = ExtResource("2_02k7c")
+ArcanistTextureJungle = ExtResource("2_02k7c")
+ArcanistTextureLava = ExtResource("2_02k7c")
+EnchanterTextureGrasslands = ExtResource("2_02k7c")
+EnchanterTextureTundra = ExtResource("2_02k7c")
+EnchanterTextureDesert = ExtResource("2_02k7c")
+EnchanterTextureIcy = ExtResource("2_02k7c")
+EnchanterTextureJungle = ExtResource("2_02k7c")
+EnchanterTextureLava = ExtResource("2_02k7c")
+metadata/_custom_type_script = "uid://cx0u8btsax3i7"

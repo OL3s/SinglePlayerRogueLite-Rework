@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bd7ux1tukcshh"]
+
+[ext_resource type="Script" uid="uid://cl0xtqpt82i4r" path="res://scenes/scene/outpost/shared/buildings/shared/building/building/Building.cs" id="1_pmmwi"]
+[ext_resource type="Texture2D" uid="uid://hy8j5ixbx5vb" path="res://global/resources/sprite/spBox.png" id="2_ydmu2"]
+
+[node name="Building" type="Control" unique_id=1601724858 node_paths=PackedStringArray("BuildingTexture")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_pmmwi")
+BuildingType = 3
+BuildingTexture = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=413889893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ydmu2")
+stretch_mode = 5
+metadata/_edit_lock_ = true

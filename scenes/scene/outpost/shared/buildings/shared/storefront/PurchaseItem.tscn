@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dcsjc7p2etynb"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_je4xk"]
+[ext_resource type="Script" uid="uid://det41vsm3cto7" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/PurchaseItem.cs" id="1_nqo01"]
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="3_syxml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2g0aj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_syxml"]
+
+[node name="PurchaseItem" type="Control" unique_id=1449225475 node_paths=PackedStringArray("ItemNameLabel", "ItemCostLabel", "ItemIcon", "PurchaseButton", "CancelButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_je4xk")
+script = ExtResource("1_nqo01")
+ItemNameLabel = NodePath("PanelContainer/TextureRect/NameLabel")
+ItemCostLabel = NodePath("PanelContainer/HBoxContainer/Purchase/PriceLabel")
+ItemIcon = NodePath("PanelContainer/TextureRect")
+PurchaseButton = NodePath("PanelContainer/HBoxContainer/Purchase")
+CancelButton = NodePath("PanelContainer/HBoxContainer/Cancel")
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=1313572892]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2g0aj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=748212583]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.400024
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Cancel" type="Button" parent="PanelContainer/HBoxContainer" unique_id=273930713]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_syxml")
+text = "Cancel"
+
+[node name="Purchase" type="Button" parent="PanelContainer/HBoxContainer" unique_id=893816778]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_syxml")
+text = "Purchase"
+
+[node name="PriceLabel" type="Label" parent="PanelContainer/HBoxContainer/Purchase" unique_id=1747278645]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -32.0
+grow_horizontal = 2
+text = "$price"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=973118368]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.999985
+offset_top = 11.0
+offset_right = 95.999985
+offset_bottom = 203.00015
+grow_horizontal = 2
+texture = SubResource("PlaceholderTexture2D_syxml")
+
+[node name="NameLabel" type="Label" parent="PanelContainer/TextureRect" unique_id=1138997848]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$name"
+horizontal_alignment = 1
