@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b587vli8rddgf" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/Storefront.cs" id="1_wh0ve"]
 [ext_resource type="LabelSettings" uid="uid://8pe427jgf6ls" path="res://global/resources/tres/defLabelSettings.tres" id="2_wh0ve"]
-[ext_resource type="Script" uid="uid://2fhbjwdu47uh" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/ContainerGenerateItems.cs" id="4_0uhn3"]
-[ext_resource type="PackedScene" uid="uid://1qjiwcmb4ebk" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.tscn" id="5_s7gb5"]
+[ext_resource type="PackedScene" uid="uid://1qjiwcmb4ebk" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.tscn" id="4_s5p1u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0uhn3"]
 
-[node name="Storefront" type="Control" unique_id=1642659416 node_paths=PackedStringArray("StoreNameLabel", "StoreSellerName", "ContainerGenerateItems")]
+[node name="Storefront" type="Control" unique_id=1642659416 node_paths=PackedStringArray("StoreNameLabel", "StoreSellerName", "StoreItemsContainer")]
 layout_mode = 3
 anchor_left = 0.1
 anchor_top = 0.1
@@ -19,7 +18,8 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_wh0ve")
 StoreNameLabel = NodePath("Panel/StoreLabel")
 StoreSellerName = NodePath("Panel/TextureRect/CharLabel")
-ContainerGenerateItems = NodePath("Panel/ReferenceRect/ContainerGenerateItems")
+StoreItemScene = ExtResource("4_s5p1u")
+StoreItemsContainer = NodePath("Panel/ReferenceRect/ContainerGenerateItems")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="ReferenceRect" parent="." unique_id=921602271]
@@ -97,5 +97,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-script = ExtResource("4_0uhn3")
-StoreItemTscn = ExtResource("5_s7gb5")

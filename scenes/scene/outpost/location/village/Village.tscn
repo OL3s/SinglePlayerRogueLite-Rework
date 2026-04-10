@@ -17,6 +17,7 @@ offset_left = 171.0
 offset_top = 127.0
 offset_right = -812.6016
 offset_bottom = -367.0
+BuildingType = 3
 
 [node name="Building2" parent="." unique_id=177287439 instance=ExtResource("1_ff5gj")]
 layout_mode = 1
@@ -32,7 +33,6 @@ offset_left = 593.0
 offset_top = 110.0
 offset_right = -390.60162
 offset_bottom = -384.0
-BuildingType = 0
 
 [node name="Building4" parent="." unique_id=716957560 instance=ExtResource("1_ff5gj")]
 layout_mode = 1

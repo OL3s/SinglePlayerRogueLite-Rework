@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bf3dhu1rxow8"]
 
+[ext_resource type="Script" uid="uid://dh84mjaa04itk" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/BuildingUI.cs" id="1_ibbh5"]
 [ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_l6vhh"]
 [ext_resource type="StyleBox" uid="uid://dq6ypmjqrllos" path="res://global/resources/tres/TabContainerTheme.tres" id="2_xw3oe"]
 [ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="3_bu82o"]
 [ext_resource type="PackedScene" uid="uid://cl4r07gdfn11b" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/storefront.tscn" id="3_xw3oe"]
 
-[node name="Arcanist" type="Control" unique_id=227782784]
+[node name="Arcanist" type="Control" unique_id=227782784 node_paths=PackedStringArray("Storefront")]
 layout_mode = 3
 anchor_left = 0.1
 anchor_top = 0.1
@@ -14,6 +15,9 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_ibbh5")
+BuildingType = 6
+Storefront = NodePath("TabContainer/Purchase")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=454399080]
 layout_mode = 1

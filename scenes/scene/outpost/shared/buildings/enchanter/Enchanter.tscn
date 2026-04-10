@@ -1,9 +1,38 @@
 [gd_scene format=3 uid="uid://ig6yinjkevtv"]
 
-[node name="Enchanter" type="Control" unique_id=105128408]
+[ext_resource type="Script" uid="uid://dh84mjaa04itk" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/BuildingUI.cs" id="1_4uywp"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="2_pw4ll"]
+[ext_resource type="StyleBox" uid="uid://dq6ypmjqrllos" path="res://global/resources/tres/TabContainerTheme.tres" id="3_fqlcv"]
+[ext_resource type="PackedScene" uid="uid://cl4r07gdfn11b" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/storefront.tscn" id="4_dl6y2"]
+
+[node name="Enchanter" type="Control" unique_id=105128408 node_paths=PackedStringArray("Storefront")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4uywp")
+BuildingType = 7
+Storefront = NodePath("TabContainer/Purchase")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=620896030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_pw4ll")
+theme_override_styles/panel = ExtResource("3_fqlcv")
+current_tab = 0
+
+[node name="Purchase" parent="TabContainer" unique_id=1642659416 instance=ExtResource("4_dl6y2")]
+layout_mode = 2
+StoreType = 2
+metadata/_tab_index = 0
+
+[node name="Tab" type="Control" parent="TabContainer" unique_id=2100313181]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

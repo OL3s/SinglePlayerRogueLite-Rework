@@ -6,16 +6,18 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2g0aj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syxml"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_syxml"]
 
-[node name="PurchaseItem" type="Control" unique_id=1449225475 node_paths=PackedStringArray("ItemNameLabel", "ItemCostLabel", "ItemIcon", "PurchaseButton", "CancelButton")]
-layout_mode = 3
+[node name="PurchaseItem" type="ColorRect" unique_id=958775130 node_paths=PackedStringArray("ItemNameLabel", "ItemCostLabel", "ItemIcon", "PurchaseButton", "CancelButton")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_je4xk")
+color = Color(0, 0, 0, 0.5058824)
 script = ExtResource("1_nqo01")
 ItemNameLabel = NodePath("PanelContainer/TextureRect/NameLabel")
 ItemCostLabel = NodePath("PanelContainer/HBoxContainer/Purchase/PriceLabel")
@@ -29,7 +31,7 @@ anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.1
 anchor_right = 0.7
-anchor_bottom = 0.8
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2g0aj")
@@ -55,6 +57,7 @@ text = "Cancel"
 [node name="Purchase" type="Button" parent="PanelContainer/HBoxContainer" unique_id=893816778]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_syxml")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_syxml")
 text = "Purchase"
 
 [node name="PriceLabel" type="Label" parent="PanelContainer/HBoxContainer/Purchase" unique_id=1747278645]
@@ -62,6 +65,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = -32.0
+offset_bottom = 23.0
 grow_horizontal = 2
 text = "$price"
 horizontal_alignment = 1

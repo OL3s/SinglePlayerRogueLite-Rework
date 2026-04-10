@@ -16,6 +16,10 @@ public partial class StoreItem : Control
 		{
 			throw new InvalidOperationException("StoreItem: One or more UI elements or PackedScene are not assigned in the editor.");
 		}
+
+		if (ItemData != null)
+			UpdateItemDisplay(ItemData);
+
 	}
 
 	public override void _GuiInput(InputEvent @event)
@@ -35,22 +39,24 @@ public partial class StoreItem : Control
 				GD.PrintErr("StoreItem: Failed to instantiate ItemDetailScene. Ensure the PackedScene is of type PurchaseItem and has the correct script attached.");
 				return;
 			}
-			itemDetailInstance.ItemData = ItemData; // Pass item data to the detail scene
+			itemDetailInstance.UpdateItemDisplay(ItemData);
+			GlobalOverlay.Get().AddChild(itemDetailInstance);
 		}
 	}
 
-	public void UpdateItemDisplay()
+	public void UpdateItemDisplay(ItemBase itemData)
 	{
-		if (ItemData == null)
+		ItemData = itemData;
+		if (itemData == null)
 		{
 			Visible = false;
 			return;
 		}
 
-		ItemCostLabel.Text = $"{ItemData.Cost}";
-		ItemNameLabel.Text = ItemData.ItemName;
-		ItemIcon.Texture = ItemData.Icon;
-		ItemCostLabel.Modulate = ItemData.Cost > SaveNode.Get().RunData.Gold ? Colors.Red : Colors.White; // Dim cost if item is free
+		ItemCostLabel.Text = $"{itemData.Cost}";
+		ItemNameLabel.Text = itemData.ItemName;
+		ItemIcon.Texture = itemData.Icon;
+		ItemCostLabel.Modulate = itemData.Cost > SaveNode.Get().RunData.Gold ? Colors.Red : Colors.White; // Dim cost if item is free
 	}
 	
 }

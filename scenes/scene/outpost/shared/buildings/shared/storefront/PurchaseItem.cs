@@ -37,4 +37,15 @@ public partial class PurchaseItem : Control
 		QueueFree(); // Close the purchase item detail view
 	}
 
+	public void UpdateItemDisplay(ItemBase itemData)
+	{
+		if (itemData == null)
+			throw new ArgumentNullException(nameof(itemData), "PurchaseItem: ItemData cannot be null when updating display.");
+
+		ItemNameLabel.Text = itemData.ItemName;
+		ItemCostLabel.Text = $"{itemData.Cost}";
+		ItemIcon.Texture = itemData.Icon;
+		PurchaseButton.Disabled = itemData.Cost > SaveNode.Get().RunData.Gold; // Disable purchase if player can't afford
+	}
+
 }
