@@ -16,12 +16,12 @@ public partial class ContractButton : Button
 	public override void _Ready()
 	{
 		UpdateTexture();
-		SignalHandler.Subscribe(SignalTypes.Signals.ContractSelected, UpdateTexture);
+		SignalHandler.Subscribe(SignalHandler.Signals.ContractSelected, UpdateTexture);
 	}
 
 	public override void _ExitTree()
 	{
-		SignalHandler.Unsubscribe(SignalTypes.Signals.ContractSelected, UpdateTexture);
+		SignalHandler.Unsubscribe(SignalHandler.Signals.ContractSelected, UpdateTexture);
 	}
 
 	public override void _Pressed()
@@ -57,7 +57,7 @@ public partial class ContractButton : Button
 		_timer += delta;
 	}
 
-	private void UpdateTexture(SignalTypes.Signals signalType)
+	private void UpdateTexture(SignalHandler.Signals signalType)
 	{
 		Icon = _hasContract ? HasContractTexture : NoContractTexture;
 		Text = _hasContract ? MsgStart : MsgSelect;

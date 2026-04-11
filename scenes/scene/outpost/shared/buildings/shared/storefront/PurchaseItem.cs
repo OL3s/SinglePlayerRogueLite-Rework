@@ -30,7 +30,7 @@ public partial class PurchaseItem : Control
 			return;
 		}
 		
-		SignalHandler.EmitSignalStatic(SignalTypes.Signals.PurchaseItem);
+		SignalHandler.EmitSignalStatic(SignalHandler.Signals.PurchaseItem);
 		throw new NotImplementedException("PurchaseItem: Purchase logic not implemented yet.");
 	}
 

@@ -61,7 +61,7 @@ public partial class ContractSelectComponent : Control
 			return;
 		}
 		SaveNode.Get().RunData.CurrentContract = SetContract;
-		SignalHandler.Get()?.EmitSignal(SignalTypes.Signals.ContractSelected);
+		SignalHandler.Get()?.EmitSignal(SignalHandler.Signals.ContractSelected);
 		GlobalOverlay.CloseOverlayStatic();
 	}
 
