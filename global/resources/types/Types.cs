@@ -43,6 +43,12 @@ namespace MyTypes {
 		Arrow
 	}
 
+	public enum Signals
+	{
+		ContractSelected,
+		PurchaseItem,
+		PlayerInventoryChanged
+	}
 }
 
 namespace SaveData
@@ -52,14 +58,5 @@ namespace SaveData
 		Meta,
 		Run,
 		Settings
-	}
-}
-
-namespace SignalTypes
-{
-	public enum Signals
-	{
-		ContractSelected,
-		PurchaseItem,
 	}
 }

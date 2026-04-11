@@ -1,4 +1,5 @@
 using Godot;
+using MyTypes;
 
 public partial class ContractButton : Button
 {
@@ -16,12 +17,12 @@ public partial class ContractButton : Button
 	public override void _Ready()
 	{
 		UpdateTexture();
-		SignalHandler.Subscribe(SignalTypes.Signals.ContractSelected, UpdateTexture);
+		SignalHandler.Subscribe(Signals.ContractSelected, UpdateTexture);
 	}
 
 	public override void _ExitTree()
 	{
-		SignalHandler.Unsubscribe(SignalTypes.Signals.ContractSelected, UpdateTexture);
+		SignalHandler.Unsubscribe(Signals.ContractSelected, UpdateTexture);
 	}
 
 	public override void _Pressed()
@@ -57,7 +58,7 @@ public partial class ContractButton : Button
 		_timer += delta;
 	}
 
-	private void UpdateTexture(SignalTypes.Signals signalType)
+	private void UpdateTexture(Signals signalType)
 	{
 		Icon = _hasContract ? HasContractTexture : NoContractTexture;
 		Text = _hasContract ? MsgStart : MsgSelect;

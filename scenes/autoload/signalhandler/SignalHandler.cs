@@ -1,13 +1,14 @@
 using Godot;
+using MyTypes;
 using System.Collections.Generic;
 
 public partial class SignalHandler : Node
 {
-	[Signal] public delegate void SignalRecievedEventHandler(SignalTypes.Signals singlaltype);
+	[Signal] public delegate void SignalRecievedEventHandler(Signals signalType);
 
-	private static readonly Dictionary<(SignalTypes.Signals signalType, SignalRecievedEventHandler handler), SignalRecievedEventHandler> SubscriptionWrappers = new();
+	private static readonly Dictionary<(Signals signalType, SignalRecievedEventHandler handler), SignalRecievedEventHandler> SubscriptionWrappers = new();
 
-	public static void Subscribe(SignalTypes.Signals signalType, SignalRecievedEventHandler handler)
+	public static void Subscribe(Signals signalType, SignalRecievedEventHandler handler)
 	{
 		var signalHandler = Get();
 		if (signalHandler == null)
@@ -33,7 +34,7 @@ public partial class SignalHandler : Node
 		signalHandler.SignalRecieved += wrapper;
 	}
 
-	public static void Unsubscribe(SignalTypes.Signals signalType, SignalRecievedEventHandler handler)
+	public static void Unsubscribe(Signals signalType, SignalRecievedEventHandler handler)
 	{
 		var signalHandler = Get();
 		if (signalHandler == null)
@@ -62,12 +63,12 @@ public partial class SignalHandler : Node
 		GD.Print("SignalHandler is ready and can now manage signals.");
 	}
 
-	public void EmitSignal(SignalTypes.Signals signalType)
+	public void EmitSignal(Signals signalType)
 	{
 		EmitSignal(SignalName.SignalRecieved, Variant.From(signalType));
 	}
 
-	public static void EmitSignalStatic(SignalTypes.Signals signalType)
+	public static void EmitSignalStatic(Signals signalType)
 	{
 		var signalHandler = Get();
 		if (signalHandler == null)

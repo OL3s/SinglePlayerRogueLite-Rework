@@ -21,18 +21,18 @@ public partial class Storefront : Control
 		}
 
 		UpdateStorefront(StoreType);
-		SignalHandler.Subscribe(SignalTypes.Signals.PurchaseItem, OnPurchaseItem);
+		SignalHandler.Subscribe(Signals.PurchaseItem, OnPurchaseItem);
 	}
 
 	public override void _ExitTree()
 	{
 		base._ExitTree();
-		SignalHandler.Unsubscribe(SignalTypes.Signals.PurchaseItem, OnPurchaseItem);
+		SignalHandler.Unsubscribe(Signals.PurchaseItem, OnPurchaseItem);
 	}
 
-	private void OnPurchaseItem(SignalTypes.Signals signalType)
+	private void OnPurchaseItem(Signals signalType)
 	{
-		if (signalType != SignalTypes.Signals.PurchaseItem)
+		if (signalType != Signals.PurchaseItem)
 			return;
 		
 		

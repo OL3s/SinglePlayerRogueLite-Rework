@@ -11,9 +11,13 @@ public partial class ItemBase : Resource
 	[Export] public Texture2D Icon { get; set; } = new PlaceholderTexture2D();
 	[Export] public int MaxStackSize { get; set; } = 1;
 	[Export] public int Cost { get; set; } = 0;
+	[Export] public string ItemID { get; set; }
 	public bool IsStackable => MaxStackSize > 1;
 
-	public ItemBase() { }
+	public ItemBase()
+	{
+		ItemID = Guid.NewGuid().ToString();
+	}
 
 	public ItemBase(string itemName, DependencyLevel? useDependency, Texture2D icon, int maxStackSize, int cost)
 	{
@@ -22,5 +26,6 @@ public partial class ItemBase : Resource
 		Icon = icon;
 		MaxStackSize = maxStackSize;
 		Cost = cost;
+		ItemID = Guid.NewGuid().ToString();
 	}
 }
