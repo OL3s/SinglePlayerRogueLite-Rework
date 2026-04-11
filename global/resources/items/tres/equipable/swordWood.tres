@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemEquipable" format=3 uid="uid://byqcmrbhe64pw"]
+
+[ext_resource type="Script" uid="uid://b4h70vfbgoj25" path="res://global/resources/items/script/dependencies/ItemDepencency.cs" id="1_7swju"]
+[ext_resource type="Script" uid="uid://ds1ui868xtbo0" path="res://global/resources/items/script/dependencies/Dependency.cs" id="1_hfpp2"]
+[ext_resource type="Script" uid="uid://cs8r7xiuvkpdn" path="res://global/resources/items/script/ItemEquipable.cs" id="1_p2xpk"]
+
+[sub_resource type="Resource" id="Resource_qkj64"]
+script = ExtResource("1_7swju")
+metadata/_custom_type_script = "uid://b4h70vfbgoj25"
+
+[resource]
+script = ExtResource("1_p2xpk")
+Dependency = SubResource("Resource_qkj64")
+metadata/_custom_type_script = "uid://cs8r7xiuvkpdn"

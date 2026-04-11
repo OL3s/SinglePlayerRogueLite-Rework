@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemAmmo" format=3 uid="uid://dc73tqgrhlw2y"]
+
+[ext_resource type="Script" uid="uid://0pj8iyvvxh7n" path="res://global/resources/items/script/ItemAmmo.cs" id="1_bqkgd"]
+
+[resource]
+script = ExtResource("1_bqkgd")
+metadata/_custom_type_script = "uid://0pj8iyvvxh7n"

@@ -37,6 +37,12 @@ namespace MyTypes {
 		Enchanter,
 	}
 
+	public enum AmmoType
+	{
+		None,
+		Arrow
+	}
+
 }
 
 namespace SaveData

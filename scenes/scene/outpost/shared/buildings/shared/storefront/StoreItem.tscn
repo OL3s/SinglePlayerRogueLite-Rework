@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_j3qlc"]
 [ext_resource type="Script" uid="uid://bhwtiuwbs4lf8" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.cs" id="2_j3qlc"]
 [ext_resource type="PackedScene" uid="uid://dcsjc7p2etynb" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/PurchaseItem.tscn" id="3_j3qlc"]
-[ext_resource type="Script" uid="uid://c7dpdusc456h6" path="res://global/resources/items/ItemBase.cs" id="4_ar4gr"]
+[ext_resource type="Script" uid="uid://c7dpdusc456h6" path="res://global/resources/items/script/ItemBase.cs" id="4_ar4gr"]
 
 [sub_resource type="Resource" id="Resource_45kjp"]
 script = ExtResource("4_ar4gr")

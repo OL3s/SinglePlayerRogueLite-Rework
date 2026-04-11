@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemConsumable" format=3 uid="uid://bxdpstol6q2ma"]
+
+[ext_resource type="Script" uid="uid://71duiytbsk1t" path="res://global/resources/items/script/ItemConsumable.cs" id="1_4ijcj"]
+
+[resource]
+script = ExtResource("1_4ijcj")
+metadata/_custom_type_script = "uid://71duiytbsk1t"

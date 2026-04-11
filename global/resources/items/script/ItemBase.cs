@@ -1,3 +1,5 @@
+#nullable enable
+
 using Godot;
 using System;
 
@@ -5,20 +7,20 @@ using System;
 public partial class ItemBase : Resource
 {
 	[Export] public string ItemName { get; set; } = "NONAME";
-
-	[Export] public Texture2D Icon { get; set; } = null;
-
+	[Export] public DependencyLevel? UseDependency { get; set; }
+	[Export] public Texture2D Icon { get; set; } = new PlaceholderTexture2D();
 	[Export] public int MaxStackSize { get; set; } = 1;
 	[Export] public int Cost { get; set; } = 0;
 	public bool IsStackable => MaxStackSize > 1;
 
 	public ItemBase() { }
 
-	public ItemBase(string name, Texture2D icon, int maxStackSize)
+	public ItemBase(string itemName, DependencyLevel? useDependency, Texture2D icon, int maxStackSize, int cost)
 	{
-		ItemName = name;
+		ItemName = itemName;
+		UseDependency = useDependency;
 		Icon = icon;
 		MaxStackSize = maxStackSize;
+		Cost = cost;
 	}
-
 }
