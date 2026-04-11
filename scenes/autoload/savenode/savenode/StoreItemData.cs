@@ -31,6 +31,45 @@ public partial class StoreItemData : Resource
 		EnchanterItems ??= GenerateRandomStoreItemsForBuilding(MyTypes.BuildingTypes.Enchanter, biome);
 	}
 
+	public void RegenerateItemsForBuilding(MyTypes.BuildingTypes buildingType, MyTypes.Biomes biome)
+	{
+		switch (buildingType)
+		{
+			case MyTypes.BuildingTypes.Tavern:
+				TavernItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Merchant:
+				MerchantItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Blacksmith:
+				BlacksmithItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Goldsmith:
+				GoldsmithItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Alchemist:
+				AlchemistItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Fletcher:
+				FletcherItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Arcanist:
+				ArcanistItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+			case MyTypes.BuildingTypes.Enchanter:
+				EnchanterItems = GenerateRandomStoreItemsForBuilding(buildingType, biome);
+				break;
+		}
+	}
+
+	public void RegenerateItemsForAllBuildings(MyTypes.Biomes biome)
+	{
+		foreach (MyTypes.BuildingTypes buildingType in Enum.GetValues(typeof(MyTypes.BuildingTypes)))
+		{
+			RegenerateItemsForBuilding(buildingType, biome);
+		}
+	}
+
 	public Array<ItemBase> GetItemsForBuildingType(MyTypes.BuildingTypes buildingType)
 	{
 		
@@ -58,6 +97,7 @@ public partial class StoreItemData : Resource
 	{
 		var placeholderimage = new PlaceholderTexture2D();
 		placeholderimage.Size = new Vector2(64, 64);
+		GD.Print($"Generating items for {buildingType} in {biome} biome");
 		return new Array<ItemBase>() { 
 			new ItemBase($"{buildingType} Item 1", null, placeholderimage, 10, 100),
 			new ItemConsumable($"{buildingType} Consumable 1", null, placeholderimage, 10, 50, 5, 5),
