@@ -1,1 +1,1 @@
-- Fix global overlay system
+- Inventory frontend

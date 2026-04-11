@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PurchaseItem : Control
+public partial class PurchaseItemStorefront : Control
 {
 	[Export] public ItemBase ItemData { get; set; }
 	[Export] public Label ItemNameLabel { get; set; }
@@ -9,6 +9,7 @@ public partial class PurchaseItem : Control
 	[Export] public TextureRect ItemIcon { get; set; }
 	[Export] public Button PurchaseButton { get; set; }
 	[Export] public Button CancelButton { get; set; }
+	[Export] public Storefront ParentStorefront { get; set; }
 
 	public override void _Ready()
 	{
@@ -30,8 +31,9 @@ public partial class PurchaseItem : Control
 			return;
 		}
 		
-		SignalHandler.EmitSignalStatic(SignalHandler.Signals.PurchaseItem);
-		throw new NotImplementedException("PurchaseItem: Purchase logic not implemented yet.");
+		if (ParentStorefront.PurchaseItem(ItemData))
+			QueueFree(); // Close the purchase item detail view after purchase
+		
 	}
 
 	private void OnCancelButtonPressed()

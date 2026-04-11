@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using System;
 using MyTypes;
 
 public partial class Storefront : Control
@@ -67,9 +68,55 @@ public partial class Storefront : Control
 				GD.PrintErr("Storefront: Failed to instantiate StoreItemScene. Ensure the PackedScene is of type StoreItem and has the correct script attached.");
 				continue;
 			}
+			storeItemInstance.ParentStorefront = this; // Set reference to parent storefront for purchase callbacks
 			storeItemInstance.UpdateItemDisplay(itemData);
 			StoreItemsContainer.AddChild(storeItemInstance);
 		}
+	}
+
+	public void RemoveItemFromStore(ItemBase item)
+	{
+		if (item == null)
+			throw new ArgumentNullException(nameof(item), "Storefront: Cannot remove a null item from the store.");
+		
+
+		if (!StoreItems.Contains(item))
+			throw new InvalidOperationException($"Storefront: Attempted to remove item '{item.ItemName}' that does not exist in the store.");
+
+		StoreItems.Remove(item);
+		foreach (var child in StoreItemsContainer.GetChildren())
+		{
+			if (child is StoreItem storeItem && storeItem.ItemData == item)
+			{
+				storeItem.QueueFree();
+				break;
+			}
+		}
+
+		UpdateStorefront(StoreType); // Refresh the storefront display after removing the item
+	}
+
+	public bool PurchaseItem(ItemBase item)
+	{
+		if (item == null)
+			throw new ArgumentNullException(nameof(item), "Storefront: Cannot purchase a null item.");
+
+		var runData = SaveNode.Get().RunData;
+		var playerData = runData.PlayerData;
+		if (playerData == null)
+			throw new InvalidOperationException("Storefront: PlayerData is null. Cannot process purchase.");
+
+		if (runData.Gold < item.Cost)
+		{
+			GD.Print("Storefront: Not enough gold to purchase this item.");
+			return false;
+		}
+
+		runData.Gold -= item.Cost;
+		runData.InventoryData.AddItem(item);
+		RemoveItemFromStore(item);
+		GD.Print($"Storefront: Purchased {item.ItemName} for {item.Cost} gold. Remaining gold: {runData.Gold}");
+		return true;
 	}
 
 }

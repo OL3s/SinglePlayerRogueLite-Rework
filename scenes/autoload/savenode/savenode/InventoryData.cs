@@ -1,7 +1,8 @@
 using Godot;
 using Godot.Collections;
 
-public partial class InventoryData : Node
+[GlobalClass]
+public partial class InventoryData : Resource
 {
     [Export] public Array<ItemBase> Items { get; set; } = new Array<ItemBase>();
 
@@ -24,5 +25,5 @@ public partial class InventoryData : Node
         }
         return null;
     }
-    
+
 }

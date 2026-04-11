@@ -11,10 +11,11 @@ namespace SaveData
 		[Export] public PlayerData PlayerData { get; set; } = null;
 		[Export] public StoreItemData StoreData { get; set; } = null;
 		[Export] public Contract CurrentContract { get; set; } = null;
-		[Export] public int Gold { get; set; } = 0;
+		[Export] public InventoryData InventoryData { get; set; } = new InventoryData();
+		[Export] public int Gold { get; set; } = 100;
 		public override string ToString()
 		{
-			return $"RunData: CurrentBiome={CurrentBiome} PlayerData={PlayerData}, StoreData={StoreData}, CurrentContract={CurrentContract}, Gold={Gold}";
+			return $"RunData: CurrentBiome={CurrentBiome} PlayerData={PlayerData}, StoreData={StoreData}, CurrentContract={CurrentContract}, InventoryData={InventoryData}, Gold={Gold}";
 		}
 	}
 

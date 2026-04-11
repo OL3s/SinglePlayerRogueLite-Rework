@@ -8,6 +8,7 @@ public partial class StoreItem : Control
 	[Export] public Label ItemNameLabel { get; set; }
 	[Export] public TextureRect ItemIcon { get; set; }
 	[Export] public PackedScene ItemDetailScene { get; set; }
+	[Export] public Storefront ParentStorefront { get; set; }
 
 	public override void _Ready()
 	{
@@ -33,12 +34,13 @@ public partial class StoreItem : Control
 				return;
 			}
 
-			var itemDetailInstance = ItemDetailScene.Instantiate<PurchaseItem>();
+			var itemDetailInstance = ItemDetailScene.Instantiate<PurchaseItemStorefront>();
 			if (itemDetailInstance == null)
 			{
 				GD.PrintErr("StoreItem: Failed to instantiate ItemDetailScene. Ensure the PackedScene is of type PurchaseItem and has the correct script attached.");
 				return;
 			}
+			itemDetailInstance.ParentStorefront = ParentStorefront; // Set reference to parent storefront for purchase callbacks
 			itemDetailInstance.UpdateItemDisplay(ItemData);
 			GlobalOverlay.Get().AddChild(itemDetailInstance);
 		}
