@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b27v32yn6crkp"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_iowu1"]
+[ext_resource type="Script" uid="uid://dma3f05y7x1gw" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryItem/InventoryItem.cs" id="2_p2gao"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iowu1"]
+
+[node name="InvItem" type="Control" unique_id=1158832451 node_paths=PackedStringArray("LabelName", "TextureIcon")]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_iowu1")
+script = ExtResource("2_p2gao")
+LabelName = NodePath("Label")
+TextureIcon = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1344693154]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_iowu1")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1696178572]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 22
+text = "$ItemName"
+horizontal_alignment = 1
+clip_text = true
