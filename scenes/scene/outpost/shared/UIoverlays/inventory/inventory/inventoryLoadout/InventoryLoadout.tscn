@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dfp5fsymmi6yq" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryLoadout/InventoryLoadout.cs" id="3_cc1cj"]
 [ext_resource type="Script" uid="uid://g731tos6khco" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryLoadout/InventoryLoadoutButton.cs" id="4_rekp3"]
 
-[node name="LoadoutPanel" type="Control" unique_id=1757445908]
+[node name="LoadoutPanel" type="Control" unique_id=1757445908 node_paths=PackedStringArray("MainHandSlot", "OffHandSlot", "ArmorSlot", "AmuletSlot", "AmmoSlot", "ConsumableSlot")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_iy643")
 script = ExtResource("3_cc1cj")
+MainHandSlot = NodePath("Panel/GridContainer/BtnEquipMain")
+OffHandSlot = NodePath("Panel/GridContainer/BtnEquipOff")
+ArmorSlot = NodePath("Panel/GridContainer/BtnArmor")
+AmuletSlot = NodePath("Panel/GridContainer/BtnAmulet")
+AmmoSlot = NodePath("Panel/GridContainer/BtnAmmo")
+ConsumableSlot = NodePath("Panel/GridContainer/BtnConsumable")
 
 [node name="Panel" type="Panel" parent="." unique_id=138622126]
 layout_mode = 1
@@ -49,7 +55,7 @@ theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 32
 columns = 3
 
-[node name="BtnArmor" type="Button" parent="Panel/GridContainer" unique_id=223518929]
+[node name="BtnAmmo" type="Button" parent="Panel/GridContainer" unique_id=1419401558]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("4_rekp3")
@@ -61,25 +67,25 @@ layout_mode = 2
 script = ExtResource("4_rekp3")
 metadata/_custom_type_script = "uid://g731tos6khco"
 
+[node name="BtnConsumable" type="Button" parent="Panel/GridContainer" unique_id=780593902]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
 [node name="BtnEquipMain" type="Button" parent="Panel/GridContainer" unique_id=106580275]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("4_rekp3")
 metadata/_custom_type_script = "uid://g731tos6khco"
 
+[node name="BtnArmor" type="Button" parent="Panel/GridContainer" unique_id=223518929]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
 [node name="BtnEquipOff" type="Button" parent="Panel/GridContainer" unique_id=1712900518]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-script = ExtResource("4_rekp3")
-metadata/_custom_type_script = "uid://g731tos6khco"
-
-[node name="BtnAmmo" type="Button" parent="Panel/GridContainer" unique_id=1419401558]
-custom_minimum_size = Vector2(96, 96)
-layout_mode = 2
-script = ExtResource("4_rekp3")
-metadata/_custom_type_script = "uid://g731tos6khco"
-
-[node name="BtnConsumable" type="Button" parent="Panel/GridContainer" unique_id=780593902]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 script = ExtResource("4_rekp3")

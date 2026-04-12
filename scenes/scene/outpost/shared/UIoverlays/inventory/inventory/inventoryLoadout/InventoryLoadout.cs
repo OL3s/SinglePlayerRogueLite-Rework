@@ -9,12 +9,11 @@ public partial class InventoryLoadout : Control
 	[Export] public InventoryLoadoutButton AmuletSlot;
 	[Export] public InventoryLoadoutButton AmmoSlot;
 	[Export] public InventoryLoadoutButton ConsumableSlot;
-	[Export] public InventoryLoadoutButton AltSlot;
 
 	public override void _Ready()
 	{
 		base._Ready();
-		if (MainHandSlot == null || OffHandSlot == null || ArmorSlot == null || AmuletSlot == null || AmmoSlot == null || ConsumableSlot == null || AltSlot == null)
+		if (MainHandSlot == null || OffHandSlot == null || ArmorSlot == null || AmuletSlot == null || AmmoSlot == null || ConsumableSlot == null)
 			throw new InvalidOperationException("All inventory slots must be assigned in the inspector.");
 
 		MainHandSlot.Pressed += ButtonEquipMainPressed;
@@ -23,7 +22,6 @@ public partial class InventoryLoadout : Control
 		AmuletSlot.Pressed += ButtonEquipAmuletPressed;
 		AmmoSlot.Pressed += ButtonEquipAmmoPressed;
 		ConsumableSlot.Pressed += ButtonEquipConsumablePressed;
-		AltSlot.Pressed += ButtonEquipAltPressed;
 
 		UpdateLoadout(SaveNode.Get().EquipedItemsData ?? throw new InvalidOperationException("EquipedItemsData is not available.")); // Initialize with empty loadout or load from save data
 	}
@@ -36,11 +34,6 @@ public partial class InventoryLoadout : Control
 	private void ButtonEquipOffPressed()
 	{
 		GD.Print("Equip Off Hand");
-	}
-
-	private void ButtonEquipAltPressed()
-	{
-		GD.Print("Equip Alt");
 	}
 
 	private void ButtonEquipArmorPressed()
