@@ -5,6 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://8pe427jgf6ls" path="res://global/resources/tres/defLabelSettings.tres" id="2_lvxen"]
 [ext_resource type="PackedScene" uid="uid://b27v32yn6crkp" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryItem/InventoryItem.tscn" id="2_qxmba"]
 [ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="3_lvxen"]
+[ext_resource type="PackedScene" uid="uid://c6ulvb04un1nm" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryLoadout/InventoryLoadout.tscn" id="6_7ku12"]
 
 [node name="Inventory" type="Control" unique_id=113333181 node_paths=PackedStringArray("ContainerItems")]
 layout_mode = 3
@@ -57,9 +58,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -321.00006
-offset_top = -139.65
-offset_right = 321.00006
-offset_bottom = 139.65
+offset_left = -422.99997
+offset_top = -116.60002
+offset_right = 57.00003
+offset_bottom = 179.4
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LoadoutPanel" parent="." unique_id=1757445908 instance=ExtResource("6_7ku12")]
+layout_mode = 1
+offset_left = 536.8
+offset_top = 106.2
+offset_right = -30.799927
+offset_bottom = -43.400024

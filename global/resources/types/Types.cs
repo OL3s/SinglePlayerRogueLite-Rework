@@ -43,6 +43,16 @@ namespace MyTypes {
 		Arrow
 	}
 
+	public enum ItemType
+	{
+		ItemBase,
+		ItemEquipable,
+		ItemConsumable,
+		ItemAmmo,
+		ItemArmor,
+		ItemAmulet
+	}
+
 }
 
 namespace SaveData

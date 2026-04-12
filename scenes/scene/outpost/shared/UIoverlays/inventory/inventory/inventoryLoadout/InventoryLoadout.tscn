@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://c6ulvb04un1nm"]
+
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_iy643"]
+[ext_resource type="Script" uid="uid://dfp5fsymmi6yq" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryLoadout/InventoryLoadout.cs" id="3_cc1cj"]
+[ext_resource type="Script" uid="uid://g731tos6khco" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryLoadout/InventoryLoadoutButton.cs" id="4_rekp3"]
+
+[node name="LoadoutPanel" type="Control" unique_id=1757445908]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iy643")
+script = ExtResource("3_cc1cj")
+
+[node name="Panel" type="Panel" parent="." unique_id=138622126]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=2078880199]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Loadout"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=822790918]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -224.0
+offset_right = 176.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 3
+
+[node name="BtnArmor" type="Button" parent="Panel/GridContainer" unique_id=223518929]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
+[node name="BtnAmulet" type="Button" parent="Panel/GridContainer" unique_id=984313856]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
+[node name="BtnEquipMain" type="Button" parent="Panel/GridContainer" unique_id=106580275]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
+[node name="BtnEquipOff" type="Button" parent="Panel/GridContainer" unique_id=1712900518]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
+[node name="BtnAmmo" type="Button" parent="Panel/GridContainer" unique_id=1419401558]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"
+
+[node name="BtnConsumable" type="Button" parent="Panel/GridContainer" unique_id=780593902]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+script = ExtResource("4_rekp3")
+metadata/_custom_type_script = "uid://g731tos6khco"

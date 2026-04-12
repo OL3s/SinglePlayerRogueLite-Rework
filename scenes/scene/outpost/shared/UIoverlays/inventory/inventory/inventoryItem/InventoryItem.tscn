@@ -2,19 +2,25 @@
 
 [ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_iowu1"]
 [ext_resource type="Script" uid="uid://dma3f05y7x1gw" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryItem/InventoryItem.cs" id="2_p2gao"]
+[ext_resource type="PackedScene" uid="uid://bjy4opgjb7r1k" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/showcase/InventoryItemShowcase.tscn" id="3_vx8kv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iowu1"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vx8kv"]
 
-[node name="InvItem" type="Control" unique_id=1158832451 node_paths=PackedStringArray("LabelName", "TextureIcon")]
-custom_minimum_size = Vector2(120, 120)
-layout_mode = 3
-anchors_preset = 0
+[node name="InvItem" type="ReferenceRect" unique_id=287257118 node_paths=PackedStringArray("LabelName", "TextureIcon")]
+custom_minimum_size = Vector2(128, 198)
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 134.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = ExtResource("1_iowu1")
+border_color = Color(0.7312316, 0.45843172, 0.30465975, 1)
 script = ExtResource("2_p2gao")
-LabelName = NodePath("Label")
-TextureIcon = NodePath("TextureRect")
+LabelName = NodePath("Label2")
+TextureIcon = NodePath("TextureRect2")
+InventoryItemShowcaseScene = ExtResource("3_vx8kv")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1344693154]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1617327197]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
@@ -22,25 +28,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
+offset_left = -32.0
+offset_top = -67.0
+offset_right = 32.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_iowu1")
-stretch_mode = 5
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_vx8kv")
 
-[node name="Label" type="Label" parent="." unique_id=1696178572]
+[node name="Label2" type="Label" parent="." unique_id=1743797700]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -23.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 22
-text = "$ItemName"
+theme_override_font_sizes/font_size = 14
+text = "$Name"
 horizontal_alignment = 1
-clip_text = true
+vertical_alignment = 2

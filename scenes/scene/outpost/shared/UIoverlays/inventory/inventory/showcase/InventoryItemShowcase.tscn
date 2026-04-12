@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bjy4opgjb7r1k"]
+
+[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="1_0vgvm"]
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_ajtue"]
+[ext_resource type="Script" uid="uid://c5m8usk83e6i0" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/showcase/InventoryItemShowcase.cs" id="1_iepsp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iepsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajtue"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywrrd"]
+
+[node name="InvShowcase" type="ColorRect" unique_id=412121431 node_paths=PackedStringArray("LabelName", "TextureIcon", "ButtonEquipMain", "ButtonEquipOff", "ButtonEquipAlt", "ButtonCancel")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ajtue")
+color = Color(0, 0, 0, 0.5058824)
+script = ExtResource("1_iepsp")
+LabelName = NodePath("PanelContainer/TextureRect/NameLabel")
+TextureIcon = NodePath("PanelContainer/TextureRect")
+ButtonEquipMain = NodePath("PanelContainer/HBoxContainer/EquipMain")
+ButtonEquipOff = NodePath("PanelContainer/HBoxContainer/EquipSecond")
+ButtonEquipAlt = NodePath("PanelContainer/HBoxContainer/EquipAlt")
+ButtonCancel = NodePath("PanelContainer/HBoxContainer/Cancel")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=693228977]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iepsp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1615104588]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.400024
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Cancel" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1234454529]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_0vgvm")
+text = "Cancel"
+
+[node name="EquipMain" type="Button" parent="PanelContainer/HBoxContainer" unique_id=2068503474]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_0vgvm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajtue")
+text = "Equip"
+
+[node name="EquipSecond" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1114268231]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_0vgvm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajtue")
+text = "Equip L"
+
+[node name="EquipAlt" type="Button" parent="PanelContainer/HBoxContainer" unique_id=550757942]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_0vgvm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajtue")
+text = "Equip Alt"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1711383661]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.999985
+offset_top = 11.0
+offset_right = 95.999985
+offset_bottom = 203.00015
+grow_horizontal = 2
+texture = SubResource("PlaceholderTexture2D_ywrrd")
+
+[node name="NameLabel" type="Label" parent="PanelContainer/TextureRect" unique_id=205977192]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$name"
+horizontal_alignment = 1

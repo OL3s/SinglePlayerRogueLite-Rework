@@ -5,7 +5,14 @@ public partial class InventoryItem : Control
 {
 	[Export] public Label LabelName;
 	[Export] public TextureRect TextureIcon;
-
+	[Export] public PackedScene InventoryItemShowcaseScene;
+	[Export] public ItemBase ItemData;
+	public override void _Ready()
+	{
+		base._Ready();
+		if (LabelName == null || TextureIcon == null || InventoryItemShowcaseScene == null)
+			throw new InvalidOperationException("All UI elements must be assigned in the inspector.");
+	}
 	public override void _GuiInput(InputEvent @event)
 	{
 		base._GuiInput(@event);
@@ -13,7 +20,9 @@ public partial class InventoryItem : Control
 		{
 			if (mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left)
 			{
-				throw new NotImplementedException("TODO: Implement inventory popup when clicking on an inventory item");
+				var showcaseInstance = InventoryItemShowcaseScene.Instantiate<InventoryItemShowcase>();
+				showcaseInstance.UpdateShowcase(ItemData);
+				GlobalOverlay.Get().AddChild(showcaseInstance);
 			}
 		}
 	}
@@ -22,7 +31,9 @@ public partial class InventoryItem : Control
 	{
 		if (item == null)
 			throw new ArgumentNullException(nameof(item), "Item cannot be null when updating inventory item.");
+		ItemData = item;
 		LabelName.Text = item.ItemName;
 		TextureIcon.Texture = item.Icon;
 	}
+	
 }

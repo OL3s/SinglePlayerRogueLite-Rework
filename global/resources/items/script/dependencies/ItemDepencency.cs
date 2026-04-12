@@ -30,4 +30,35 @@ public partial class ItemDepencency : Resource
 
 		return true;
 	}
+
+	public bool CanExecute(AmmoType? ammoType, int? mana)
+	{
+		return CanExecute(Dependencies, ammoType, mana);
+	}
+
+	public AmmoType? IsAmmoDependency()
+	{
+		foreach (var dependency in Dependencies)
+		{
+			if (dependency is DependencyAmmo ammoDependency)
+			{
+				return ammoDependency.AmmoType;
+			}
+		}
+
+		return null;
+	}
+
+	public int? ManaCost()
+	{
+		foreach (var dependency in Dependencies)
+		{
+			if (dependency is DependencyMana manaDependency)
+			{
+				return manaDependency.Cost;
+			}
+		}
+
+		return null;
+	}
 }

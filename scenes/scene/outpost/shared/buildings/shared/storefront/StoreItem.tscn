@@ -3,11 +3,6 @@
 [ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_j3qlc"]
 [ext_resource type="Script" uid="uid://bhwtiuwbs4lf8" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/StoreItem.cs" id="2_j3qlc"]
 [ext_resource type="PackedScene" uid="uid://dcsjc7p2etynb" path="res://scenes/scene/outpost/shared/buildings/shared/storefront/PurchaseItemStorefront.tscn" id="3_j3qlc"]
-[ext_resource type="Script" uid="uid://c7dpdusc456h6" path="res://global/resources/items/script/ItemBase.cs" id="4_ar4gr"]
-
-[sub_resource type="Resource" id="Resource_45kjp"]
-script = ExtResource("4_ar4gr")
-metadata/_custom_type_script = "uid://c7dpdusc456h6"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bvgk5"]
 
@@ -23,7 +18,6 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = ExtResource("1_j3qlc")
 border_color = Color(0.62153065, 0.50750226, 0.4508894, 1)
 script = ExtResource("2_j3qlc")
-ItemData = SubResource("Resource_45kjp")
 ItemCostLabel = NodePath("HBoxContainer/Label")
 ItemNameLabel = NodePath("Label")
 ItemIcon = NodePath("TextureRect")

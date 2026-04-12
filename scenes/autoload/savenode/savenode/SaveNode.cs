@@ -15,6 +15,7 @@ public partial class SaveNode : Node
 	public PlayerData PlayerData => RunData.PlayerData;
 	public StoreItemData StoreData => RunData.StoreData;
 	public InventoryData InventoryData => RunData.InventoryData;
+	public EquipedItemsData EquipedItemsData => PlayerData.EquipedItems;
 	public static SaveNode Get() => Engine.GetMainLoop() is SceneTree tree ? tree.Root.GetNode<SaveNode>("SaveNode") : throw new InvalidOperationException("SaveNode: Unable to find SaveNode in the scene tree. Ensure that SaveNode is added as a child of the root node and is named 'SaveNode'.");
 	public override void _Ready()
 	{
