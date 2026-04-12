@@ -53,21 +53,21 @@ offset_bottom = 72.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1299312198]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -422.99997
-offset_top = -116.60002
-offset_right = 57.00003
-offset_bottom = 179.4
+anchors_preset = -1
+anchor_right = 0.56200004
+anchor_bottom = 1.0
+offset_left = 37.799988
+offset_top = 110.2
+offset_right = -0.13922119
+offset_bottom = -47.400024
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LoadoutPanel" parent="." unique_id=1757445908 instance=ExtResource("6_7ku12")]
 layout_mode = 1
-offset_left = 536.8
+anchors_preset = -1
+anchor_left = 0.582
+offset_left = 0.428833
 offset_top = 106.2
 offset_right = -30.799927
 offset_bottom = -43.400024
