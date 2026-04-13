@@ -13,7 +13,8 @@ public partial class GoldPanel : Control
 			return;
 		}
 
-		UpdateGoldAmount(SaveNode.Get().RunData.Gold);
+		UpdateGoldAmount(GetGoldAmount());
+		SignalHandler.Subscribe(SignalHandler.Signals.GoldAmountChanged, OnGoldAmountChanged);
 	}
 
 	public void UpdateGoldAmount(int amount)
@@ -22,5 +23,24 @@ public partial class GoldPanel : Control
 			return;
 
 		GoldAmountLabel.Text = amount.ToString();
+	}
+
+	public void OnGoldAmountChanged(SignalHandler.Signals signal)
+	{
+		if (signal != SignalHandler.Signals.GoldAmountChanged)
+			return;
+
+		UpdateGoldAmount(GetGoldAmount());
+	}
+
+	private int GetGoldAmount()
+	{
+		return SaveNode.Get().RunData.Gold;
+	}
+
+	public override void _ExitTree()
+	{
+		base._ExitTree();
+		SignalHandler.Unsubscribe(SignalHandler.Signals.GoldAmountChanged, OnGoldAmountChanged);
 	}
 }

@@ -10,7 +10,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywrrd"]
 
-[node name="InvShowcase" type="ColorRect" unique_id=412121431 node_paths=PackedStringArray("LabelName", "TextureIcon", "ButtonEquipMain", "ButtonEquipOff", "ButtonEquipAlt", "ButtonCancel")]
+[node name="InvShowcase" type="ColorRect" unique_id=412121431 node_paths=PackedStringArray("LabelName", "TextureIcon", "ButtonEquipMain", "ButtonEquipOff", "ButtonCancel")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,7 +23,6 @@ LabelName = NodePath("PanelContainer/TextureRect/NameLabel")
 TextureIcon = NodePath("PanelContainer/TextureRect")
 ButtonEquipMain = NodePath("PanelContainer/HBoxContainer/EquipMain")
 ButtonEquipOff = NodePath("PanelContainer/HBoxContainer/EquipSecond")
-ButtonEquipAlt = NodePath("PanelContainer/HBoxContainer/EquipAlt")
 ButtonCancel = NodePath("PanelContainer/HBoxContainer/Cancel")
 metadata/_edit_lock_ = true
 
@@ -48,6 +47,7 @@ offset_top = -70.400024
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Cancel" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1234454529]
@@ -69,13 +69,6 @@ layout_mode = 2
 theme_override_styles/normal = ExtResource("1_0vgvm")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajtue")
 text = "Equip L"
-
-[node name="EquipAlt" type="Button" parent="PanelContainer/HBoxContainer" unique_id=550757942]
-custom_minimum_size = Vector2(64, 0)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("1_0vgvm")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ajtue")
-text = "Equip Alt"
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1711383661]
 layout_mode = 1

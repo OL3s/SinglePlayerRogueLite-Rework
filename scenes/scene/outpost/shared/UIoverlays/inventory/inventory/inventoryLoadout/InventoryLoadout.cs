@@ -24,6 +24,7 @@ public partial class InventoryLoadout : Control
 		ConsumableSlot.Pressed += ButtonEquipConsumablePressed;
 
 		UpdateLoadout(SaveNode.Get().EquipedItemsData ?? throw new InvalidOperationException("EquipedItemsData is not available.")); // Initialize with empty loadout or load from save data
+		SignalHandler.Subscribe(SignalHandler.Signals.ItemEquipped, OnItemEquipped);
 	}
 
 	private void ButtonEquipMainPressed()
@@ -68,6 +69,26 @@ public partial class InventoryLoadout : Control
 			mainDependency != null && mainDependency.IsAmmoDependency() != null
 			&& offDependency != null && offDependency.IsAmmoDependency() != null;
 
+		MainHandSlot.Icon = equipedItems.MainHandItem?.Icon;
+		OffHandSlot.Icon = equipedItems.OffHandItem?.Icon;
+		ArmorSlot.Icon = equipedItems.ArmorItem?.Icon;
+		AmuletSlot.Icon = equipedItems.AmuletItem?.Icon;
+		AmmoSlot.Icon = equipedItems.AmmoItem?.Icon;
+		ConsumableSlot.Icon = equipedItems.ConsumableItem?.Icon;
 	}
+	private void OnItemEquipped(SignalHandler.Signals signal)
+	{
+		if (signal != SignalHandler.Signals.ItemEquipped)
+			return;
+
+		UpdateLoadout(SaveNode.Get().EquipedItemsData ?? throw new InvalidOperationException("EquipedItemsData is not available."));
+	}
+
+	public override void _ExitTree()
+	{
+		base._ExitTree();
+		SignalHandler.Unsubscribe(SignalHandler.Signals.ItemEquipped, OnItemEquipped);
+	}
+
 
 }

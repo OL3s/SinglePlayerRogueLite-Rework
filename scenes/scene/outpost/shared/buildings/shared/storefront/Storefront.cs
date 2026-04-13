@@ -35,8 +35,6 @@ public partial class Storefront : Control
 	{
 		if (signalType != SignalHandler.Signals.PurchaseItem)
 			return;
-		
-		
 	}
 
 	public void UpdateStorefront(BuildingTypes storeType)

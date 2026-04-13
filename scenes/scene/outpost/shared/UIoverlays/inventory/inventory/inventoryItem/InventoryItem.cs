@@ -20,7 +20,7 @@ public partial class InventoryItem : Control
 		{
 			if (mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left)
 			{
-				var showcaseInstance = InventoryItemShowcaseScene.Instantiate<InventoryItemShowcase>();
+				InventoryItemShowcase showcaseInstance = InventoryItemShowcaseScene.Instantiate<InventoryItemShowcase>();
 				showcaseInstance.UpdateShowcase(ItemData);
 				GlobalOverlay.Get().AddChild(showcaseInstance);
 			}

@@ -32,7 +32,11 @@ public partial class PurchaseItemStorefront : Control
 		}
 		
 		if (ParentStorefront.PurchaseItem(ItemData))
+		{
 			QueueFree(); // Close the purchase item detail view after purchase
+			SignalHandler.EmitSignalStatic(SignalHandler.Signals.GoldAmountChanged); // Notify gold amount change after purchase
+			GD.Print($"Purchased {ItemData.ItemName} for {ItemData.Cost} gold.");
+		}
 		
 	}
 

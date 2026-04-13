@@ -7,14 +7,13 @@ public partial class InventoryItemShowcase : ColorRect
 	[Export] public TextureRect TextureIcon;
 	[Export] public BaseButton ButtonEquipMain;
 	[Export] public BaseButton ButtonEquipOff;
-	[Export] public BaseButton ButtonEquipAlt;
 	[Export] public BaseButton ButtonCancel;
 	[Export] public ItemBase ItemData;
 
 	public override void _Ready()
 	{
 		base._Ready();
-		if (LabelName == null || TextureIcon == null || ButtonEquipMain == null || ButtonEquipOff == null || ButtonEquipAlt == null || ButtonCancel == null)
+		if (LabelName == null || TextureIcon == null || ButtonEquipMain == null || ButtonEquipOff == null || ButtonCancel == null)
 			throw new InvalidOperationException("All UI elements must be assigned in the inspector.");
 		if (ItemData != null)
 			UpdateShowcase(ItemData);
@@ -22,43 +21,26 @@ public partial class InventoryItemShowcase : ColorRect
 		ButtonCancel.Pressed += ButtonClosePressed;
 		ButtonEquipMain.Pressed += ButtonEquipMainPressed;
 		ButtonEquipOff.Pressed += ButtonEquipOffPressed;
-		ButtonEquipAlt.Pressed += ButtonEquipAltPressed;
-
 	}
 
 	private void DecideButtonVisibility()
 	{
-		switch (ItemData.GetType().Name)
+		switch (ItemData)
 		{
-			case nameof(ItemEquipable):
+			case ItemEquipable:
 				ButtonEquipMain.Visible = true;
 				ButtonEquipOff.Visible = true;
-				ButtonEquipAlt.Visible = true;
 				break;
-			case nameof(ItemConsumable):
+			case ItemConsumable:
+			case ItemArmor:
+			case ItemAmulet:
+			case ItemAmmo:
 				ButtonEquipMain.Visible = true;
 				ButtonEquipOff.Visible = false;
-				ButtonEquipAlt.Visible = false;
-				break;
-			case nameof(ItemArmor):
-				ButtonEquipMain.Visible = true;
-				ButtonEquipOff.Visible = false;
-				ButtonEquipAlt.Visible = false;
-				break;
-			case nameof(ItemAmulet):
-				ButtonEquipMain.Visible = true;
-				ButtonEquipOff.Visible = false;
-				ButtonEquipAlt.Visible = false;
-				break;
-			case nameof(ItemAmmo):
-				ButtonEquipMain.Visible = true;
-				ButtonEquipOff.Visible = false;
-				ButtonEquipAlt.Visible = false;
 				break;
 			default:
 				ButtonEquipMain.Visible = false;
 				ButtonEquipOff.Visible = false;
-				ButtonEquipAlt.Visible = false;
 				break;
 		}
 	}
@@ -70,17 +52,35 @@ public partial class InventoryItemShowcase : ColorRect
 
 	private void ButtonEquipMainPressed()
 	{
-		throw new NotImplementedException("TODO: Implement equipping item to main slot.");
+		var equipedItems = SaveNode.Get().PlayerData.EquipedItems;
+		switch (ItemData)
+		{
+			case ItemEquipable equipableItem: equipedItems.MainHandItem = equipableItem; break;
+			case ItemConsumable consumableItem: equipedItems.ConsumableItem = consumableItem; break;
+			case ItemArmor armorItem: equipedItems.ArmorItem = armorItem; break;
+			case ItemAmulet amuletItem: equipedItems.AmuletItem = amuletItem; break;
+			case ItemAmmo ammoItem: equipedItems.AmmoItem = ammoItem; break;
+			default: throw new InvalidOperationException("Attempted to equip an item that is not equipable.");
+		}
+
+		SignalHandler.EmitSignalStatic(SignalHandler.Signals.ItemEquipped);
+		GD.Print($"Equipped {ItemData.ItemName} to main hand/consumable/armor/amulet/ammo slot.");
+		QueueFree();
 	}
 
 	private void ButtonEquipOffPressed()
 	{
-		throw new NotImplementedException("TODO: Implement equipping item to off slot.");
-	}
+		if (ItemData is ItemEquipable equipableItem)
+		{
+			var equipedItems = SaveNode.Get().PlayerData.EquipedItems;
+			equipedItems.OffHandItem = equipableItem;
+			SignalHandler.EmitSignalStatic(SignalHandler.Signals.ItemEquipped);
+			GD.Print($"Equipped {ItemData.ItemName} to off hand slot.");
+			QueueFree();
+			return;
 
-	private void ButtonEquipAltPressed()
-	{
-		throw new NotImplementedException("TODO: Implement equipping item to alt slot.");
+		}
+		throw new InvalidOperationException("Attempted to equip an item that is not equipable.");
 	}
 
 	public void UpdateShowcase(ItemBase item)

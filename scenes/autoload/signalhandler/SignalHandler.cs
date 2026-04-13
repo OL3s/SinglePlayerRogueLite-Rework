@@ -80,5 +80,7 @@ public partial class SignalHandler : Node
 	{
 		ContractSelected,
 		PurchaseItem,
+		ItemEquipped,
+		GoldAmountChanged,
 	}
 }
