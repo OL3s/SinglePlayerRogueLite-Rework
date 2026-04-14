@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ycqojtf4kve"]
 
+[ext_resource type="Theme" uid="uid://2xtitfiievtl" path="res://global/resources/tres/defTheme.tres" id="1_5xibk"]
 [ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="1_okqau"]
 [ext_resource type="Script" uid="uid://dupclu1d2hxla" path="res://scenes/scene/outpost/shared/UIoverlays/inventory/inventory/inventoryItemLoadoutShowcase/InventoryItemLoadoutShowcase.cs" id="1_sgodx"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_5xibk")
 color = Color(0, 0, 0, 0.53333336)
 script = ExtResource("1_sgodx")
 LabelName = NodePath("PanelContainer/TextureRect/NameLabel")
