@@ -8,16 +8,28 @@ public partial class GlobalOverlay : CanvasLayer
 	private float OverlayScale = 1f;
 	private string currentChildName => GetChildCount() > 0 ? GetChild(0).Name : null;
 
-	// Static method to access the GlobalOverlay instance from anywhere in the code.
+	/// <summary>Gets the singleton instance of GlobalOverlay.</summary>
+	/// <returns>Autoload instance of GlobalOverlay or null if not found.</returns>
 	public static GlobalOverlay Get()
 	{
 		var sceneTree = Engine.GetMainLoop() as SceneTree;
 		return sceneTree?.Root?.GetNodeOrNull<GlobalOverlay>("/root/GlobalOverlay");
 	}
+
+	#region Static Methods for Overlay Management
+	/// <summary> Adds (force removes existing) an overlay to the GlobalOverlay. </summary>
+	/// <param name="overlay">The overlay to add.</param>
 	public static void AddOverlayStatic(Control overlay) => Get().AddOverlay(overlay);
+	/// <summary> Closes the currently active overlay. </summary>
 	public static void CloseOverlayStatic() => Get().CloseOverlay();
+	/// <summary> Changes current scene to a new scene. </summary>
+	/// <param name="newScene">The new scene to change to.</param>
 	public static void ChangeScenePackedStatic(PackedScene newScene) => Get().ChangeScenePacked(newScene);
+	/// <summary> Checks if any overlay is currently active. </summary>
+	/// <returns>True if an overlay is active, false otherwise.</returns>
 	public static bool IsOverlayActive() => Get().GetChildCount() > 0;
+	#endregion
+
 	public override void _Ready()
 	{
 		base._Ready();
