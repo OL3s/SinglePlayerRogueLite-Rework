@@ -9,12 +9,14 @@ public partial class InventoryLoadout : Control
 	[Export] public InventoryLoadoutButton AmuletSlot;
 	[Export] public InventoryLoadoutButton AmmoSlot;
 	[Export] public InventoryLoadoutButton ConsumableSlot;
+	[Export] public PackedScene InventoryItemLoadoutShowcaseScene;
+	private EquipedItemsData equipmentData => SaveNode.Get().EquipedItemsData;
 
 	public override void _Ready()
 	{
 		base._Ready();
-		if (MainHandSlot == null || OffHandSlot == null || ArmorSlot == null || AmuletSlot == null || AmmoSlot == null || ConsumableSlot == null)
-			throw new InvalidOperationException("All inventory slots must be assigned in the inspector.");
+		if (MainHandSlot == null || OffHandSlot == null || ArmorSlot == null || AmuletSlot == null || AmmoSlot == null || ConsumableSlot == null || InventoryItemLoadoutShowcaseScene == null)
+			throw new InvalidOperationException("All inventory slots and the showcase scene must be assigned in the inspector.");
 
 		MainHandSlot.Pressed += ButtonEquipMainPressed;
 		OffHandSlot.Pressed += ButtonEquipOffPressed;
@@ -23,38 +25,57 @@ public partial class InventoryLoadout : Control
 		AmmoSlot.Pressed += ButtonEquipAmmoPressed;
 		ConsumableSlot.Pressed += ButtonEquipConsumablePressed;
 
-		UpdateLoadout(SaveNode.Get().EquipedItemsData ?? throw new InvalidOperationException("EquipedItemsData is not available.")); // Initialize with empty loadout or load from save data
+		UpdateLoadout(equipmentData ?? throw new InvalidOperationException("EquipedItemsData is not available.")); // Initialize with empty loadout or load from save data
 		SignalHandler.Subscribe(SignalHandler.Signals.ItemEquipped, OnItemEquipped);
+	}
+
+	private void ButtonPressedSlotBase(InventoryLoadoutButton slot)
+	{
+		if (slot?.Item == null)
+			return;
+
+		if (InventoryItemLoadoutShowcaseScene == null)
+			throw new InvalidOperationException("The loadout showcase scene must be assigned in the inspector.");
+
+		var showcase = InventoryItemLoadoutShowcaseScene.Instantiate<InventoryItemLoadoutShowcase>();
+		showcase.UpdateItem(slot.Item);
+		GlobalOverlay.Get().AddChild(showcase);
 	}
 
 	private void ButtonEquipMainPressed()
 	{
 		GD.Print("Equip Main Hand");
+		ButtonPressedSlotBase(MainHandSlot);
 	}
 
 	private void ButtonEquipOffPressed()
 	{
 		GD.Print("Equip Off Hand");
+		ButtonPressedSlotBase(OffHandSlot);
 	}
 
 	private void ButtonEquipArmorPressed()
 	{
 		GD.Print("Equip Armor");
+		ButtonPressedSlotBase(ArmorSlot);
 	}
 
 	private void ButtonEquipAmuletPressed()
 	{
 		GD.Print("Equip Amulet");
+		ButtonPressedSlotBase(AmuletSlot);
 	}
 
 	private void ButtonEquipAmmoPressed()
 	{
 		GD.Print("Equip Ammo");
+		ButtonPressedSlotBase(AmmoSlot);
 	}
 
 	private void ButtonEquipConsumablePressed()
 	{
 		GD.Print("Equip Consumable");
+		ButtonPressedSlotBase(ConsumableSlot);
 	}
 
 	public void UpdateLoadout(EquipedItemsData equipedItems)
@@ -69,19 +90,19 @@ public partial class InventoryLoadout : Control
 			mainDependency != null && mainDependency.IsAmmoDependency() != null
 			&& offDependency != null && offDependency.IsAmmoDependency() != null;
 
-		MainHandSlot.Icon = equipedItems.MainHandItem?.Icon;
-		OffHandSlot.Icon = equipedItems.OffHandItem?.Icon;
-		ArmorSlot.Icon = equipedItems.ArmorItem?.Icon;
-		AmuletSlot.Icon = equipedItems.AmuletItem?.Icon;
-		AmmoSlot.Icon = equipedItems.AmmoItem?.Icon;
-		ConsumableSlot.Icon = equipedItems.ConsumableItem?.Icon;
+		MainHandSlot.UpdateItem(equipedItems.MainHandItem);
+		OffHandSlot.UpdateItem(equipedItems.OffHandItem);
+		ArmorSlot.UpdateItem(equipedItems.ArmorItem);
+		AmuletSlot.UpdateItem(equipedItems.AmuletItem);
+		AmmoSlot.UpdateItem(equipedItems.AmmoItem);
+		ConsumableSlot.UpdateItem(equipedItems.ConsumableItem);
 	}
 	private void OnItemEquipped(SignalHandler.Signals signal)
 	{
 		if (signal != SignalHandler.Signals.ItemEquipped)
 			return;
 
-		UpdateLoadout(SaveNode.Get().EquipedItemsData ?? throw new InvalidOperationException("EquipedItemsData is not available."));
+		UpdateLoadout(equipmentData ?? throw new InvalidOperationException("EquipedItemsData is not available."));
 	}
 
 	public override void _ExitTree()

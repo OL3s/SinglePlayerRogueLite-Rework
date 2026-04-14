@@ -6,10 +6,13 @@ using MyTypes;
 public partial class InventoryLoadoutButton : Button
 {
 	[Export] public ItemBase Item { get; set; }
-
 	public override void _Ready()
 	{
 		base._Ready();
+
+		if (Item != null)
+			UpdateItem(Item);
+
 		IconAlignment = HorizontalAlignment.Center;
 		VerticalIconAlignment = VerticalAlignment.Top;
 		Alignment = HorizontalAlignment.Center;
@@ -18,6 +21,6 @@ public partial class InventoryLoadoutButton : Button
 	public void UpdateItem(ItemBase newItem)
 	{
 		Item = newItem;
-		Icon = Item.Icon;
+		Icon = Item?.Icon;
 	}
 }

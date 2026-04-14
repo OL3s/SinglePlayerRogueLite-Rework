@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bobbm3ix3nim2"]
 
-[ext_resource type="StyleBox" uid="uid://duo5qvpg4vytf" path="res://global/resources/tres/buttonUIstyle.tres" id="1_ghgw3"]
+[ext_resource type="StyleBox" uid="uid://dq6ypmjqrllos" path="res://global/resources/tres/TabContainerTheme.tres" id="1_c450d"]
 [ext_resource type="LabelSettings" uid="uid://8pe427jgf6ls" path="res://global/resources/tres/defLabelSettings.tres" id="2_hhi5l"]
 [ext_resource type="PackedScene" uid="uid://i6ce61tcppw2" path="res://global/resources/tscn/CloseButton.tscn" id="3_hhi5l"]
 
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_ghgw3")
+theme_override_styles/panel = ExtResource("1_c450d")
 
 [node name="Label" type="Label" parent="Panel" unique_id=192415411]
 layout_mode = 1
